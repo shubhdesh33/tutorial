@@ -232,16 +232,25 @@
         //  JSON.stringify will not stringify functions:
         //      HOPELESS
 
-        student1.display = student1.display.toString()
+        // student1.display = student1.display.toString()
 
-        mystring = JSON.stringify(student1)
-        console.log(mystring)
+        // mystring = JSON.stringify(student1)
+        // console.log(mystring)
 
 
         //  object convert to array
 
         const methodvalues = Object.values(student1)
         console.log(methodvalues)
+
+    //  let savearray = methodvalues.push('fith element')
+    //  console.log(savearray)
+
+    // methodvalues.push('fith element')
+    //  console.log(methodvalues)
+
+    methodvalues[4] = 'fith element'
+     console.log(methodvalues)
 
 
 
