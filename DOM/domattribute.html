@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+#btn {
+    background-color: brown;
+    font-size: 25px;
+}
+
+.color{
+ background-color: gray;
+ color: blue;
+}
+.dim {
+
+    border: 2px solid red;
+    padding: 50px;
+}
+.addon {
+    margin:5px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <button id="btn">send</button>
+
+    <button id="btn1" name="form5">send</button>
+
+    <div id="box" class="color dim">
+        <h2>this is dummy color</h2>
+    </div>
+
+    <script>
+
+
+   //  Attribute
+
+
+  save= document.getElementById('btn')
+  save.setAttribute('name','form1')
+  save.setAttribute('class','form2')
+
+  saving = save.hasAttribute('class')
+  console.log(saving)
+
+
+ let  save2= document.getElementById('btn1')
+
+  let store = save2.getAttribute('name')
+
+  console.log(store)
+
+  store1 = save2.removeAttribute('name')
+  console.log(store1)
+
+
+  //  inline style
+//  multiple style
+   save.style.cssText = 'background-color:red; color:black';
+
+  save.style.cssText += 'border:2px solid red'
+
+   save2.setAttribute('style','background-color:aqua')
+
+   save2.style.background = 'grey'
+
+
+   //  get computed css  
+
+   let css = getComputedStyle(btn)
+
+   console.log(css.color)
+
+   //  method to get class name
+
+   let box = document.getElementById('box')
+   
+  // console.log(box.className)
+   //  box.className +=' dim';
+
+  console.log(box.classList)       // array
+
+  for ( let css of box.classList) {
+     console.log(css)
+  }
+
+  box.classList.add('addon')
+ // box.classList.remove('addon')
+ // box.classList.replace('color','addon')
+
+  let result= box.classList.contains('color')
+    console.log(result)
+
+    //  toggle  laga hai toh remove karo aur nhi laga toh 
+    // laga do
+
+    box.classList.toggle('dim')
+
+
+    //  width and height  of an Element
+
+    //  offsetwidth == include border & padding
+
+    let width = box.offsetWidth;
+    let height = box.offsetHeight;
+
+    console.log(width)
+    console.log(height)
+
+    // clientwidth == remove border
+
+    let widthclient = box.clientWidth;
+    let heightclient = box.clientHeight;
+
+    console.log( widthclient)
+    console.log( heightclient)
+
+
+
+
+ 
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src='main.js'></script>
+</head>
+
+<body>
+
+     <script>
+
+          // implicit Parameter - this
+
+          /* When a function is invoked, with the explicitly defined parameters that represents 
+            the argument, an implicit parameter this is also passed. 
+            The this parameter refers to the object that invoked the function. 
+            This is why this parameter is also known as function context.  */
+
+          function myFunc() {
+               return this;
+          }
+          myFunc();
+
+
+          //  Rest Parameter
+
+          // If for some reason, you're not sure how many arguments you will end up passing with invoking a function, you can always use rest parameter with ellipsis (...) prefixed to the parameter name. The parameters passed as rest parameter are available in the function in the form of array. For example:
+
+          function myFunc(firstParam, ...remainingParams) {
+               console.log(firstParam);
+               for (var i = 0; i < remainingParams.length; i++) {
+                    console.log(remainingParams[i]);
+               }
+          }
+          myFunc('A', 'B', 'V', 'F', 'T', 'H');
+
+
+
+          /*  Implicit Parameter - argument
+          // The argument parameter is a collection of all the arguments passed to a function. 
+          // The argument parameter is useful in case no parameter is defined or a matching parameter is not 
+              defined, then this could be used to access the values passed to the function. To identify the     
+             number of arguments passed, we could use the arguments length property as shown  below: */
+         
+
+
+          function myFunc() {
+               if (arguments.length > 0) {
+                    for (var i = 0; i < arguments.length; i++)
+                         console.log(arguments[i]);
+               }
+          }
+          myFunc(2, 3, 4, 6, 1, 7, 3);
+
+
+
+
+
+              //  implicit binding  //
+
+              function basespeed () {
+
+                return this.speed
+              }
+            
+              const pikachu = {
+
+               speed: 90,
+               basespeed :basespeed,
+              }
+               
+           // 1)  console.log(pikachu.basespeed())
+             
+           let savepikachu = pikachu.basespeed
+          
+           // loss the value of this == this taken value global declare variable
+           var speed =100;
+
+           console.log(savepikachu())
+
+           let saver=basespeed.call(pikachu)
+           console.log(saver)
+
+           // simple  Explict binding 
+ 
+           function setpokeman (name)  {
+
+            this.name = name;
+           }
+
+           const catchpokeman = new setpokeman ('shubham')
+
+           console.log(catchpokeman.name)   //   console.log(catchpokeman)
+
+
+
+
+
+
+
+
+// https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
+
+
+
+     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

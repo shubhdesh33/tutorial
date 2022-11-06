@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+
+        let zero = 0;
+        document.write(Boolean(zero) + '<br>');
+        document.write(typeof Boolean(zero) + '<br>');    // O/P == FALSE == BOOLEAN
+        document.write('<hr>');
+
+        zero = 20;
+        document.write(Boolean(zero) + '<br>');            // O/P == FALSE == BOOLEAN
+        document.write('<hr>');
+
+        zero = -20;
+        document.write(Boolean(zero) + '<br>');              // O/P == FALSE == BOOLEAN
+        document.write(typeof Boolean(zero) + '<br>');
+        document.write('<hr>');
+
+        zero = 'SHUBHAM';
+        document.write(Boolean(zero) + '<br>');              // O/P == TRUE == BOOLEAN
+        document.write(typeof Boolean(zero) + '<br>');
+        document.write('<hr>');
+
+        zero = '';
+        document.write(Boolean(zero) + '<br>');              // O/P == FALSE == BOOLEAN
+        document.write(typeof Boolean(zero) + '<br>');
+        document.write('<hr>');
+
+        zero = false;
+        document.write(typeof (zero) + '<br>');
+        covertstring = zero.toString();
+        document.write(Boolean(covertstring) + '<br>');              // O/P == true == BOOLEAN
+        document.write(typeof Boolean(zero) + '<br>');
+        document.write(typeof (covertstring) + '<br>');
+
+        document.write('<hr>');
+
+        zero = false;
+        document.write(Boolean(zero) + '<br>');              // O/P == FALSE == BOOLEAN
+        document.write(typeof Boolean(zero) + '<br>');
+        document.write('<hr>');
+
+        result = Boolean(undefined);
+        document.write(result + '<br>'); // false
+
+        result = Boolean(null);
+        document.write(result + '<br>'); // false
+        document.write('<hr>');
+
+        // empty array 
+        var b4 = Boolean([]); // true
+        document.write(b4+ '<br>');
+        document.write(typeof(b4+ '<br>'));
+        document.write('<hr>');
+
+        var b1 = new Boolean(false);                 // pls put true
+        document.write(' object==='+b1 + '<br>');
+        document.write(typeof(b1+ '<br>'));
+
+        document.write('<hr>');
+
+        var b2 = true;
+        document.write(b2 + '<br>');
+        document.write(typeof(b2+ '<br>'));
+
+        document.write('<hr>');
+
+        // var a;
+		// var b4 = Boolean(a); // false
+        // document.write(b4)
+
+
+    </script>
+
+</body>
+
+</html>

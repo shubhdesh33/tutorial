@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+
+    <script>
+
+        const person = {
+
+            fname: 'shubham',
+            lname: 'deshmukh',
+            language: 'english',
+            age: 'No',
+
+            set changeproperty(ages) {
+
+                return this.age = ages.toUpperCase()
+            },
+
+            get lang() {
+
+                return this.language.toUpperCase()
+            },
+
+        }
+
+        //          // accessing  property
+        console.log(person.fname)
+
+        
+        //  // accessing getter methods
+        console.log(person.lang)
+
+
+        // // trying to access as a method
+        //      console.log(person.lang)  ===     error
+
+
+        // change(set) object property using a setter
+
+        person.changeproperty = 'i am 26 year old '
+        console.log(person.age)
+
+
+
+
+        ///  objectdefine.property  //
+
+
+        //  syntax =(obj,property,{})
+
+        //  change the value
+
+        Object.defineProperty(person, 'fname', { value: 'rushi' })
+
+        console.log(person.fname)
+
+
+        person.fname = 'rushiSir'
+
+        console.log(person.fname)
+
+
+        //  Object.defineProperty  +  getter + setter
+
+
+        const student1 = {
+
+            name: 'ritesh',
+            lname: 'fulkar',
+            age: 26
+        }
+
+          Object.defineProperty(student1,'name',{value :'rits'})
+        console.log(student1.name)
+
+        
+        Object.defineProperty(student1,'class',{value :'3rd'})
+        console.log(student1)
+
+        Object.defineProperty(student1, 'property1', {
+
+            get() {
+
+                return name;
+            },
+
+            set(value) {
+                this.name = value;
+
+            },
+        })
+
+        student1.property1 = 'ritya';
+
+        console.log(student1.name)
+
+
+
+
+
+
+        //   OBJECT CONSTRUCTOR  BY USING FUNCTION
+
+        Student2 = function (fname,lname,age,rate)  {
+            this.fname= fname;
+            this.lname = lname;
+            this.age= age;
+            this.rate =rate;
+
+            //  Your constructor function can also define methods:
+
+          this.getname = function (ages)  {
+
+            return `${this.fname} ${this.lname} ${this.age =ages}`
+          }
+
+        }
+
+        createobj = new Student2 ('vaibhav','sonawane',28,3)
+        console.log(createobj)
+
+           functionmethod = new Student2 ('gaurav','dongre',33)
+           console.log(functionmethod.getname(23))
+
+
+        //  Adding a new property to an existing object is easy:
+
+        createobj.nationality= 'indian';
+        console.log(createobj)
+
+
+        //  You cannot add a new property to an object constructor  
+        // the same way you add a new property to an existing object:
+
+       //   Student2.nationality ='english'         //  give error
+
+        //  Adding a new method to an existing object is easy:
+
+         createobj.fullname = function ()  {
+
+            return `${this.fname} ${this.lname} ${this.age}`
+         }
+
+         console.log(createobj.fullname())
+
+
+
+    </script>
+
+</body>
+
+</html>

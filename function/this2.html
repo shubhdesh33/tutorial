@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        const mere = {
+            dell: function () {
+
+                var x = 5;
+                console.log(x)
+
+                function das() {                           // this is a window function
+
+                    this.x = 40;                           //   ha this pointing to the obj mere
+                    console.log(this.x)
+                }
+                das();                                     //    function calling without obj name
+                console.log(this.x)                        //    ha this point kart ahe window / global scope la
+                console.log(window.x)
+
+                
+            }
+
+        }
+        mere.dell();
+        console.log(x)
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+let x = new Date ();
+document.write(x + '<br>');
+
+let y = new Date (1996,04,01,11,20,26);              // y,m,date,hour,min,sec,millisec
+document.write(y + '<br>');
+
+let z = new Date (1996);       // necessary minimum year,month
+document.write(z + '<br>');
+
+let a = new Date ('octomber, 13 2018 11:12:33')    // time (:) must  
+document.write(a + '<br>');                   // also pass with string
+
+
+//METHOD
+
+//   JavaScript counts months from 0 to 11. January is 0. December is 11.
+
+
+
+
+let b = new Date ('octomber, 13 2018 11:12:33');
+document.write(b.getDate()+ '<br>');
+document.write(b.getFullYear()+ '<br>');
+document.write(b.getDay()+ '<br>');
+document.write('<br>');
+document.write(b.getMonth()+ '<br>');
+document.write(b.getMilliseconds()+ '<br>');
+document.write(b.getMinutes()+ '<br>');
+document.write(b.getMonth()+ '<br>');
+document.write(b.getTime()+ '<br>');
+document.write(b.getHours()+ '<br>');
+//document.write(b.getDate.now()+ '<br>')
+document.write(b.getUTCDate()+ '<br>');
+document.write(b.getUTCDay()+ '<br>');
+document.write(b.getUTCFullYear()+ '<br>');
+document.write(b.getUTCSeconds()+ '<br>');
+
+document.write(b.valueOf()+ '<br>');
+
+// SET
+
+let c = new Date ('octomber, 13 2018 11:12:33')
+
+c.setFullYear(2020);
+document.write(c  +'<br>');
+c.setMonth(2);
+document.write(c +'<br>');
+
+c.setDate(14);
+document.write(c+ '<br>');
+
+c.setHours(22);
+document.write(c +'<br>');
+
+c.setMinutes(33);
+document.write(c +'<br>');
+
+let d = new Date ('octomber, 13 2018 11:12:33');
+
+d.setDate(d.getDate() + 50);
+document.write(d + '<br>');
+
+let e = new Date ('octomber, 13 2018 11:12:33');
+ let f =  new Date ('octomber, 13 2018 11:12:33');
+
+f.setDate(f.getDate() + 50) ;
+ document.write(f + '<br>');
+
+
+// COMPARE    DATE
+
+let g = new Date ('octomber, 13 2018 11:12:33');
+let h = new Date ();
+
+if (g < h){
+   document.write('g is future date'+ '<br>')
+}
+else if (g > h) {
+       document.write('past date')
+}
+else {
+   document.write('today')
+}
+
+let i = new Date ();
+let time = (i.getFullYear()+' '+i.getDate()+ ' '+ i.getDay()+ ' '+ i.getMonth())
+
+document.write(time)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

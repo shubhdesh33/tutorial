@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //     let number = prompt ('take a number')
+    //     console.log(number)
+    // let fact =1
+
+    //     if (number <0) {
+    //         console.log('negative num factorial is not possible')
+    //     }
+    //     else if (number==0) {
+    //         console.log(`factorial of ${number} is not possible`)
+    //     } else {
+
+    //         for (i=1;i<=number ;i++) {
+    //            fact = fact * i
+    //         }
+    //         console.log(fact)
+    //     }
+
+
+
+
+
+
+
+  function factorial (x) {
+
+    if (x==0) {
+        return 1;
+    } else {
+        return x * factorial(x-1)
+    }
+  }
+
+      const numeric = prompt ('take a number')
+  //const num =5;
+
+    let result = factorial(numeric)
+    console.log(`the ${numeric} is a ${result}`)
+
+
+
+
+
+    let takenum = prompt('take a number')
+    let fact=1
+
+    function facto (n)  {
+      if (n> takenum) {
+     return
+      }
+      fact = fact * n
+      n++
+      facto (n)
+    }
+       facto (1)
+       console.log(fact)
+    
+ 
+
+
+    </script>
+</body>
+</html>

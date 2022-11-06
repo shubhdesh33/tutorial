@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+    <script>
+
+
+        // [ 1 ] STATIC  //  how to call Static method == Test.display1
+
+        class Test {
+
+            static display1() {
+
+                return ' a statuc method'
+            }
+
+            static display2() {
+
+                return ' another static method'
+            }
+        }
+
+        console.log(Test.display1())
+
+
+
+        // [ 2 ]  constructor with static method
+
+        class Tested {
+
+            constructor() {
+
+                console.log(Tested.display3())
+                console.log(this.constructor.display3())  // call using constructor method
+            }
+            static display3() {
+
+                return ' another static method , calling by using constructor method'
+            }
+        }
+
+
+        //  to call a contructor we want a new object
+
+        var tea = new Tested()
+
+
+
+        // [ 3 ] STATIC METHOD WITH NON STATIC METHOD  //
+
+        //  by using non static method ( ) we can call static method
+
+        class Testing {
+
+            static staticmethod() {
+                //       console.log(Testing.staticmethod())
+
+                return 'static method called'
+
+
+            }
+
+            forstaticmethodcall() {
+
+                console.log(Testing.staticmethod())
+
+                return 'nonstatic method called'
+            }
+        }
+
+
+        //      to create a obj for calling  
+        teatea = new Testing()
+        console.log(teatea.forstaticmethodcall())
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

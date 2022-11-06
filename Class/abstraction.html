@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+  <script>
+
+    //  abstraction example
+
+    function person5(fname, lname, age) {
+
+      let firstname = fname;
+      let lastname = lname;
+      let aged = age;
+
+      getdetail_noaccess = () => { return `my name is ${firstname} ${lastname} and age is ${aged}` }
+
+     // this.getdetail_noaccess = () => { return `my name is ${firstname} ${lastname} and age is ${aged}` }
+
+
+
+      this.getdetail_access = function () {
+
+        return `my name is ${firstname} ${lastname} and age is ${aged}`
+      }
+
+    }
+
+    personalise = new person5('aditya', 'adhau', 26)
+
+
+    console.log(personalise.firstname)
+
+    //   By changing the way we define a function we can restrict its scope. and hide the data
+
+    console.log(personalise.getdetail_access())
+
+
+    console.log(personalise.getdetail_noaccess)
+
+
+
+
+    //  https://www.educba.com/abstract-classes-in-javascript/
+    //  Example #1: Abstract Class Creation
+
+    //Created an abstract class (constructor function)  
+
+
+
+
+    function Employee() {
+
+      this.empname = 'employ';
+
+      if (this.constructor === Employee) {
+
+        throw new error("FYI: Instance of Abstract class cannot be created")
+      }
+    }
+
+       // newer = new Employee ('emp')
+
+    // // Method (function) of our abstract class
+
+    Employee.prototype.display = function () {
+
+      return ("Employee name is: " + this.empName)
+    }
+
+
+    //Created a subclass (constructor function)
+
+    function Manager(fullname) {
+
+      this.empname = fullname;
+    }
+
+    //Created an object of subclass (extending abstract class)
+
+    Manager.prototype = Object.create(Employee.prototype)
+
+    var mang = new Manager('aniket tayade')
+
+    console.log(mang)
+
+    console.log(mang.display())       //  abstract hide the data
+
+    // . The implementational details our hidden from the user and access only 
+    // the features that satisfy his/her requirements.
+
+
+    //  to check if we can create an instance  (new obj) of an Abstract class
+
+    class Employabstract {
+
+      constructor() {
+
+        if (this.constructor === Employabstract) {
+
+          throw new Error('" Object of Abstract Class we cannot be created" ')
+        }
+      }
+
+      displayed() {
+
+        throw new Error('"Abstract Method has no implementation"')
+      }
+    }
+
+
+    class Abstractmanager extends Employabstract {
+
+      displayed() {
+
+        super.displayed()
+        console.log('i am manager')
+      }
+    }
+
+     // emp = new Employabstract ()
+
+       var mang2 = new Abstractmanager()
+
+     mang2.displayed()
+
+
+
+    /*  Explanation of the above code
+ The above code snippet almost looks like a java code with classes, constructors, methods, and 
+ objects being defined, this is magic of release of ES6. Now coming back to the code, we can see that 
+ the Employee class is an abstract class and displays error when its object is created (Output 3) and
+  contains an abstract method display() whose implementation is defined in the display() method of 
+  Manager class which extends the properties and methods of the Employee class.*/
+
+
+
+
+
+  </script>
+</body>
+
+</html>

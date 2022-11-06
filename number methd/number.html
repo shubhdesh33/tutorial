@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+
+
+document.write('<h3>JAVASCRIPT CONSTANT</h3>')
+
+document.write(Number.MAX_VALUE + '<br>')
+document.write(Number.MIN_VALUE + '<br>');
+document.write(Number.NEGATIVE_INFINITY + '<br>');
+document.write(Number.POSITIVE_INFINITY +  '<br>');
+document.write(Number.NaN +  '<br>');
+document.write(Number.isNaN('s') +  '<br>');
+document.write(Number.isNaN (25)+  '<br>');
+document.write(Number.isNaN (true)+  '<br>');
+
+document.write(Number.MAX_SAFE_INTEGER + '<br>');
+
+var a= '84';
+ let b= 66;
+
+//  NUMBER METHOD
+
+ var num = Number(a)                      // this line only convert string to number
+document.write(num + 66 + '<br>')
+  
+var a = true;
+document.write(Number(a) + '<br>')
+
+//  PARSEINT()             ITS CONVERT FLOAT VALUE TO INTEGERS
+
+let d = '99 98'
+let f = 'he is 50';
+
+document.write(parseInt(d) + '<br>');      // its convert into a
+document.write(parseInt(f) + '<br>');
+
+// parseFloat ();
+
+let g = 123.456  
+
+document.write(parseInt(g) + '<br>');
+document.write(parseFloat(g));               // its returns the number after decimal (.)
+
+// is== is used to check condn return the value true or false
+
+//   isFinite
+
+var m = Infinity;
+var n = '100';
+var o = 10.33;
+var p = 'hello';
+
+document.write(Number.isFinite(m)+'<br>');
+document.write(Number.isFinite(n)+'<br>');
+document.write(Number.isFinite(o)+'<br>');
+document.write(Number.isFinite(p)+'<br>');
+
+//   isInfinite   ()
+
+var m = Infinity;
+var n = '100';
+var o = 10.33;
+var p = 'hello';
+var q = 100;
+
+document.write(Number.isInteger(m)+'<br>');
+document.write(Number.isInteger(n)+'<br>');
+document.write(Number.isInteger(o)+'<br>');
+document.write(Number.isInteger(p)+'<br>');
+document.write(Number.isInteger(q)+'<br>');
+
+
+document.write(' <br><br> ')
+//   toFixed ()
+
+var m = 10.33546;
+
+document.write(m.toFixed(4)+'<br>')
+document.write(' <br><br> ')
+// toPrecision ( )
+
+var n = 100.456;
+
+var nums = n.toPrecision(2);
+
+document.write(nums + '<br>');
+
+
+var n = 125.456;
+
+var nums = n.toPrecision(4);
+
+document.write(nums + '<br>');
+
+
+// toExponential
+
+var m = 100000;
+
+document.write(m.toExponential(4) + '<br>');
+
+// toString
+
+var nums = '100 bnmmm nnnnn';
+
+document.write(nums.toString() + '<br>');
+
+
+document.write(nums.toLocaleString());
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

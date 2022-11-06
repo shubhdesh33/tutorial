@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var emp = new Object();
+
+        console.log(typeof (Object))
+        console.log(typeof (emp))
+        console.log(emp)
+
+        console.log(Object)
+
+        console.log(console)
+
+
+
+        let person = {};
+        document.write(person + '<br>');
+        console.log(person)
+
+        person['name like'] = 'akshay',
+        console.log(person['name like'])// multiword property must be in ('')and in []
+
+        let persons = {
+            firstName: 'shubham',
+            lastName: 'deshmukh',
+            age: 30,
+        }
+
+        document.write(persons.firstName + '<br>');
+        document.write(persons.lastName + '<br>');
+        document.write(persons.age + '<br>');
+        console.log(persons);
+
+        persons['class'] = '3rd';
+        console.log(persons)
+
+
+        //  by using array method  //
+
+        document.write(persons['firstName'] + '<br>');
+        document.write(persons['lastName'] + '<br>');
+        document.write(persons['age'] + '<br>');
+
+        // access the object by using two method
+        // 1) person.firstName                 .notation
+        // 2) .array notation                  console.log (person['lastname']
+
+
+
+
+
+
+        // to change  or modified the value of property
+
+        persons.firstName = 'SD';
+        persons.city = 'amravati';            // add the property to the object
+
+        document.write(persons.firstName + '<br>')
+        console.log(persons.city)
+        console.log(persons)
+
+
+
+
+        delete persons.age;              //  delete the given property in the object
+        console.log(persons);
+
+
+
+        document.write('height' in persons);  // check the property are define or not define in object
+
+        console.log('age' in persons);          // in operator is imp
+
+        persons.age = 26;
+        console.log(persons)
+
+
+
+
+        // to get a all property, define in obj by using for (in) loop
+
+        for (let key in persons) {          // key is a variable is used to store a property of obj     // in is a operator
+
+            console.log(key + ': ' + persons[key]);     // necessary to use a array type
+
+        }
+
+
+
+        let persones = {
+            firstName: 'shubham',
+            lastName: 'deshmukh',
+            age: 30,
+            // sayhello: function () {
+            //     console.log(this.firstName);
+            // }
+        }
+        //  persones.sayhello();
+
+
+        //  AAD  a method with a obj  
+
+        persones.sayhello = function () {           // anonomyus function
+            console.log('get a job')
+            console.log(this.firstName)
+
+        }
+        persones.sayhello()
+
+        // normal function
+
+
+        function greek() {
+            console.log('focus on a job')       // normal function + assign
+            console.log(this.age)
+        }
+        persones.sayhello = greek;
+
+        persones.sayhello();
+
+
+
+        let man = {                             // updated in ES6
+            firstName: 'shubham',
+            lastName: 'deshmukh',
+            age: 30,
+            sayhello() {
+                console.log('job must for me,job,job');
+                console.log(this.firstName)
+            }
+        }
+
+        man.sayhello()
+
+        console.log(man.sayhello)      // without ()
+
+
+        // javascript nested obj
+
+        student = {
+            name: 'jay',
+            surname: 'land',
+            age: 28,
+            marks: {
+                science: 70,
+                math: 60,
+            }
+        }
+        console.log(student)
+        console.log(student.marks)
+        console.log(student.marks.science)
+        console.log(student.toString())
+
+        //  https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+
+        //Defining object   //  Using an Object Literal 
+
+
+        let personed = {
+            first_name: 'Mukul',
+            last_name: 'Latiyan',
+
+
+            //method
+            getFunction: function () {
+                return (`The name of the person is
+          ${personed.first_name} ${personed.last_name}`)
+            },
+            //object within object
+            phone_number: {
+                mobile: '12345',
+                landline: '6789'
+            }
+        }
+        console.log(personed.getFunction());          //  O/P with return keyword
+        console.log(personed.phone_number.landline);
+
+
+        //  /using a constructor
+
+
+
+        function personal(first_name, last_name) {
+            this.first_name = first_name;
+            this.last_name = last_name;
+        }
+
+        //creating new instances of person object
+        let person1 = new personal('Mukul', 'Latiyan');
+        let person2 = new personal('Rahul', 'Avasthi');
+
+        console.log(person1.first_name);
+        console.log(`${person2.first_name} ${person2.last_name}`);
+
+
+        //  DISPLAY THE OBJ PROPERTY AND METHOD  
+
+        //  1] 
+
+        student1 = {
+
+            name: 'adi',
+            lname: 'adhau',
+            today: new Date,
+
+            display: function () {
+
+                console.log(this.name + ' ' + this.lname)
+            }
+        }
+
+        console.log(student1.name)
+
+        // object property convert to string
+
+        const convertstring = JSON.stringify(student1)
+        console.log(convertstring)
+
+        
+
+        //  Stringify Functions
+        //  JSON.stringify will not stringify functions:
+        //      HOPELESS
+
+        student1.display = student1.display.toString()
+
+        mystring = JSON.stringify(student1)
+        console.log(mystring)
+
+
+        //  object convert to array
+
+        const methodvalues = Object.values(student1)
+        console.log(methodvalues)
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

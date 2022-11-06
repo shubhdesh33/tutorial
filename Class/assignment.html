@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+<script>
+
+class Employee {
+
+    constructor (name)  {
+   this.name=name
+
+    }
+
+    display () {
+
+        console.log (this.name)
+    }
+}
+
+var class1 = new Employee ('rahul')
+var class2 = new Employee ('sham')
+
+class1.display()
+class2.display()
+
+//  You cannot redeclare Employee, but you can reassign it.
+
+ Employee = class {
+
+    constructor (age)  {
+
+    this.age= age;
+}
+   display1 ()  {
+
+    console.log(this.age)
+   }
+}
+
+var class3 = new Employee (26)
+
+class3.display1()
+
+
+
+Employee = class {
+
+constructor (id,name,salary)  {
+
+    this.id= id;
+    this.name= name;
+    this.salary= salary;
+
+}
+highestsalary ()  {
+
+console.log(`&{this.id} &{this.name} &{ this.salary}`)
+}
+}
+
+var class4 = new Employee (1,'ram',10)
+var class5 = new Employee (1,'sham',20)
+var class6 = new Employee (1,'rama',30)
+
+class3.highestsalary()
+
+</script>
+
+</body>
+</html>

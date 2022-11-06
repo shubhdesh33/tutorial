@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+    
+<script>
+
+
+function x ()  {
+
+    console.log('x is the example of higher order function')
+}
+
+
+function y (x)  {
+
+    x()
+}
+y(x)
+
+
+
+ // let radius = [5,4,8,9,4]
+
+// let output = [];
+
+// function area (radius) {
+//  for (i=0; i<radius.length;i++) {
+//     output.push(Math.PI*radius[i]*radius[i])  
+//  }
+//  return output                 //  console.log(output)
+
+// }
+
+// console.log(area(radius))
+
+
+
+
+
+
+// let circumference = function (radiuss)  {
+//     let storevalue = [];
+
+//     for (i=0;i<radiuss.length;i++)  {
+
+//     storevalue.push(2*Math.PI*radiuss[i])
+
+//     }
+//    console.log(storevalue)
+// }
+
+// circumference (radiuss)
+
+
+
+// let radius = [5,4,8,9,4]
+
+// function area (radius) {
+
+// return Math.PI*radius*radius
+// }
+
+
+// let circumference = function (radius) {
+
+// return 2*Math.PI*radius[i]
+// }
+
+// // let diameter = function (radius) {
+
+// // return 2*radius[i]
+// // }
+
+
+// function calculate (radius,func) {
+
+//     let output = [];
+//     for (i=0;i<radius.length;i++) {
+//      output.push(func(radius[i]))
+
+//     }
+//     return output
+// }
+
+//console.log(calculate(radius,area))
+// console.log(calculate(radius,circumference))
+//console.log(calculate(radius,diameter))
+
+
+
+
+
+
+
+
+radius= [3,5,6,8]
+
+function area (radius) {
+
+    return Math.PI*radius*radius;
+}
+
+
+// radius.map(area)                                        //  
+
+
+function diameter (radius) {                              // remember argument
+
+return 2*radius
+}
+
+circumference = (radius) =>  2*Math.PI*radius
+
+
+
+
+ 
+
+//   Array.prototype.calculate = function (func) {
+
+//     let output =[]
+
+//     for (let i=0; i<this.length; i++)  {
+
+//         output.push(func(this[i]))                 //  area function call here  // remember [i]
+//     }
+//     return output;
+// }
+
+// console.log(radius.calculate(area))
+
+// console.log(radius.calculate(area))   // in that line 'this ' is point to the array--radius
+
+
+
+
+calculate = function (radius,func) {
+
+    let output =[]
+
+    for (let i=0; i<radius.length; i++)  {
+
+        output.push(func(radius[i]))                 //  area function call here  // remember [i]
+    }
+    return output;
+}
+
+console.log(calculate(radius,area))
+console.log(calculate(radius,circumference))
+console.log(calculate(radius,diameter))
+
+
+
+
+//  MAP   //
+
+arr = [10,20,30,40]
+
+// function double (arr)  {
+
+//    return arr*2                                  // remember return
+// }
+
+
+// console.log(arr.map(double))
+
+
+double = (arr) =>   arr*2 
+
+console.log(arr.map(double))
+
+
+
+function fullname (getname)  {
+ 
+    middlename='yyyy'
+    return function () {
+
+        name = 'shubham'
+      return getname +'  '+name
+    }
+   getname()
+}
+
+//  console.log(fullname(surname))
+
+function surname () {
+
+   return lastname= 'deshmukh'
+}
+
+
+
+function add (a,b)  {
+
+return a+b
+}
+
+function power (a,b) {
+
+return  Math.pow(a,b)
+}
+
+const  operation =function (a,b,funct) {
+
+let result = funct(a,b)
+console.log(result)
+
+}
+
+operation(0,5,add)
+operation(2,5,power)
+
+
+
+A = [2,3,4,5,6,7,8,9]
+
+var square =(ele) => { return ele*2 }
+
+save = A.map(square)
+
+console.log(save)
+
+
+
+function named (a)  {
+
+let x= 10
+y = x+ a
+return y
+}
+console.log(named(another()))
+
+
+function another ()  {
+
+let sorry = 33 ;
+return sorry 
+}
+
+
+
+
+
+
+
+let promise1 = new Promise((resolve, reject) => {
+  setInterval(() => {
+    reject("Reject the promise");
+  }, 10000)
+
+  setInterval(() => {
+    resolve("Reject the promise");
+  }, 10000)
+
+});
+
+// promise.then(callback_for_resolved, callback_for_rejected)
+promise1.then(
+  (successResponse) => {
+    console.log(successResponse);    
+  },
+  (errorResponse) => {
+    console.log(errorResponse)
+  }
+);
+
+console.log(promise1)
+
+
+
+
+function callDogApi(url){
+
+  const promise = fetch(url);
+
+  let responsed = 200
+
+  promise.then((response)=> {
+
+    if(responsed === 200){
+
+      console.log('Api call successful');
+
+      console.log(response);	
+
+
+    }else{
+
+      throw new Error(response.status);
+
+    }
+
+  }).catch((error)=> {
+
+    console.log(error);
+
+  });
+}
+
+
+callDogApi("https://dog.ceo/api/breed/ABD/images/random");
+
+
+
+function firstFunction(){
+  return new Promise((resolve, reject)=> {
+  var randomNumber = (Math.floor(Math.random() * 100) % 2);
+    if(randomNumber === 0){
+    	setTimeout(() => {
+          resolve("Number is even");
+        }, 3000);
+    }else {
+    	setTimeout(() => {
+       	  reject("Number is odd");
+        }, 4000);
+    }
+  });
+}
+
+// Async function starts with async keyword.
+async function myFirstAsyncFunction(){
+  const result = await firstFunction();
+  console.log(result);
+};
+
+myFirstAsyncFunction();
+
+
+var randomNumber = (Math.floor(Math.random() * 100) % 2);
+
+
+
+
+//  higher order function  //
+
+function greet (named,callback) {
+ let nam = 'shubham'
+console.log('hi'+' '+ named)
+
+console.log(callback('shubham'))
+
+}
+
+// callback function //
+
+function callme () {
+ let argu = 'desh'
+  console.log('i am callback function');
+  return argu;
+}
+
+//  passing function as an argument //
+
+greet ('peter',callme)
+//
+
+
+</script>
+
+
+<script>
+
+/* Benefits of higher-order functions
+They are an excellent way to abstract and separate actions in a program.
+They are easy to reuse.
+They provide simplicity to the code, allowing the programmer and any other party to understand the code at a high level easily.
+They make it less time-consuming to write fully functioning and clear code as it’s easier to debug when higher-order functions are used.
+Also, they help write compressed and composed code when programs get more complex.
+Conclusion     */
+
+
+
+</script>
+
+</body>
+</html>

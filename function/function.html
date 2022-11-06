@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    //   SIMPLE FUNCTION
+
+    function multiply(a, b) {
+
+      return a = a + b;
+
+    }
+    console.log(multiply(5, 4))
+
+
+
+    function hari(x, y) {
+      if (y == undefined) {
+        y = 8;
+      }
+      return x * y
+
+    }
+    console.log(hari(5))
+
+
+    function rahul() {
+      sum = 0
+
+      for (i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+      }
+      return sum
+    }
+    // rahul(21,56,66,85,36,53)
+    // console.log(sum);
+
+    console.log(rahul(21, 56, 66, 85, 36, 53))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // for (var i = 0; i < 5; i++) {
+    //   setTimeout(function () { console.log(i); }, i * 1000)
+
+    // }
+    // console.log(i)
+
+
+    // for (let i = 0; i < 5; i++) {
+    //   setTimeout(function () { console.log(i); }, i * 1000)
+    // }
+    // console.log(i)
+
+
+
+
+    // let num = 1;
+    // function show() {
+    //   console.log('hii', num)
+
+    //   num++;
+    //   if (num <= 2552)            //  base case
+    //     show();                  //  call inside body
+    // }
+    // show()
+
+
+    // recursion has two parts 
+    // base condition stop condition break 
+    // func for recursive call
+
+
+    function log(num) {
+
+      // base case
+      console.log(num > 5)
+
+      if (num > 5) {
+        return;
+      }
+      console.log(num)
+      // recursive function
+      log(num + 1);
+    }
+    log(1)
+
+
+
+    function factorial(n) {
+
+      console.log((n == 1 || n == 0))
+      if (n == 1 || n == 0) {
+
+        return 1;           // stopper
+
+      }
+      else {
+
+        return n * factorial(n - 1);              // recursion
+      }
+    }
+    console.log(factorial(5))
+
+
+    function sum(a, b) {
+
+      function inner(a, b) {
+        a += b
+        return a
+      }
+    }
+    console.log(5, 1)
+
+
+
+
+
+
+    var Object = {
+
+      outerfunction: function () {
+        console.log('Output 1-', this == object)
+
+        function innerfunction() {
+
+          console.log('output -2', this == obj)
+        }
+
+        return innerfunction;
+
+      }
+    }
+
+
+    var inner = object.outerFunction();
+    inner();
+
+
+
+    let channels = [{
+      name: 'india',
+      sub: 1000
+    },
+    {
+      name: 'cnbc',
+      sub: 200,
+    },
+    {
+      name: 'net',
+      sub: 300,
+    },
+    ]
+
+    channelsName = channels.find(function (ch) {
+      (ch)  // closure  // data hide // callback
+      return ch.sub === 200
+    })
+
+      (channelsName)
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- https://www.quanzhanketang.com/js/js_function_parameters.html
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+https://www.javatpoint.com/javascript-function
+https://javascript.info/function-basics#local-variables
+https://www.bing.com/videos/search?q=function+in+javascript&docid=607991915858786299&mid=C954A2531AC4DFC2C4A4C954A2531AC4DFC2C4A4&view=detail&FORM=VIRE
+https://medium.com/@abhiburman20/types-of-functions-in-javascript-31bc32c209cb -->
+<!-- https://medium.com/joonsikyang/execution-contexts-and-the-call-stack-cf53679b2c39
+https://www.acil.in/types-of-functions-in-javascript/
+https://medium.com/nerd-for-tech/understanding-arrow-functions-in-javascript-es6-3fa900b3c1c6
+
+https://rabisiddique.medium.com/how-javascript-runs-in-the-browser-part-1-7a2b3ce7f5e5
+
+https://medium.com/geekculture/fun-with-javascript-functions-47f20fed1c07
+
+https://chinwendu.medium.com/12-javascript-fundamentals-a-basic-cheat-sheet-3fcbaae8c6e0
+
+https://medium.com/codex/scopes-and-closures-in-javascript-eed5694023d0
+
+https://medium.com/@abhiburman20/types-of-functions-in-javascript-31bc32c209cb -->
+
+
+
+
+<!-- https://www.educba.com/javascript-self-invoking-functions/
+
+https://www.tutorialspoint.com/What-are-Self-Invoking-Anonymous-Functions-in-JavaScript
+
+https://www.educba.com/javascript-function-declaration/?source=leftnav
+
+https://www.educba.com/javascript-function-arguments/?source=leftnav
+
+https://www.educba.com/javascript-nested-functions/
+
+https://www.educba.com/javascript-bind/?source=leftnav
+
+https://www.educba.com/javascript-self-invoking-functions/
+
+https://www.geeksforgeeks.org/what-is-the-purpose-of-self-executing-function-in-javascript/ -->

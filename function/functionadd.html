@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+   
+</head>
+<body>
+    
+
+    <script>
+
+ var x= 2;
+
+das();
+sad();
+console.log(x)
+
+ function sad ()  {
+
+    var x= 5;
+    console.log(x)
+ }
+
+ function das ()  {
+
+    var x= 20;
+    console.log(x)
+ }
+
+
+
+//   HOISTING   //
+
+
+
+namaste();             //  HOISTING           //  its gets a proper function calling 
+console.log(varun)                 // its get O/P undefined  
+console.log(namaste)               //  its gets O/P FUNCTION CODE
+
+
+var varun = 'hello';
+
+function namaste ()  {
+
+    console.log('namaste bhau')
+}
+
+// namaste();
+// console.log(varun)
+
+console.log(namaste)
+
+
+
+// program to display value
+var a = 4;
+
+function greet() {
+    b = 'hello';
+    console.log(b); // hello
+    var b;                             //    let b;
+}
+
+greet(); // hello
+
+
+//  unknown argument  //
+
+let x1 = function () {
+    console.log(arguments);
+}
+x1(4,6,7); // Arguments [4, 6, 7]
+
+
+// arrow func  with unknown arguments  //
+
+let x = (...n) => {
+    console.log(n);
+}
+
+x(4,6,7); // [4, 6, 7]
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

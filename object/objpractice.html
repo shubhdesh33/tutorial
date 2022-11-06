@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let school = {
+            name: 'vivekanand swami',
+            estd: '1950',
+            location: 'chennai',
+            20: 10000,
+
+            display: function () {                                       // lavaris function
+                console.log(this.name.split(' ')[0], ' is my school and its estd in year ', this.estd, ' is located at ', school.location, this[20])
+                console.log(this['20'])
+            }
+        }
+        school.display();
+
+        // function inside object       function + object
+
+        function car(name, model, color, price) {
+            this.name = name,
+                this.model = model,               // this obj contains the empty obj in a obj constructer 
+                this.color = color;
+            this.price = price;
+        }
+
+        // constructer
+        // provides a template for creation of objects. In other words, it defines a set of properties and methods that would be common to all objects initialized using the constructor
+
+        let gadi1 = new car('creta', '2018', 'white', '2000');      // so we can create a (new) obj to provide value 
+        let gadi2 = new car('alto', 2011, 'white', 10000);        // in this line function calling also done            call(parameter passed) . we also give a parameter during a function calling
+
+        // car is a function name / function calling => car () =>  car (parameter passed)
+
+        console.log(gadi1.name, gadi1.model, gadi1.color, gadi1.price)
+        console.log(gadi2.name, gadi2.model, gadi2.color, gadi2.price)
+
+
+
+
+
+        var person1 = {
+            name: 'rao',
+            lastname: 'ka re rao',
+            age: 25,
+            2020: 2011,
+
+        }
+        for (key in person1) {
+            console.log(key, person1[key])
+            console.log(person1[2020], person1[2020])
+            console.log(person1.lastname.split(' ')[1])
+        }
+
+
+        //name.split(' ')[0],
+
+
+        function ram() {
+
+            var1 = {
+                id: 'sd123',
+                firstName: 'shu',
+                lastName: 'desh',
+                email: 'shub@2123.gmail',
+                age: 29,
+                address: {
+                    street: 'konwa',
+                    pincode: 777420
+
+                }
+            }
+            console.log(var1.age)
+            console.log(var1.address.street)
+
+        }
+        ram();
+        console.log(var1.id)
+
+
+        let user = {};
+        user[name] = 'john';
+        user.surname = 'smith';
+        console.log(user);
+
+        user[name] = 'pete';
+        console.log(user);
+
+        delete user[name];
+        console.log(user);
+
+
+
+        let salary = {
+            john: 2000,
+            aditya: 3000,
+            shubham: 2000,
+        }
+
+
+
+        let sum = 0;
+
+        for (key in salary) {          // ya key madhe only salary che property save hote , value nhi yte
+            sum += salary[key];          // sum = sum + salary[value]
+            // console.log(key[sum])       // not get o/p from this method
+        }
+        console.log(sum)
+
+        let solve = {
+            width: 300,
+            height: 400,
+            'title me': 'rama',
+        }
+
+
+
+
+        function multiply() {
+            for (value in solve) {
+
+
+            }
+        }
+
+
+
+        const ob = {
+
+            fname: 'shubham',
+            lname: 'fulkar',
+            age: '23',
+
+            setname: function () {
+
+                console.log(`${this.fname} ${this.lname}`)
+
+            },
+            getname() {
+
+                return `${this.fname} ${this.lname}`
+            }
+
+        }
+
+        console.log(ob.getname())
+        ob.setname()
+
+
+        console.log(ob.fname)
+
+        console.log(ob['lname'])
+
+        ob.lang = 'eng';
+        console.log(ob.lang)
+
+        delete ob.lang
+
+
+        function obt(name, lname,) {
+
+            this.name = name;
+            this.lname = lname;
+
+        }
+
+        obt1 = new obt('saurabh', 'raut')
+
+        console.log(obt1)
+
+        // const person = {
+
+        //     name:'shubham',
+        //     lname:'deshmukh',
+        //      age :30,
+
+        //      cars :[
+        //         {name :'ford', price :'20000', models :['fiesta ','kia','mustang']},
+        //         {name :'maruti', price :'40000', models :['alto ','swift','creta']},
+        //         {name :'bmw', price :'10000', models :['bm-10 ','bm-30','cre']},
+
+        //      ]
+
+        // }
+
+
+
+
+
+
+
+        const person = {
+
+            fname: 'shubham',
+            lname: 'desh',
+
+            display: function () {
+
+                console.log(`my fullname is ${this.fname} ${this.lname}  from amravati`)
+            },
+
+            getname() {
+                console.log('my fullname is : ' + ' ' + this.fname + ' ' + this.lname + '  ' + this.nationality
+                )
+            },
+
+            getname1(rating) {
+                return 'my fullname is : ' + ' ' + this.fname + ' ' + this.lname + ' ' + this.age
+            }
+
+        }
+
+        //  add a method in a obj  
+
+        person.addmethod = function () {
+
+            return this.fname + ' ' + this.lname
+        }
+
+        console.log(person.addmethod())
+
+
+        
+
+        console.log(person.fname);
+
+        person['lname'];
+
+        person.nationality = 'indian'
+
+        person.display()
+
+
+        person.getname()
+
+        person.age = 36
+
+        console.log(person.getname1(5))
+
+        
+
+
+    </script>
+
+
+
+</body>
+
+</html>

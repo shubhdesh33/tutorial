@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='main.js'></script>
+</head>
+
+<body>
+
+
+  <script>
+
+    let name = {
+
+      firstName: 'mahesh',
+      lastName: 'chanakya',
+      fullName: function () {
+
+        console.log(this.firstName + ' ' + this.lastName)
+      }
+    }
+
+    name.fullName()
+
+
+
+
+    let getname = {                          //  this is a obj
+
+      firstName: 'esha',
+      lastName: 'chanakya',
+      printfullName: function () {           // function
+
+        console.log(this.firstName + ' ' + this.lastName)
+      }
+    }
+
+    getname.printfullName()
+
+
+    let getname1 = {
+
+      firstName: 'hari',
+      lastName: 'narayan',
+    }
+
+    //  FUNCTION BORROWING  //
+
+    // call method madhe getname madhla thissss ha getname1 la point karto  means this borrow karto getname1 cha property
+
+    getname.printfullName.call(getname1)
+
+
+    //  ANOTHER METHOD  //
+
+    let student = {
+
+      firstName: 'suresh ',
+      lastName: 'raina',
+
+    }
+
+    let getstudent = function (town, km, village) {
+
+      console.log(this.firstName + ' ' + this.lastName + ' ' + 'from ' + town + ' ' + km + ' ' + village)
+    }
+
+    getstudent.call(student, 'acmt', '1200', 'chandur')
+
+
+
+    student1 = {
+
+      firstName: 'pravin ',
+      lastName: 'kumar',
+
+    }
+
+
+    //  in call method we pass the argument indivisually  //
+
+    getstudent.call(student1, 'akola', 1500, 'murti')
+
+    //  apply method pass the argument in a array list type //
+
+    getstudent.apply(student1, ['alaska', 1900, 'murti']);
+
+    //  bind method  //
+
+    // its gives a copy of property and call it when we used that a diff between call & bind
+
+    //  printmyname   copy the function property 
+
+    let printmyname = getstudent.bind(student1, 'nagpur', 1500, 'jayna')
+    console.log(printmyname);
+    printmyname()              //  must be called in bind method it can used when we want
+
+
+    obj = { num: 25 };
+
+    function add(a, b) {
+
+      console.log(this.num + a + b)
+    }
+
+    //  call the function add() on that object as if it belonged to the object?
+
+    // Now the function add() gets its this from obj where it’s bound to.
+    //  When the add() function is called this.num refers to the num of the obj.
+    add.call(obj, 25, 50)
+
+    const addbyapply = add.apply(obj, [25, 30])
+
+
+    const bindadd = add.bind(obj, 75, 60)
+
+    bindadd();
+
+
+
+
+
+
+
+    function Item(name, price) {
+      this.name = name;
+      this.price = price;
+      // this.description = `${this.name}, ${this.price}€`;
+    }
+
+    function Car(name, price, design, color) {
+      Item.call(this, name, price);
+      // You can add other car specific fields here
+      this.design = design;
+      this.color = color;
+    }
+
+    function Fruit(name, price, species, quantity) {
+      Item.call(this, name, price);                      // Item.apply(this,[name,price])
+      // You can add other fruit specific fields here
+      this.species = species;
+      this.quantity = quantity;
+    }
+
+    const bmw = new Car("BMW", 120000, 'angular', 'black');
+    const banana = new Fruit("Banana", 1, 'nagpur', 10);
+
+
+    //   IMP
+    console.log(bmw);
+
+    console.log(bmw);
+
+
+      
+
+
+
+    function item(name, price) {
+
+      this.name = name;
+      this.price = price;
+
+      //this.description = '${this.name},${this.price}';
+
+    };
+
+    // function Car ()  {
+
+    //     item.call(this,name,price)
+    // }
+
+
+    // function fruit ()  {
+
+    // item.call(this,name,price)
+    // }
+
+
+    // function chair ()  {
+
+    // item.call(this,name,price)
+    // }
+
+
+    const getcar = new item('creta', 10)
+
+    const getfruit = new item('orange', 100)
+
+    console.log(getcar)
+
+    console.log(getfruit)
+
+
+
+    //  The bind() method enables us to explicitly bind this. When called on a function,
+    // it binds the value of this to its first argument and returns a new copy of that function.
+
+
+    const developer = {
+      firstName: "John",
+      lastName: "Doe",
+      getDevName: function () {
+        let fullName = this.firstName + " " + this.lastName;
+        return fullName;
+      }
+    }
+
+    const logDevName = function () {
+      console.log('logged: ' + this.getDevName());
+    }
+
+    // binds the `this`in the boostedLogDevName function to the developer object.
+
+    const boostedLogDevName = logDevName.bind(developer)
+
+    boostedLogDevName()
+
+
+
+
+    function car(name, fueltype) {
+
+      this.name = name;
+      this.fueltype = fueltype;
+    }
+
+    function setbrand(brand) {
+
+      car.call(this, 'creta', "petrol")
+      this.brand = brand
+      console.log(this)
+    }
+
+    function newbrand(price) {
+
+      car.call(this, 'safari', "diesel")
+      this.price = price,
+        console.log(this)
+    }
+
+    let savesetbrand = new setbrand('hyundai')
+
+    let savenewbrand = new newbrand(50000)
+
+    // savesetbrand()
+    // avenewbrand ()
+
+
+    /*  we use the call function to invoke the Car function on two occasions. 
+    Firstly, in the setBrand and then in the definePrice functions.
+    In both of these functions, we invoke the Car function with ' this ' object representing
+     to the respective functions . For example, inside setBrand, 
+     we call the Car function with the this object belonging to its context.
+      The case is similar for definePrice. */
+
+
+
+    // function return example  //
+
+    //  diff between call & bind //
+
+    /* From our code above, we see that call and apply invokes the greet function immediately and
+     set the this context to their first argument.
+    
+    The bind method, however, returns a copy of the greet function and sets the this context to its first argument. 
+    The new function — greet2 is then invoked later.*/
+
+    function greet() {
+      return `Hello ${this.name}`
+    }
+    const person = {
+      name: "Lawrence Eagles"
+    };
+
+
+    greet.call(person); // returns Hello Lawrence Eagles
+    greet.apply(person); // returns Hello Lawrence Eagles
+
+    console.log(greet.call(person))
+
+    const greet2 = greet.bind(person) // returns a new copy of greet with this binding
+    greet2() // Hello Lawrence Eagles
+
+    console.log(greet2())
+
+
+
+    const Vehicle = {
+    name: 'Vehicle',
+    type: 'vehicle',
+    start: function() { 
+        return `starting the ${this.name} ${this.type}`
+    },
+    stop: function() {
+        return `stopped the ${this.name} ${this.type}`
+    }
+};
+
+const car = { name: 'Toyota', type: 'car' }
+Vehicle.start.call(car) // returns starting the car Toyota
+Vehicle.stop.call(car) // stopped the Toyota car
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// https://blog.sessionstack.com/how-javascript-works-deep-dive-into-call-apply-and-bind-415f6729c902
+
+// IMP ==> https://blog.bitsrc.io/understanding-call-bind-and-apply-methods-in-javascript-33dbf3217be
+
+
+// https://www.freecodecamp.org/news/understand-call-apply-and-bind-in-javascript-with-examples/
+
+// https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
+
+// https://betterprogramming.pub/when-to-use-bind-call-and-apply-in-javascript-1ae9d7fa66d5
+
+// https://www.codingame.com/playgrounds/9799/learn-solve-call-apply-and-bind-methods-in-javascript
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

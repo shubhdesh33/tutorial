@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+ 
+ //  Outer variables
+ //  A function can access an outer variable as well, for example:
+
+ var color = 'red';
+ function testt () {
+    var name = 'shubham';
+    return color +'      '+ name;
+ }
+ console.log(testt());
+
+
+
+ //The function has full access to the outer variable. It can modify it as well.
+
+let userName = 'shubham';
+
+function outer ()  {
+
+    let userName = 'deshmukh';
+   let x= userName;
+
+  console.log(x)
+}
+console.log(userName);
+
+outer();
+console.log(userName);
+
+
+// let userName = 'John';
+
+// function showMessage() {
+//   userName = "Bob";    // changed the outer variable  //  PLS TAKE LET WITH THIS userName
+
+//   let message = 'Hello, ' + userName;
+//   alert(message);
+// }
+
+// alert( userName ); // John before the function call
+
+// showMessage();
+
+// alert( userName ); // Bob, the value was modified by the function
+
+
+
+function chilly ()  {
+    use = 'don'                  // without var or let keyword // its access everywhery
+}
+chilly();
+console.log(use)
+
+
+
+
+
+
+
+
+
+var a= 5;
+
+function rama (){
+    console.log(a)
+}
+rama();
+
+
+
+
+
+
+ //   Local variables
+//   A variable declared inside a function is only visible inside that function.
+
+
+
+function tests () {
+    var colors = 'white'
+    console.log(colors)
+}
+tests ();
+
+// function tests () {           // EXECUTION CONTEXT    //  
+//     var colors = 'white'
+// }                                    // scope end function delete
+// tests ();
+// console.log(colors)
+
+
+function test () {
+    var colorss = 'aqq'
+    return colorss
+}
+console.log(test());
+
+
+
+
+var acc= 1;
+function ramas (){
+    console.log(acc)
+    var add = 123;
+    console.log(add)
+}
+ramas();
+//console.log(add)
+
+
+var adam= 1;                      
+function ramdas (){
+    console.log(adam)              // undefined because initialization before declare    
+    var adam = 1233;          // same var variable name adam taken // focus on variable
+    console.log(adam)
+}
+ramdas();
+
+
+let spread= 1;                    //  error occur
+function ramaed (){
+   // console.log(spread)           //Variables defined with let must be Declared before use.
+
+//                                             let with same variable name
+    let spread = 1233;                 
+    console.log(spread)
+}
+ramaed();
+
+let
+
+
+
+function name (a,b) {
+ 
+ let  c=a+b;
+ console.log(c)
+}
+name(12,23);
+
+
+// name (23,45)
+// console.log(c)
+
+// Parameters are essentially passed to fctiunons by value — so if the code within the body of a function assigns a completely new value to a parameter that was passed to the function, the change is not reflected globally or in the code which called that function.
+
+
+// पॅरामीटर्स मूलत: मूल्यानुसार फंक्शन्सना पास केले जातात — म्हणून जर फंक्शनच्या मुख्य भागातील कोड फंक्शनला पास केलेल्या पॅरामीटरला पूर्णपणे नवीन मूल्य नियुक्त करतो, तर बदल जागतिक स्तरावर किंवा त्या फंक्शन नावाच्या कोडमध्ये प्रतिबिंबित होत नाही.
+
+
+ function rams (a,b) {
+      var a=5 ,b=7
+       a+=b
+       console.log(a);
+
+   }
+  rams();
+
+
+// function name (a,b) {
+ 
+//    let a=5,b=8
+//    //c=a+b;
+//    a+=b
+//  console.log(c)
+// }
+// name(12,23);
+
+
+// name (23,45)
+// console.log(c)
+
+
+
+function make (a,b)   {
+    return a+b;
+}
+console.log(make(28,65))
+
+
+// Here’s one more example: we have a variable (from ) and pass it to the function. Please note: the function changes the value ( from ), but the change is not seen outside, because a function always gets a copy of the value:
+
+
+function show (from,text)  {
+
+from = ' * '+ from +' my love '+ text    //   function always gets a copy of the value:
+
+    console.log(from,':',text)
+} 
+
+let from ='anna';
+//                                   anna = 'shubham';
+show(from,'hello')
+
+console.log(from);                   //   but the change is not seen outside
+
+
+
+
+function sorry (pk,rk)   {
+
+    console.log(pk,' ',rk)
+}
+
+sorry('hello','ramram')
+sorry('bolo','kay kam hai')
+
+
+function sadha ()  {
+
+    let kmt = 20;
+    return kmt
+}
+console.log(sadha())
+
+
+
+
+
+function showMessage(text) {
+  // if text is undefined or otherwise falsy, set it to 'empty'
+  text = text || 'empty';
+console.log(text)
+}
+showMessage(undefined)
+
+
+
+// function checkage (age)  {
+
+//     if (age>=18)  {
+//         return true
+//     }
+//      else     {
+//      return false
+//      }
+    
+// }
+
+
+
+
+function checkage (age)  {
+
+    if (age>=18)   {
+
+        return true 
+    }
+    else {
+        return confirm ( 'are u completed ', 18);
+    }
+    xc = checkage;
+    console.log(checkage)
+}
+// let age = 18;
+
+// if (checkage)  {
+
+//     alert ('grant')
+
+// }
+// else  {
+//     alert ('denied')
+// }
+
+
+
+
+ debugger;
+function showPrimes(n) {
+  nextPrime: for (let i = 2; i < n; i++) {
+
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+//     let rr= showPrimes(100)                                                                                      
+   console.log(i)
+   // alert( i ); // a prime
+  }
+
+
+}
+showPrimes(50)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sorry('bolo','kay kam hai');
+
+
+
+
+console.log(sadha())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// We declare functions listing their parameters, then call them passing arguments.
+// If a function is called, but an argument is not provided, then the corresponding value becomes undefined.
+
+
+
+
+    </script>
+</body>
+</html>

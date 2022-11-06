@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+
+
+</head>
+<body>
+ <button id="shubh">click me</button> 
+
+ <button id="fetchusers">click jaan</button> 
+
+
+<button id="shubh"><a id="abc" href="https://blog.sessionstack.com/how-javascript-works-the-rendering-engine-and-tips-to-optimize-its-performance-7b95553baeda" ></a>click me</button>    
+
+<script>
+
+
+ //  Anonymous Function?
+
+
+ setTimeout (function (){
+    console.log('example of Anonymous Function')
+ },1000)
+
+
+ //    Callback as an Arrow Function
+
+
+ setTimeout (()=> {
+    console.log('example of   example of Arrow  Function')
+ },2000)
+
+// const button = document.getElementById('shubh');
+// function callback(){
+// console.log("Hello world");
+// }
+
+// button.addEventListener('click',callback);
+
+
+const button = document.getElementById('fetchusers');
+
+
+async function fetchUsers() {
+
+  const resp = await fetch('<https://jsonplaceholder.typicode.com/users>');
+
+  const users = await resp.json();
+  const names = users.map(({ login }) => login);
+  console.log(names);
+}
+
+
+button.addEventListeners('click', fetchUsers);
+
+
+function x ()  {
+
+    for (var i=0;i<5;i++) {
+
+        function close (a) {
+        setTimeout (function () {
+
+           
+
+            console.log(a)
+        },a* 1000)
+    }
+      close (i)
+    }
+
+}
+
+x()
+
+
+// document.getElementById("shubh").addEventListener('click',() => {
+
+//     Promise.resolve().then( () => console.log('micretask 1'));
+//     console.log('Listner 1');
+// });
+
+// var button = document.getElementById("shubh")
+// button.addEventListener('click',() => {
+
+// Promise.resolve().then( () => console.log('micretask 2'));
+// console.log('Listner 2');
+// });
+
+// button.click()
+
+
+// document.getElementById("shubh").addEventListener('click',() => {
+// const nextClick = new Promise (resolve => {
+
+//  document.getElementById("abc").addEventListener ('click',resolve, {once : true});
+// })
+
+// nextClick.then (event => {
+//     event.preventDefault ();
+// });
+// })
+
+// document.getElementById("abc").click();
+
+// document.getElementById("shubh").addEventListener("click",funName);
+
+// function funName(){
+
+// }
+
+
+
+
+
+
+console.log('first')
+
+function sham (name,callback) {
+
+    setTimeout(() =>{
+        console.log('settime')
+         callback();
+    },2000 )
+
+}
+ let save =sham ('undo',()=>{})
+
+ console.log(save)
+
+ console.log('last')
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+<script>
+
+
+var A = [1,2,3,4,5,6,7,8,9];
+
+
+square = (accu,ele)  => {return ele+accu+1;};
+
+save = A.reduce(square)
+
+console.log(save)
+
+
+multiply1 = (ele)  => {return ele*2;};
+
+savemultiply1 = A.map(square)
+
+console.log(savemultiply1 )
+
+
+
+
+even = (ele) => { return ele%2!==0;}
+
+save1 =A.filter(even)
+
+console.log(save1)
+
+
+
+
+multiply = (accu,ele)  => {return ele*accu;}
+
+console.log(A.reduce(multiply))
+
+
+
+
+
+// find the sum of all odd elements)
+
+
+findodd = (ele) => {return ele%2!==0;}
+
+saveodd = A.filter(findodd)
+
+console.log(saveodd)
+
+sumodd= (accu,ele)  => {return ele + accu; }
+
+getsumodd = saveodd.reduce(sumodd)
+
+console.log(getsumodd)
+
+
+
+
+// %3; cube of all element ; sum of all element 
+
+const getvalue = A.filter((ele) =>{
+  return ele%3==0;
+}).map((ele) => {
+  return ele**3;
+}).reduce((accu,ele) => {
+  return ele+accu;
+})
+console.log(getvalue)
+
+
+// filter (find el at even index)
+
+const findindex =A.filter ((ele,ind) => { 
+
+  return ind%2==0 ;
+
+ },)
+console.log(findindex)
+
+
+
+
+
+
+
+B = [100,4,9,25,36,28]
+
+root= (ele) => {return Math.sqrt(ele);}
+
+saveroot = B.map(root)
+console.log(saveroot)
+
+
+
+
+const instructors = [
+  {
+    name: {
+      first: 'Andrew',
+      last: 'Whitley'
+    },
+    cohort: 17
+  },
+  {
+    name: {
+      first: 'Juan',
+      last: 'Garcia'
+    },
+    cohort: 17
+  },
+  {
+    name: {
+      first: 'John',
+      last: 'Master'
+    },
+    cohort: 17
+  },
+  {
+    name: {
+      first: 'Ali',
+      last: 'Spittel'
+    },
+    cohort: 18
+  },
+  {
+    name: {
+      first: 'Eric',
+      last: 'Green'
+    },
+    cohort: 18
+  },
+  {
+    name: {
+      first: 'James',
+      last: 'Reichard'
+    },
+    cohort: 18
+  }
+]
+
+
+ check = (ele) => { return ele.cohort==17}
+
+savecheck = instructors.filter(check)
+console.log(savecheck)
+
+
+
+
+
+arr1 = [2,4,6,8]
+
+let bothsummultiply = arr1.reduce((ele,accu)=> { return ele + accu*2})
+
+console.log(bothsummultiply )
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

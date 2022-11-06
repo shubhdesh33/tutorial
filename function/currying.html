@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+
+        // const multiply = function (x,y) {
+
+        //     return x*y
+        // }
+        //   savemultiply = multiply.bind(this,2)
+        //  console.log(savemultiply (3))
+
+        // savemultiply = multiply.bind(this)
+        //   console.log(savemultiply (3,5))
+
+        //    OR
+
+        // CURRYING  //
+
+        const multiply = function (x) {
+            return function (y) {
+                return function (z) {
+                   return x * y * z
+                }
+            }
+        }
+    //    let  currymultiply = multiply(3)
+    //     let res = currymultiply(5)
+    //    let sir = res(10)
+    //     console.log(sir)
+
+    let res = multiply (5)(5)(5)
+     console.log(res)
+
+
+
+     userobj ={
+
+        name:'shubham',
+        age: 26
+     }
+
+     function userinfo (obj) {
+
+        return function(userinfo) {
+            return obj[userinfo]
+        }
+     } 
+
+     let resu = userinfo(userobj)
+      console.log(resu('name'))
+
+
+
+
+function sum (x) {
+    return (y) => {
+        return (z) => {
+            return x + y + z
+
+            }
+        }
+    }
+
+const data = sum (5)(5)(5)
+ 
+console.log(data)
+
+  //  https://youtu.be/KbAW3R2RAGM
+
+user = {
+
+    name: 'shubham',
+    id : '12121',
+    age: '26',
+}
+ function info (obj1) {
+
+    return  (name) => {
+     return   obj1[name]
+    }
+ }
+
+let getresult = info(user)
+
+console.log(getresult('name'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

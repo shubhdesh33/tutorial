@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+
+// When we need to iterate over an array – we can use forEach, for or for..of.
+
+// When we need to iterate and return the data for each element – we can use map.
+
+// The methods arr.reduce and arr.reduceRight also belong to that breed, but are a little bit more intricate. They are used to calculate a single value based on the array
+
+//  arr.map(func, thisArg);     its optional     >=== its most use for object element
+
+
+
+
+//  The callback function() is called on each array element, and the map() method always passes the current element, the index of the current element, and the whole array object to it.
+
+square = [25,36,49,100,121]
+
+function sqr (value)  {
+
+return Math.sqrt(value)
+}
+console.log(square.map(sqr))
+
+
+add = [25,36,49,100,121]
+
+function addd (value,i)  {
+
+return {key:i , value: value + value}                //  (  * / + -   )
+}
+console.log(add.map(addd))
+
+
+
+adds = [25,36,49,100,121]
+
+function addd (value,i)  {
+
+return  value + value               //  (  * / + -   )
+}
+console.log(adds.map(addd))
+
+
+
+// object
+
+let users = [
+  {firstName : "Susan", lastName: "Steward"},
+  {firstName : "Daniel", lastName: "Longbottom"},
+  {firstName : "Jacob", lastName: "Black"}
+];
+
+function rada (element,index) {
+
+  //  returns the new value instead of item
+    return index + '  '+ element.firstName + element.lastName   /// its show index no
+}
+ console.log(users.map(rada,' ' ))             // (rada + '  ')  >== NOT WORK
+
+// convert to uppercase
+
+convertobj = (ele) => {return ele.firstName.toUpperCase() }
+
+saveconvertobj = users.map(convertobj)
+
+console.log(saveconvertobj)
+
+
+//  https://www.javascripttutorial.net/javascript-array-filter/
+
+
+ let cities = [
+    {name: 'Los Angeles', population: 3792621},
+    {name: 'New York', population: 8175133},
+    {name: 'Chicago', population: 2695598},
+    {name: 'Houston', population: 2099451},
+    {name: 'Philadelphia', population: 1526006}
+];
+
+let bigCities = [];
+
+// for (let i = 0; i < cities.length; i++) {
+//     if (cities[i].population > 3000000) {
+//         bigCities.push(cities[i]);
+//     }
+// }
+//console.log(bigCities);
+
+let sort = function checked (element)  {
+
+    return element.population > 3000000
+}
+ 
+console.log(bigCities)
+
+
+
+let arr = [2, 3, 5, 7]
+
+arr.map(function(element, index, array){
+    console.log(element);
+    console.log(index);
+    console.log(array);
+    return element;
+},);
+
+
+//  https://www.freecodecamp.org/news/javascript-map-how-to-use-the-js-map-function-array-method/
+
+//  arr.map(func, thisArg);     its optional     >=== its most use for object element
+
+/*The this argument will be used inside the callback function. By default, its value is undefined . For example, here's how to change the this value to the number 80:  */
+
+
+
+let arr1 = [2, 3, 5, 7]
+
+arr1.map(function(element, index, array){
+	console.log(this) // 80
+}, 80);
+
+
+
+//  Example 2: Uppercase Array Of Strings Using map()
+
+
+// define array of Strings
+var languages = ["swift", "java", "python"]
+
+convertuppercase = (ele) => {return ele.toUpperCase()}
+
+saveuppercase = languages.map(convertuppercase)
+console.log(saveuppercase)
+
+
+
+
+
+  // jonas bhai  //
+
+
+  const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+
+
+//  CHAINING METHOD  //   pipeline
+
+
+
+const displaybalance = function(ele) { 
+    const balance =ele.reduce((acc,add) => add +acc ,0)
+    console.log(`balance ${balance}`)
+}
+
+displaybalance(account1.movements)
+
+
+const displayincome = function (ele) {
+
+    const getincome = ele
+    .filter(element => element > 0)
+    .reduce( (accu,element) =>    element + accu ,0 
+    )
+
+    console.log(getincome)
+
+
+    const getoutcome = ele
+.filter(element => element < 0)
+.reduce( (accu,element) =>    element + accu ,0 
+)
+
+console.log(Math.abs(getoutcome))
+
+
+const depoist = Math.floor(ele
+.filter(element =>  element >0)
+.map(element => (element *1.2)/100 )
+.reduce((element,accu) => accu + element ,0) )
+
+console.log(`depoist value :${depoist}`)
+}
+displayincome(account1.movements)
+
+
+
+
+
+movements =[200, 450, -400, 3000, -650, -130, 70, 1300]
+
+
+
+const euroTousd = 1.1;
+
+const savemove = movements.map((ele,ind)=> {
+
+    return   Math.floor(ele * euroTousd);
+;})
+ 
+// let usefloor = Math.floor(savemove)
+console.log(savemove)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

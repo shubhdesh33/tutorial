@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+//every variable, function, or code block has its own scope.
+// Scope in JavaScript refers to the accessibility or visibility of variables and expressions. Tha
+
+//1. Ownership
+// If we can access all variables from anywhere within our program,
+//2 2. Avoid name collision
+// The scope helps to avoid name collision.
+
+//3. Garbage Collection
+// Global Scope
+// Variables declared outside of functions or code blocks (curly braces { }) are considered to have a global scope. The outermost scope contains the entire code, and there is only one global scope in the program.
+
+// The variables defined in the global scope are named Global Variables and can be accessed and altered in any other scopes.
+
+// Check the below example. The function greeting can access the userName variable inside the function, and it is located in the global scope.
+
+
+// // Create a variable in the global scope
+// const userName = "Sarah";
+// function greeting() {
+//   // Access global variable within the function
+//   console.log(`Hello ${userName}!`);
+// }
+// greeting();  // "Hello Sarah!"
+
+// We have the accessibility to change the value of the variable anywhere in the code with global scope. Check the below example.
+
+
+// Create a global variable
+
+const userName = "Sarah";
+function greeting() {
+  
+  const userName = "Jessica";        //   Assign a different value to the global variable
+  console.log(`Hello ${userName}!`);
+}
+greeting(); // "Hello Jessica!"
+console.log(userName); // "Jessica"
+
+// In the above example, we have reassigned the value of the variable userName inside the function. And it has modified the value of the variable inside the global scope.
+
+// This means that we can alter global variables anywhere within our code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const x = "declared outside ";
+
+// exampleFunction();
+
+// function exampleFunction() {
+//   console.log("Inside function");
+//   console.log(x);
+// }
+
+//  console.log("Outside function");
+//  console.log(x);
+
+
+const x = 6;
+ 
+function y() {
+    const x= 33;
+    document.write(x + '<br>');
+    
+}
+y();
+ document.write(x)
+
+
+    </script>
+
+
+</body>
+</html>

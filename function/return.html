@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+
+
+
+
+
+const CarModule = () => {
+  let milesDriven = 0;
+  let speed = 0;
+
+  const accelerate = (amount) => {
+    speed += amount;
+    milesDriven += speed;
+  }
+
+  const getMilesDriven = () => milesDriven;
+
+  // Using the "return" keyword, you can control what gets
+  // exposed and what gets hidden. In this case, we expose
+  // only the accelerate() and getMilesDriven() function.
+  return {
+    accelerate,
+    getMilesDriven
+  }
+};
+
+const testCarModule = CarModule();
+testCarModule.accelerate(5);
+console.log(testCarModule.accelerate(4));
+console.log(testCarModule.getMilesDriven());
+
+
+
+
+
+var Dog = (function () {
+
+// Private
+var play = function () {
+    // play implementation
+console.log( `hey`)
+};
+
+// Private
+var breed = "Dalmatian"
+
+// Public
+var name = "Rex";
+
+// Public
+var makeNoise = function () {
+     return 'Bark bark!';
+};
+
+ return {
+    makeNoise: makeNoise,
+    name: name,
+  play:play
+ };
+})();
+
+
+console.log(Dog.play())
+
+console.log(Dog.makeNoise())
+
+console.log(Dog.name)
+
+
+    </script>
+</body>
+</html>

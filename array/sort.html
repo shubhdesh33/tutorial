@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+<script>
+//             0          1              2           3
+let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+// get the object at index 1 and then show its name
+alert( arr[1].name ); // John
+
+//  The length property automatically updates when we modify the array. To be precise, it is actually not the count of values in the array, but the greatest numeric index plus one.
+
+//let arr = [1, 2, 3, 4, 5];
+//arr.length
+
+
+
+sortalpha = ['jan','feb','mar','april','may','june']
+
+ad = sortalpha.sort();
+console.log(ad[0]);
+
+sortassending = [23,56,45,21,32,56]
+
+function assen (a,b)  {
+return a-b
+
+};
+
+rd = sortassending.sort(assen);
+console.log(rd);
+console.log(rd[0]);
+
+md = rd.reverse(assen)
+console.log(md)
+console.log(md[0])
+
+
+
+sortdecending = [54,63,52,84,9,6,211]
+
+function decending (a,b)  {
+
+    return b-a
+}
+
+kd = sortdecending.sort(decending)
+console.log(kd)
+console.log(kd[0]);
+
+
+Obj= [
+{ apples: 5 },
+  { apples: 2 },
+  { apples: 30 },
+  { apples: 1 }
+]
+
+function objed (a,b)  {
+ return a.apples - b.apples
+
+}
+rdx = Obj.sort(objed)
+console.log(rdx)
+
+const objj = [
+    { app:16},
+    {app :20},
+    {app:32},
+
+]
+ function names (a,b) {
+return a.app - b.app
+}
+rds=objj.sort(names);
+console.log(rds)
+
+
+
+const students = [
+
+{name: 'Sara', age:24},
+{name: 'John', age:24},   // If their difference is negative value,their order is changed.
+
+{name: 'adi', age:35},   // If their difference is positive value,the order is left as is.
+
+{name: 'aka', age:20},
+{name: 'rits', age:15},
+{name: 'handu', age:45},
+{name: 'aka', age:25},
+
+];
+
+// As you can see we are making use of the sort callback function to return -1 if the amount of apples in arrayItemB is greater than the amount of apples in arrayItemA, then we are doing the opposite of that when we return 1 and lastly, if neither of those conditions are triggered it means that the values are equal and then we return 0.
+
+
+// programiz
+
+
+ //// converting to uppercase to have case-insensitive comparison
+function newobj (a,b) {
+    name1 = a.name.toUpperCase();         // name1 is used to store upper case property
+    name2 = b.name.toUpperCase();
+
+    if (name1>name2) {
+        return 1
+    }
+     if (name1<name2)    {      // also take else if /// pls see the effect of only else
+        return -1 
+     }
+    return 0;
+}
+
+console.log(students.sort(newobj))
+  
+const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+function dg (a,b) {
+
+    return a.type - b.type
+}
+console.log(cars.sort(dg));
+
+
+
+
+
+
+
+
+//https://atomizedobjects.com/blog/javascript/how-to-sort-an-array-of-objects-by-property-value-in-javascript/#:~:text=Sorting%20an%20array%20of%20objects%20by%20property%20value,actually%20fairly%20straightforward%20thanks%20to%20the%20Array.prototype.sort%20method.
+
+
+</script>
+
+
+</body>
+</html>

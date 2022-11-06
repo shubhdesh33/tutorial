@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+const getRollNo = () => {
+
+setTimeout(() => {
+
+
+const Roll_No = [2, 3, 4, 5];
+
+console.log(Roll_No);
+
+setTimeout((rollno) => {
+
+ const biodata = {
+
+   name: 'Rushikesh',
+   age: 25
+ }
+ console.log(`My roll no is ${rollno},My name is ${biodata.name}, Age ${biodata.age} years old`)
+
+ setTimeout((name) => {
+
+   biodata.gender = 'Male';
+
+   console.log(`My roll no is ${rollno},My name is ${biodata.name}, Age ${biodata.age} years old,I am ${biodata.gender}`)
+
+ }, 2000, biodata);
+
+}, 2000, Roll_No[2]);
+
+}, 2000);
+
+};
+   getRollNo()
+
+</script>
+
+</body>
+</html>

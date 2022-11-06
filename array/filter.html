@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+
+// The find method looks for a single (first) element that makes the function return true.
+
+//  If there may be many, we can use arr.filter(fn).
+
+// syntax = arr.filter(func, thisArg);
+
+var jsonarr = [
+    {   id: 1,
+        name: "joe"},
+
+    {   id: -19,  name: "john"   },
+
+    {   id: 20,   name: "james"  },
+
+    {   id: 25,   name: "jack"  },
+
+    {   id: -10,  name: "joseph"   },
+
+    {   id: "not a number",   name: "jimmy" },
+
+    {   id: null,  name: "jeff"  },
+]
+
+function dada (value) {
+
+  return value.id > 5
+
+}
+console.log(jsonarr.filter(dada))
+
+
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function dek (nume) {
+    for (i=2;i<nume;i++){
+
+        if (nume % i==0) {
+            return false
+        }
+    }
+     return nume>1
+}
+
+console.log(array.filter(dek))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

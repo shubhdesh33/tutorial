@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <ul id ='element'>
+    <li class = 'class name'>first elemenut</li> 
+    <li class = 'class name'>second element</li> 
+    <li class = 'class name'>third element</li> 
+    <li class = 'class name'>fourth element</li> 
+</ul>
+
+<table>
+    <tr>
+    <td>one</td>
+    <td>two</td>    
+    </tr>
+    <td>three</td>
+    <td>four</td>
+
+    </table>
+</head>
+<body>
+    <script>
+
+console.log(document.body.firstChild)
+console.log(document.body.lastChild)
+console.log(document.body.previoussibling)
+console.log(document.body.previousElementsibling)
+console.log(document.body.nextElementSibling)
+
+// const ulTag = document.body.children[0]
+// console.log(ulTag.children[0].textContent)
+// console.log(ulTag.children[0].textContent='change heading')
+
+//table DOM 
+// const tableTag = document.body.children[1]
+// console.log(tableTag.childElementCount)
+// console.log(tableTag.firstChild)
+
+const tableTag = document.body.children[1]
+console.log(tableTag.tBodies[0].rows[0].cells[0].textContent)
+console.log(tableTag.tBodies[0].rows[0].cells[1].textContent)
+console.log(tableTag.tBodies[0].rows[1].cells[0].textContent)
+console.log(tableTag.tBodies[0].rows[1].cells[1].textContent)
+console.log(tableTag.tBodies[0].rows[1].cells[0].style = 'background-color:blue')
+
+
+const ulTag = document.getElementById('element')
+ulTag.style.backgroundColor ='red'
+
+listItem = document.getElementsByClassName('list-item')
+console.log(listItem[0])
+
+console.log(document.getElementsByTagName('table'))
+
+var heading = document.createElement('li')
+
+
+console.log(heading)
+
+
+for (let node of document.body.children)  {
+
+    console.log(node)
+}
+
+var new_tag = document.createElement("li");
+   var innerText = document.createTextNode("Fourth Element");
+   new_tag.appendChild(innerText);
+   var did = document.getElementById("element");
+   did.appendChild(new_tag);
+
+
+   //  attribute reading
+  
+   console.log(element.setAttribute('data'))
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+    <li id="first">menu1</li>
+    <li class="cl">menu2</li>
+    <li class="cl">menu3</li>
+
+    </ul>
+
+    <h1>heading 1</h1>
+    <p> para 1</p>
+    
+    <div id="div1">
+    
+    <h1> heading 2</h1>
+    <p> para 2</p>
+    <h1>heading 3</h1>
+    <p> para 3</p>
+
+    </div>
+
+
+
+    <script>
+
+  let ele=  document.getElementById('first')
+  console.log(ele)
+  console.log(ele.innerHTML)
+
+  ele.innerHTML= 'change inner html content'
+  console.log(ele)
+
+  classstore = document.getElementsByClassName('cl')
+  // console.log(classstore)         treat  as a array 
+  console.log(classstore.length)
+
+  for (let i=0;i <classstore.length;i++) {
+
+    classstore[i].innerHTML ='<p> hello </p>';
+  }
+
+  changetag =document.getElementsByTagName('h1');
+  console.log(changetag.length)
+
+  for (i =0;i<changetag.length ;i++) {
+
+    changetag[i].innerHTML= 'hey'
+  }
+
+
+  storediv = document.getElementById('div1')
+
+  targetdiv = storediv.getElementsByTagName('p')
+
+  for (i=0;i<targetdiv.length;i++)  {
+
+    targetdiv[i].innerHTML = 'change only inside div element'
+  }
+
+
+
+
+
+ 
+
+    </script>
+</body>
+</html>

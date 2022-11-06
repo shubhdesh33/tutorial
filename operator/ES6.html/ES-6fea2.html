@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //  https://www.tutorialrepublic.com/javascript-tutorial/javascript-es6-features.php
+
+// Iterating over string
+
+ let greet = 'hello world'
+
+  for (let character of greet) {
+     console.log(character)
+  }
+
+  //  Default Values for Function Parameters
+
+  function sayHello (name='world')  {
+   return `hello ${name}`
+  }
+
+  console.log(sayHello())
+  console.log(sayHello('john'))   // proiroty 1
+
+
+  //  class 
+  //   convention class names are written in TitleCase 
+  // (i.e. capitalizing the first letter of each word).
+
+  class Rectangle {
+    // class constructor
+
+    constructor (length,width) {
+        this.length =length;
+        this.width=width;
+    }
+    getArea () {
+    return this.length * this.width
+   }
+  }
+    // inherit parent to child by using class
+  class Square extends Rectangle {
+
+    constructor (length,width) {
+     // Call parent's constructor
+      super (length,width)
+    }
+          
+    // child class method
+    getPerimeter () {
+        return 2* (this.length +this.width)
+    }
+  }
+
+  let rectangle = new Rectangle(5,10)
+   console.log(rectangle.getArea())
+
+   let square = new Square (5,25)
+   console.log(square.getArea(10))
+   console.log(square.getPerimeter(25,30))
+
+
+   //  arrow function
+
+   var greeted = (name) => `my name is ${name} deshmukh`
+   
+  console.log(greeted('shubham'))
+
+  let multiply = (a,b) => {
+    return a*b
+  }
+
+  console.log(multiply(20,10))
+
+  let check = (age) => {
+
+    if (age > 18) {
+        console.log('adult')
+    }
+    else {
+        console.log('baby')
+    }
+  }
+
+  check (25)
+
+  var divide = (x,y) => {
+
+    if (y!=0) {
+        return x/y
+    }
+  }
+  console.log(divide(10,20))   
+
+
+
+  // diff between normal funct and arrow function
+
+  /*  There is an important difference between regular functions and arrow functions.
+   Unlike a normal function, an arrow function does not have its own this, 
+   it takes this from the outer function where it is defined. 
+  In JavaScript, this is the current execution context of a function.  */
+
+  function Person (nickname,country)  {
+
+    this.nickname=nickname;
+    this.country=country;
+
+    this.getInfo = function () {
+        // Outer function context (Person object)
+
+        function g () {                                // undefined g kadun return kara funct la
+          // Inner function context (Global object 'Window')
+          console.log(this.nickname+' '+this.country)
+            console.log(this); // window
+        }
+        g()
+
+        return sayHello= () => {
+            console.log(this.nickname+' '+ this.country)
+            console.log(this); // Person
+        }
+    }
+  }
+
+  var p =new Person ('Raj','australia')
+
+  var printinfo = p.getInfo()               //  closure effect ==  return keyword
+   printinfo()
+
+  //  The Rest Parameters
+
+  function sortnum (a,b,...arg) {
+
+    return arg
+  }
+
+  console.log(sortnum(2,56,3,45,3,1,89))
+  console.log(sortnum(-1,-8,5,6,96,32,14,52)) 
+
+  function sortNames (...name)  {
+   return name 
+  }
+
+  console.log(sortNames('ma','ka','ladla','bighad','gaya'))
+
+
+  // The Spread Operator
+
+  /* the spread operator, which is also denoted by (...), performs the exact 
+  opposite function of the rest operator. The spread operator spreads out
+   (i.e. splits up) an array and passes the values into the specified function  */
+
+
+   function addNumbers (a,b,c)  {
+    return a+b+c
+   }
+
+   let numbers = [5,8,7,9]           // 9 not taken
+
+   //  ES-6  Spread operator
+   console.log(addNumbers(...numbers))
+
+   // ES5 way of passing array as an argument of a function
+    console.log(addNumbers.apply(null, numbers)); // 25
+
+  /* The spread operator can also be used to insert the elements of an array into 
+another array without using methods like push(), unshift() concat(), etc.*/
+
+  let pets = ['cat','dog','parrot']
+
+  let bugs = ['ant','bee','butterfly','makki']
+
+  // Creating an array by inserting elements from other arrays
+
+  let animals = [...pets,'tiger','lion','cheetah',...bugs]
+
+  console.log(animals)
+
+  //  Destructuring Assignment
+
+  /* The destructuring assignment is an expression that makes it easy to extract 
+  values from arrays, or properties from objects, into distinct variables by 
+  providing a shorter syntax.
+
+  There are two kinds of destructuring assignment expressions—the array and 
+  object destructuring assignment.*/
+
+  let fruits = ['apple','mango','banana']
+
+ let  [a,b,c] = fruits           // IMP **let dya laghte remember
+
+  console.log(a)
+  console.log(b)
+  console.log(c)
+
+  //  OBJECT DESTRUCTURE
+
+  let per = {
+    name:'rahul',
+    age:'26',
+  }
+
+  let {name,age}= per
+
+  console.log(name)
+  console.log(age)
+
+  
+
+
+    </script>
+</body>
+</html>

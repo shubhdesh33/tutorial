@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+<script>
+//  START THE EXAMPLE OF OPERATOR
+var x = 5;
+var y = 8;
+let gd = x + y;
+document.write();
+
+document.write("<br>");
+var x = 3;
+var y = 10;
+var x = y;                             //y value assign to x = 10
+document.write(y);
+var x = x + 25;
+document.write("<br>");
+
+document.write(x);                //assign the new value of x
+document.write("<br>");
+
+x += y;                           // x = x + y; ==45;
+document.write(x);
+
+var shu = x ** 2;                       // shu = x power 2
+document.write("<br>");
+document.write(shu);
+
+let rosh = 15;                       //its a number
+let ash = 'marry';                    //  its a string
+document.write("<br>");
+
+let aa = rosh + ash;              //addition of number + string ; number convert to string after get output
+
+document.write(aa);
+document.write("<br>");
+
+
+var wife = "me";
+let final = ash + wife;
+document.write(final);
+document.write("<br>");
+document.write(ash + " " + wife);             //to create a space between two words
+
+
+rosh--;                                       // subtract the value by 1 rosh= rosh - 1;
+document.write("<br>");
+
+document.write(rosh);
+
+{
+  let wife = 2;
+  let jio = rosh / wife;
+  document.write("<br>");
+  document.write(jio);
+
+}
+
+var ab = 10;
+ba = 20;
+z = ba / ab;
+document.write(z);
+
+{
+  let x = 25;
+  let y = 5;
+  z = x /= y                                // z= x= x/y;   [x = 5 ]
+  document.write("<br>");
+
+  document.write(z);
+  x /= y                                          // x = x/y;  5/5  [ans = 1 ]
+  document.write("<br>");
+  document.write(x);
+}
+{
+  let d = 5;
+  let q = 2;
+  d *= q;
+  document.write(d);
+
+  let p = 5;
+  let m = 2;
+  p **= m;
+  document.write(p);
+
+}
+{
+  x = 5;
+  y = 3;
+
+  //addition
+  x = x + y;
+  console.log(x);
+
+  //subtract
+  x = 5;
+  y = 3;
+  x = x - y;
+  console.log(x);
+
+  //multiplication
+  x = 5;
+  y = 3;
+  x *= y;
+  console.log(x);
+
+  //divide
+  x = 5;
+  y = 3;
+  x /= y;
+  console.log(x);
+
+  x = 5;                            //expo
+  y = 3;
+  x **= y;                                 //5*5*5   5 cha power 3
+  console.log(x);
+
+  x = 5;
+  y = 3;                                  //     3 divide 5 remainder=2
+  x %= y;
+  console.log(x);
+}
+
+{// addition of string text by using two method
+
+  let x = "will u "
+  let y = "marry me";
+  x += y;
+  document.write(x);
+
+  let a = "yes";
+  let b = "i am ready";
+  z = a + " " + b;
+  document.write(z);
+
+  // adding string and numbers
+  let m = 5 + 5;
+  let n = "bye";
+  o = m + n;
+  document.write(o);
+
+}
+document.write("<h3>Arithmtic operator</h3>");
+ x = 10;
+var y = 20;
+let Z = 5;
+
+document.write("sum:" + (x + y));
+document.write("<br>");
+document.write("sub:" + (x - y));
+document.write("<br>");
+document.write("multiply " + (x * y));
+document.write("<br>");
+document.write("divide:" + (y / x));
+document.write("<br>");
+document.write("increment:" + (++x));
+document.write("<br>");
+document.write(" pre increment:" + (++x));
+document.write("<br>");
+document.write(" post increment:" + (x++));
+document.write("<br>");
+document.write(" post answer increment:" + (x));
+document.write("<br>");
+
+document.write("decrement: " + (--y));
+document.write("<br>");
+document.write("Remainder:" + (x % Z));
+
+
+document.write("<h3>Comparison operator</h3>");
+
+var x = 10;
+var y = 20;
+var w = 10;
+var p = '10';                             //i am data type or string
+var k = '5'
+
+// Equal to ( == )
+document.write("<br>");
+document.write("equal to: " + (x == y));
+document.write("<br>");
+
+document.write("equal to: " + (x == w));
+document.write("<br>");
+
+document.write("equal to: " + (x == p));              //ignore data type
+document.write("<br>");
+
+document.write("equal to: " + (x == k));
+
+document.write("<br>");
+
+// Equal value and Equal type ( === )
+
+document.write("equal to: " + (x === p));    //check number condition and text string  (" " )
+document.write("<br>");
+
+document.write("equal to: " + (x === w));
+document.write("<br>");
+
+// not equal (!= )
+document.write("<br>");
+document.write("<br>");
+document.write("not equal to: " + (x != y));
+document.write("<br>");
+document.write("not equal to: " + (x != w));
+document.write("<br>");
+document.write("not equal to: " + (x != p));
+document.write("<br>");
+document.write("not equal to: " + (x != k));
+document.write("<br>");
+
+// not equal value or not equal type ( !== )
+document.write("<br>");
+document.write("<br>");
+
+document.write("not equal value or not equal type: " + (x !== w));
+document.write("<br>");
+document.write("not equal value or not equal type: " + (x !== p));
+document.write("<br>");
+document.write("not equal value or not equal type: " + (x !== y));
+document.write("<br>");
+document.write("not equal value or not equal type: " + (x !== k));
+
+document.write("<br>");
+
+//greater than ( > )  less than (  < )
+document.write("<br>");
+document.write("<br>");
+
+document.write("greater than: " + (x > y));
+document.write("<br>");
+document.write("less than: " + (x < y));
+document.write("<br>");
+document.write("less than: " + (x < w));
+document.write("<br>");
+document.write("greater than: " + (x > w));
+document.write("<br>");
+document.write("less than: " + (x < p));
+document.write("<br>");
+document.write("less than: " + (x == p));
+document.write("<br>");
+document.write("greater than: " + (x > p));
+document.write("<br>");
+document.write("<br>");
+
+//greater than or equal to ( >= )  or
+document.write("<br>");
+document.write("<br>");
+
+document.write("greater than or equal to: " + (x >= y));
+document.write("<br>");
+document.write("greater than or equal to: " + (x >= w));           //ek teri condition satisfy required for true value
+document.write("<br>");
+document.write("greater than or equal to: " + (x >= p));
+document.write("<br>");
+document.write("<br>");
+
+
+//      less than  ( <= )
+document.write("<br>");
+document.write("<br>");
+
+document.write("less than or equal to: " + (x <= y));
+document.write("<br>");
+document.write("less than or equal to: " + (x <= w));
+document.write("<br>");
+document.write("less than or equal to: " + (x <= p));
+document.write("<br>");
+document.write("less than or equal to: " + (x <= k));
+document.write("<br>");
+document.write("less than or equal to: " + (y <= x));
+document.write("<br>");
+document.write("<br>");
+
+document.write("<h3>Bitwise operator</h3>");
+
+var x = 5;               //  0101
+var y = 1;               //  0001
+
+
+document.write("bitwise x & y: " + (x & y));      //0001       
+
+document.write("<br>");
+document.write("bitwise x oR y: " + (x | y));       //0101
+
+document.write("<br>");
+document.write("bitwise x  y: " + (x | y));           //
+document.write("<br>");
+
+document.write("bitwise x not y: " + (~x));
+document.write("<br>");
+
+document.write("bitwise x XOR y: " + (x ^ y));         //0100
+document.write("<br>");
+
+document.write("bitwise left shift x << y: " + (x << y));           // x* (2 power y) == 5*(2^1)
+document.write("<br>");
+
+document.write("bitwise right shift x << y: " + (x >> y));           // x/ (2 power y)=== 5/(2^1)
+document.write("<br>");
+
+</script>
+</body>
+</html>

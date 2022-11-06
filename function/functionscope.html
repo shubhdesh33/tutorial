@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+
+        const country = 'india';
+        console.log(country);
+
+        function inside() {
+            let num = '123'
+            console.log(country);
+            console.log(num)
+        }
+
+
+        inside();
+
+
+        function myFunction() {
+            const firstName = "Krishna";   // Function Scope
+            console.log(firstName)
+
+        }
+        myFunction()
+
+
+
+        // all the variables which have global scope can be easily accessed from anywhere within the code or a program.
+
+        var global = 'greek';                    //   declaring a global variable 
+
+        function first_function() {
+
+            return global;                      //     We will call that variable in one function.
+        }
+
+        function second_function() {         //      We will call that function inside another function
+
+            return first_function();
+        }
+
+        console.log(second_function());       //        then we will call that other function to see the result.
+
+
+
+
+
+
+        //            function scope  ++  Block scope
+
+        function scope() {                       //   function scope  start
+
+            if (true) {
+                //                                              block scope if with let const  
+                var x = 1;
+                let y = 2;
+                const z = 52;
+            }                                    //    block scope end
+            console.log(x)
+            //      console.log(y)
+            //      console.log(z)
+
+        }                                      //      function scope  end
+
+        //      console.log(x)
+
+
+        scope();
+
+
+
+
+        var n = 2;
+
+        function execution(num) {
+
+            ans = num * num;
+            return ans;
+        }
+
+        var square2 = execution(n);
+        var square4 = execution(8)
+
+        console.log(square2);
+        console.log(square4);
+
+
+
+
+        function context() {
+            console.log(b)
+        }
+        var b = 1;                      //   value of b assign before calling it means before execution start
+
+        context()
+
+     //         value of b assign after calling it means after execution start
+
+     //  var b = 1;              //     undefined       code not executed for this line  
+
+
+
+        
+
+        function bank() {
+
+            console.log(amt);
+        }
+        var amt = 10;
+
+        bank()
+
+
+        function outer1 () {
+            var xxx = 100;
+
+           inner1  ()                       //   ya line la function invoke zala tya mule execution context s                                    start zala ( mm ) ya function cha ani ( yy ) ya function la 
+           //                                   value assign nhi zali  xxx variable
+          //    var xxx = 100;       // ya condition madhe value assign nhi hot xxx chi  (yy)  ya functio la
+
+
+            console.log(xxx);
+
+            function inner1 () {
+
+                console.log(xxx);
+
+            }
+        }
+
+        outer1();
+       //                  mm();
+
+
+ console.log(carName)
+       myFunction() 
+     
+
+       function myFunction() {
+  carName = "Volvo";
+}
+
+// Asynchronous JavaScript
+
+
+// JavaScript is the single-threaded programming language. This means that the JavaScript engine has only one call stack. Therefore, it only can do one thing at a time.
+
+// When executing a script, the JavaScript engine executes code from top to bottom, line by line. In other words, it is synchronous.
+
+// Asynchronous means the JavaScript engine can execute other tasks while waiting for another task to be completed. For example, the JavaScript engine can:
+
+// Request for data from a remote server.
+// Display a spinner
+// When the data is available, display it on the webpage.
+
+
+    //    https://www.freecodecamp.org/news/scope-and-closures-in-javascript/
+
+    //    https://www.javascripttutorial.net/javascript-variable-scope/
+
+    //    https://www.javascripttutorial.net/javascript-execution-context/
+
+    //    https://www.javascripttutorial.net/javascript-call-stack/
+
+    //    https://www.geeksforgeeks.org/explain-scope-and-scope-chain-in-javascript/?ref=rp
+
+    //    https://www.geeksforgeeks.org/explore-the-concept-of-javascript-function-scope-and-different-types-of-javascript-functions/?ref=rp
+
+    //    https://www.peerigon.com/en/blog/function-scope-and-context-javascript/
+
+    //    //  lexical scope javascript
+
+    //    https://stackoverflow.com/questions/1047454/what-is-lexical-scope
+
+    //    https://www.freecodecamp.org/news/javascript-lexical-scope-tutorial/
+
+    //    https://stackoverflow.com/questions/1484143/scope-chain-in-javascript
+
+    //    https://medium.com/@aastha6348/understanding-scopes-and-scope-chain-in-javascript-4d87f7a4b144
+
+    //    https://dasha.ai/en-us/blog/javascript-scope-and-scope-chain
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+        var x = 'expandable';
+        var y = 'human being';
+
+        document.write(x + ' ' + y)
+
+        var x = new String('hey shubham')
+        document.write(x)
+
+        document.write('<h3>charAt</h3>')
+
+        let jiya = 'sundar'
+        let name = 'i am a shubham';
+        let search = 'It SearCH a specified regular expression in a given string and returns its position if a match occurs.'
+        document.write(name.charAt(7) + '<br>');
+
+        document.write('<h3>charCodeAt</h3>');
+        document.write(name.charCodeAt(7));
+
+        document.write('<h3>concat</h3>');
+
+        document.write(name.concat( jiya , y));
+
+        document.write('<h3> indexOf() </h3>');
+
+        document.write(name.indexOf('a')+'<br>');
+        document.write(name.indexOf('a',3)+'<br>');
+        document.write(name.indexOf('am',3));
+        document.write(name.indexOf('aam',3));      // words nhi tr o/p -1
+
+        document.write('<h3> lastindexOf() </h3>');
+
+       document.write(name.lastIndexOf('h')+'<br>');
+
+       document.write('<h3> search () </h3>');
+       document.write(search.search('its')+'<br>');
+       document.write(search.search('S')+'<br>');     // case sensitivity
+       document.write(search.search(/S/i)+'<br>');    //ignore case == string nhi pahije ''
+       document.write(search.search('ght')+'<br>');    // not exist
+
+       document.write('<h3> match () </h3>');
+
+       document.write(search.match('its')+'<br>');
+       document.write(search.match('itcc')+'<br>');
+       document.write(search.match('S')+'<br>');        // case sensitivity
+       document.write(search.match(/a/i)+'<br>');     // case sensity ignore
+
+       document.write('<h3> replace () </h3>');
+  
+       let re = 'It replaces a given string with the specified replacement.'
+
+       document.write(re.replace('its','SHUBHAM')+'<br>');
+       document.write(re.replace(/ a/gi,' DESHMUKH '));
+
+       document.write('<h3> substr () </h3>');
+
+       document.write(re.substr(14)+'<br>');           //starting poi= 14 
+       document.write(re.substr(14,15)+'<br>');         // length ==15;
+
+       document.write('<h3> substring () </h3>');
+
+       document.write(re.substring()+'<br>'); 
+       document.write(re.substring(14)+'<br>'); 
+       document.write(re.substring(14,25)+'<br>'); 
+       document.write(re.substring(-14,25)+'<br>'); 
+
+       document.write('<h3> slice () </h3>');
+
+       document.write(re.slice(-10)+'<br>'); 
+       document.write(re.slice(14,-10)+'<br>'); 
+       document.write(re.slice(14,-10)+'<br>'); 
+       document.write(re.slice(-14,10)+'<br>'); 
+
+       document.write('<h3> toLowercase () </h3>');
+
+       bhava = 'THIS ID MY PERSONAL'
+
+       document.write(bhava.toLowerCase()+'<br>'); 
+
+    //    document.write('<h3> Local case () </h3>');
+    //     let 
+
+    //    document.write(bhava.toLowerCase()+'<br>'); 
+
+    //  document.write('<h3> toLocalUppercase () </h3>');
+
+
+      document.write('<h3> toLocaleUppercase () </h3>');
+
+      string4 = 'It converts the given string into uppercase letter on the basis of host?s current locale.'
+
+      document.write(string4.toLocaleUpperCase()+'<br>'); 
+      document.write(string4.toUpperCase()+'<br>'); 
+
+      document.write('<h3> toString () </h3>');
+
+      document.write(string4.toString())         // no effect
+
+      document.write('<h3> valueOf () </h3>');
+
+      string5 = new String('It provides the primitive value of string object') //obj type madhe string ahe
+           
+      document.write(string5.valueOf());
+
+      document.write('<h3> split () </h3>');
+
+      split = 'It splits a string into substring array, then returns that newly created array.'
+      
+      
+     var gh=  split.split([7]);
+      console.log(gh)
+
+      document.write(split.split()+'<br>');
+      document.write(split.split(' ')+ '<br>');
+
+
+     let text = 'my name is shubham'
+      let splited = text.split(' ');     // let splited = text.split(' ')[2];
+      document.write(splited[2] + '<br>');
+      document.write(text.split(' ',3) + '<br>');   // (' ',3) => string madhle 3 words
+
+
+      document.write('<h3> trim() </h3>');
+
+      string6='               It trims the white space from the left and right side of the string.                 '
+
+      document.write(string6.trim()+'<br>');
+
+
+      const   intialword = 'i am shubham deshmukh abacus'
+
+      let xx = ' '
+      const another = 'you are write'
+     const dev ='JAVASCRIPT'
+     const ram = 255;
+
+      console.log(intialword.length)
+      console.log(intialword.length-1)
+      checkcharat = intialword.charAt(10)
+       console.log(checkcharat)
+
+
+       console.log(intialword.indexOf('a'))
+       console.log(intialword.indexOf('a',3))
+     //  console.log(intialword.indexOf(character,word))
+
+     console.log(intialword.substr(0,5))                // count the word at index no 5
+
+        // difference between  
+
+     console.log(intialword.substr(0,2))           //   last index no at no 2 isinclude
+     console.log(intialword.slice(1,2))              // exclude
+
+     console.log(dev.slice(-5,7))
+
+     let savelacalcase = dev.toLowerCase()
+     console.log(savelacalcase )
+
+     const convertstring =ram.toString()
+     console.log(convertstring)
+     
+
+     const stringvalue =dev.valueOf()
+     console.log(stringvalue)
+
+     console.log(intialword.lastIndexOf('a'))
+
+       console.log(intialword.concat(' '+another))
+       console.log(intialword.concat(xx+another))
+
+       console.log(intialword.replace('shubham','ashish'))
+
+
+       if (checkcharat==='m' ) {
+
+        console.log(true)
+       }
+       else {
+        console.log(false)
+       }
+
+
+
+     let trimkar = '   trim la   '
+
+        let trimbhau = trimkar.trim()
+        console.log(trimbhau)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

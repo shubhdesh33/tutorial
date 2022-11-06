@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+        // function name(a, b) {
+        //     a += b;
+        //     document.write(a + '<br>');
+
+        // }
+        // name(5, 8);
+
+        // function myFunctions(g, h) {
+        //     return g += h
+        // }
+        // document.write(myFunctions(5, 10) + '<br>')
+
+
+        // // function name stored in var x
+        // var x = myFunction(87, 20);                 // myfunction name stored kela var x madhe ani function calling pn simultaneously zala  
+
+        // function myFunction(a, b) {
+        //     return a -= b
+        // }
+        // document.write(x + '<br>');
+
+
+        // // function stored in variable y ;::: the variable can be used as a function: anonymous function (a function without a name).::: not need function names. They are always invoked (called) using the variable name
+
+
+
+        // var y = function(d,j) {            
+        //     return d*j;
+        // }
+        // document.write(y(40,10)*5 + '<br>');    // JavaScript functions can be used in expressions
+        // document.write(typeof(y));
+          
+        // ( function () {
+        //     document.write('kljmsnma')
+        // }) ()
+
+        // var names = 7;
+        
+        // function getName () {
+        //     console.log('hooo');
+        // }
+
+        // getName();
+        // console.log(getName);
+        // console.log(names);
+
+
+       // medium.com/joonsikyang/execution-contexts-and-the-call-stack-cf53679b2c39
+
+//         What is an Execution Context?
+
+// Let’s see how the code is executed in the call stack in the JavaScript engine. When the code compilation is finished, then it is ready to be executed.
+
+
+// Execution Context is an environment in which    $$$***a piece of JavaScript is executed **$$$. It stores all the necessary information for some code to be executed, *** such as local variables or arguments passed into a function***. JavaScript code always runs(computer CPU processing the received machine code) inside an execution context.
+
+// Global execution context(EC) is created for top-level code   *** the code that is not inside any function.***So in the beginning, ***   only the code that is outside of functions will be executed. **
+
+// In any JavaScript project, no matter how large it is,   $$$*** there’s only one global execution context. It’s alw
+ // where top-level code will be executed.
+
+// When the top-level code execution is finished, functions finally start to execute as well. For each and every function call, a new execution context is created, one execution context per function, containing all the necessary information to run that function.
+
+// All these execution contexts together make up the call stack.
+
+// When all functions are done executing, the engine will basically keep waiting for callback functions to arrive. Remember that it is the event loop who provides these new callback functions.
+
+// Execution Context in Detail
+// Let’s have a look at what execution context is made of.
+
+// 1. Variable Environment (VE)
+// Variable environment includes 1) all our variables(let, const and var declarations), 2) function declarations are stored, and 3) a special arguments object, which contains all the arguments passed into the function that the current execution context belongs to.                                                        *****  (Remember that each function gets its own execution context as soon as the function is called.)
+
+// 2. Scope chain
+
+
+// Basically all the variables, that are somehow declared inside a function, end up in its variable environment. However, a function can access variables out side of the function, because of the scope chain. The scope chain basically consists of references to variables that are located outside of the current function.
+
+// 3. this keyword
+// Each context also gets a special variable called the this keyword.
+
+// Content of the execution context, variable environment, scope chain, and this keyword, is generated is a "creation phase", which happens right before execution(“execution phase”).
+
+// Note that the execution contexts belonging to arrow functions, do not get their own arguments keyword, nor do they get the this keyword. So, arrow functions basically do not have the arguments object and the this keyword. Instead, they use the arguments object and the this keyword from their closest regular function parent.
+
+// So these are the things that are necessary to run each functions as well as the code in the top-level. Below is the simulation of the creation phase.
+
+//         The Call Stack
+
+// Remember that the call stack, together with the memory heap, makes up the JavaScript engine itself. Call stack is a “place” where execution contexts get stacked on top of each other, in order to keep track of where we are in the program’s execution (the order of execution).
+
+// The execution context on top of the stack is the one that is currently running. When it’s finished running, it will be removed from the stack, and execution will go back to the previous execution context.
+
+// JavaScript has only one thread of execution. No other function is being executed while the execution context on the top is executed.
+
+        // When the function meets the return keyword, if finishes its execution. It means that the function’s execution context will be popped off the stack and disappear from the computer’s memory.
+
+        // Without the call stack, the engine would not know which function was being executed before or where to go back to. The order of execution never gets lost because of the call stack.
+
+        // Initialize a global variable
+
+// let species = "human";
+ 
+//  function transform() {
+//    // Initialize a local, function-scoped variable
+//    let species = "werewolf";
+//    console.log(species);
+//  }
+ 
+//  // Log the global and local variable
+//  console.log(species);
+//  transform();
+//  console.log(species);
+
+
+//  // Initialize x in the global scope
+// var x = 100;
+
+// function hoist() {
+//   // A condition that should not affect the outcome of the code
+//   if (true) {
+//     var x = 200;
+    
+// }
+// console.log(x); 
+// }
+
+// hoist();
+
+// // Initialize a global variable
+// var specie = "human";
+
+// if (fullMoon) {
+//   // Initialize a block-scoped variable
+//   var specie = "werewolf";
+//   console.log(`It is a full moon. Lupin is currently a ${specie}.`);
+// }
+
+// console.log(`It is not a full moon. Lupin is currently a ${specie}.`);
+
+// program showing block-scoped concept
+// global variable
+
+
+let a = 'Hello';
+
+function greet() {
+
+    // local variable
+    let b = 'World';
+
+   
+
+    if (b == 'World') {
+
+        // block-scoped variable
+        let c = 'hello';
+
+        console.log(a + ' ' + b + ' ' + c);
+    }
+
+    // variable c cannot be accessed here
+//console.log(a + ' ' + b + ' ' + c);
+    console.log(a + ' ' + b);
+}
+
+
+// console.log(a + ' ' + b + ' ' + c);     O/P == b & c is not defined
+
+greet();
+
+
+
+var save = 'Hello';
+
+function greeting() {
+
+    // local variable
+    var b = 'World';
+
+   
+
+    if (b == 'World') {
+
+        // block-scoped variable
+        var c = 'hello';
+
+        console.log(save + ' ' + b + ' ' + c);
+    }
+
+    // variable c cannot be accessed here
+//console.log(a + ' ' + b + ' ' + c);
+    console.log(save + ' ' + b );
+}
+
+
+
+
+greeting();
+
+
+
+
+var colorss = 'red';
+function testss () {
+    return colorss;
+}
+console.log (testss());
+
+// var color = "aquaus";           // var outside ghetla teri pn o/p det nhi 
+// function test () {
+    
+//     return color;
+//     console.log(color);
+// }
+// test ();
+
+
+
+
+// function test () {       
+//        
+//     var color = "white";      
+//     return color;       
+//     console.log(color);        // O/P not get because log written inside the scope
+// }
+// test ();
+
+
+function test () {                   
+    var colored = "aqua";
+    shubh = colored;
+    return shubh;
+}
+console.log(test ());
+
+ 
+
+
+
+//  function rams () {
+//     var virat = 'shubham';
+//  }
+// rams();
+// console.log(virat);
+
+
+ 
+ function rams () {
+    let virata = 'deshmukh';
+    console.log(virata);
+ }
+rams();
+
+
+
+function ram () {
+    let viratas = 'amravati';
+    rim = viratas
+    console.log(rim);
+
+ }
+ ram()
+
+let ab = 10;
+function radhe () {
+ console.log(ab);
+ 
+}
+ radhe()
+
+
+
+ function myFunc(theObject) {
+  theObject.make = 'Toyota';
+}
+
+const mycar = {
+  make: 'Honda',
+  model: 'Accord',
+  year: 1998,
+};
+
+// x gets the value "Honda"
+const x = mycar.make;
+console.log(x)
+
+
+// the make property is changed by the function
+myFunc(mycar);
+// y gets the value "Toyota"
+const y = mycar.make;
+
+console.log(y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

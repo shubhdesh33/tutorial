@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <title>Document</title>
+
+</head>
+<html>
+
+<body>
+  <!-- <script>
+    
+        function msg() {
+            alert( "call me");
+        }
+    </script>
+   <input type="button" onclick="msg()" value="click me">
+   <script>
+  function  shubham(x,y) {
+    y=2;
+    return x*y;
+  }
+document.write(shubham(20));
+</script>
+<script>
+function desh(a,b,c) {
+   a = 2;
+ return a+b*c;
+
+
+}
+ document.write(desh(6,7));
+
+</script> -->
+  <script>
+    
+    function Info(fname, lname, city, country, state) {
+      this.fname = fname;
+      this.lname = lname;
+      this.city = city;
+      this.country = country;
+    }
+    function Person1(fname, lname, city, country) {
+      Info.call(this, fname, lname, city, country);
+    }
+
+    function Person2(fname, lname, city, country) {
+      Info.call(this, fname, lname, city, country);
+    }
+
+    var per1 = new Person1("shubham", "deshmukh", "amravati", "india");
+    var per2 = new Person1("ram", "dd", "akola", "inida");
+
+    document.write(per1.fname + "    " + per1.lname + "   " + per1.city + "   " + per1.country + "   " + "maha");
+    document.write("<br>");
+
+    document.write(per2.fname + "   " + per2.lname + "   " + per2.city + "    " + per2.country);
+    document.write("<br>");
+
+  </script>
+  <P id="demo"></P>
+  <script>
+
+    function ipl(mumbai, kkr, rcb, chena) {
+      this.mumbai = mumbai;
+      this.kkr = kkr;
+      this.rcb = rcb;
+      this.chena = chena;
+    }
+    function team1(mumbai, kkr, rcb, chena) {
+      ipl.call(this, mumbai, kkr, rcb, chena);
+
+    }
+    function team2(mumbai, kkr, rcb, chena) {
+      ipl.call(this, mumbai, kkr, rcb, chena);
+    }
+    var teams1 = new team1("rohit", "gautam", "vitat", "dhoni");
+    var teams2 = new team2('pollard', 'sam', 'ram', 'kaka');
+
+    document.write(teams1.mumbai + '  ' + teams1.kkr + '  ' + teams1.rcb + '  ' + teams1.chena);
+    document.write("<br>");
+
+    document.write(teams2.mumbai + '  ' + teams2.kkr + '  ' + teams2.rcb + '  ' + teams2.chena);
+    document.write("<br>");
+
+    
+
+   
+
+    
+    
+  </script>
+</body>
+
+</html>

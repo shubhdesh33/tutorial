@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='main.js'></script>
+</head>
+
+<body>
+  <script>
+    var num = 0;
+
+    while (num <= 10) {
+      if (num !== 5) {
+        document.writeln("The number is", num, "- less than 10" + "<br>");
+      } else {
+        document.writeln("The number is", num, "- the loop is now over" + '<br>');
+      }
+      num++;
+    }
+
+
+    // program to serve customers until there are none left in the queue
+    // var queue = 10;
+
+    // function serve() {
+    //  // arbitrary code to fulfil customer's order
+    //  console.log("finished serving customer");
+    // }
+    // serve(); 
+    // for (let index = 0; index < queue; index++) {
+    //     serve(); // this would be executed 10 times                   //serve la call kela nantr o/p= finished print honar
+    // }
+
+    // program to serve customers until there are none left in the queue
+    // let u = 10;
+
+    // function serve() {
+    //   // arbitrary code to fulfil customer's order
+    //   console.log("finished serving customer");
+    // }
+
+    // while (u > 0) {
+    //   serve(); // this will run infinitely
+
+    // }
+    // // program to serve customers until there are none left in the queue
+    // var q = 10;
+
+    // function serve() {
+    //   // arbitrary code to fulfil customer's order
+    //   console.log("finished serving customer");
+    // }
+
+    // while (q > 0) {
+    //   serve();
+    //   q--; // step/control
+    // }
+
+    /* do...while loop */
+
+    // do {
+    //   serve();
+    //   queue--;
+    // } while (queue > 0);
+
+
+    function digitSum(num) {
+      var sum = 0;
+      while (num != 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+      }
+      return sum;
+    }
+
+    console.log(digitSum(4367)); //20
+    console.log(digitSum(56349)); //27
+
+
+    function dumpProps(obj, objName) {
+      let result = '';
+      for (const i in obj) {
+        result += `${objName}.${i} = ${obj[i]}<br>`;
+      }
+      result += '<hr>';
+      return result;
+    }
+
+
+    for (let i = 1; i <= 100; i++) {
+      {
+
+        if (i % 3 === 0)
+
+          //console.log('shubham')
+          document.write('<br>', i)
+      }
+    };
+
+
+    function radhess(x, y) {
+      if (y===undefined)  {
+        y=5;
+       // return x*y;
+      }
+      return x*y;
+      }
+     
+      console.log( radhess(4))
+
+
+
+    function radhe(x, y) {
+      if (y===undefined)  {
+        y=5;
+        multiply= x*y;
+      }
+      
+      }
+      radhe(4)
+      console.log(multiply)
+
+
+      //  let sum = (456,215,365,100,100);
+
+      //  function kala () {
+
+      //   for (let i=0;i<argument.length,i++) {
+
+      //       sum+=argument[i]
+
+      //   }
+
+      //  }
+      
+
+
+       x = findMax(1, 123, 400, 115, 44, 88);
+
+function findMax() {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+
+  z = findMax();
+console.log(z)
+
+
+
+// function sumAll() {
+//   let sum = 0;
+//   for(let i = 0; i < arguments.length; i++) {
+//     sum += arguments[i];
+//   }
+//   return sum;
+// }
+// document.getElementById("demo").innerHTML = sumAll(1, 123, 500, 115, 44, 88);
+
+
+let marks = [ 8, 5, 7, 9, 10, 9 ];
+
+let lessThanFive = false;
+
+for (let index = 0; index < marks.length; index++) {
+    if (index > 25) {                                // pls take cond -- marks[index]<5
+        lessThanFive = true;                           // jstutorial
+        break;
+    }
+}
+
+console.log(lessThanFive);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

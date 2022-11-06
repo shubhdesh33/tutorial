@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+
+    <script>
+
+        // function first (lnames)  {
+
+        //     this.lname=lnames
+        // var firstname = 'shubam'
+        // console.log('hey')
+
+        //  function second ()  {
+
+        //     console.log(firstname+' '+lnames)
+
+        //  }
+        //  return second
+
+        //  }
+
+        //  const value = first ('desh')
+        //    value ()
+
+
+        //    function doadd (x)  {
+
+        //     return function (y) {
+        //         return x+y
+        //     }
+        //    }
+
+        //    var s1 =doadd (5)
+
+        //    console.log(s1(6))
+
+
+        //    let b= 10;
+
+        //   function outer1 () {
+
+        //     let a = 15
+
+        //     function inner1 (c)  {
+
+        //      let s = a+b+c
+        //      return s
+        //     }
+        //     return inner1
+        //   }
+
+        //   val = outer1 (6)
+        //   console.log(val(10))
+
+
+
+
+
+
+        //   function counter1 () {
+        //     count =0;
+
+        //     function add  ()  {
+
+        //         return ++count
+        //     }
+        //      return add
+        //   }
+
+        //  const  save1 = counter1 ()
+        //     console.log(save1())
+        //     console.log(save1())
+        //     console.log(save1())
+        //     console.log(save1())
+        //     console.log(save1())
+        //     console.log(save1())
+
+
+
+        //     function counter2 () {
+        //     count =0;
+
+        //     function add  ()  {
+
+        //         console.log(count)
+        //     }
+        //     ++count
+        //      return add
+        //   }
+
+        //  const  save2 = counter2 ()
+        //     save2()
+        //     save2()
+        //     save2()
+        //     save2()
+
+
+        //     function counter3 ()  {
+
+        //         let count =0
+
+        //         function add1 () {
+
+        //             console.log(count)
+        //             count ++
+        //         }
+        //         return add1
+
+        //     }
+
+        //     save3 = counter3 ()
+
+        //     save3 ()
+        //     save3()
+        //     save3()
+
+
+        //   function counter4 ()  {
+        //   let count = 0
+        //     this.increment = function () {
+        //       count ++
+        //       console.log(count)
+
+        //     }
+
+        //     this.decrement = function ()  {
+
+        //         count--
+        //         console.log(count)
+        //     }
+        //   }
+
+        //   save4 = new counter4 ()
+
+
+        //   save4.increment()
+        //   save4.increment()
+        //   save4.increment()
+        //   save4.decrement()
+        //   save4.increment()
+        //   save4.increment()
+        //   save4.increment()
+        //   save4.decrement()
+        //   save4.increment()
+        //   save4.increment()
+        //   save4.decrement()
+        //   save4.decrement()
+        //   save4.decrement()
+        //   save4.decrement()
+
+
+
+
+        //   function counter5 (countername)  {
+        //   let count =0;
+
+        //     const obj = {
+        //         name : countername,
+        //     incremented : function ()  {
+
+        //         count++
+        //         console.log(this.name,count)
+        //     }
+        //     }
+        //     return obj
+        //   }
+
+        //  const   save5 = counter5 ('shubham')
+        //  const   save55 = counter5 ('desh')
+
+        //  save5.incremented()
+        //  save5.incremented()
+        //  save5.incremented()
+        //  save5.incremented()
+        //  save5.incremented()
+
+        //  save55.incremented()
+        //  save55.incremented()
+        //  save55.incremented()
+        //  save55.incremented()
+
+
+        let count = 0
+
+        function outer(a) {
+            count++
+            function inner(b) {
+                count += 1
+                function innermost(c) {
+                    ++count
+                    d = a + b + c
+                    return d, count
+
+                }
+                return innermost
+            }
+            return inner
+        }
+
+        save7 = outer(10)
+        save8 = save7(30)
+        console.log(save8())
+        console.log(save8(20))
+        console.log(save8(20))
+        console.log(save8(20))
+
+        //  callbackhell
+
+
+        function outer1(a) {
+            return function (b) {
+                return function (c) {
+                    return function (d) {
+                        return function (e) {
+                            return function (f) {
+                                return a + b + c + d + e + f
+
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        console.log(outer1(10)(10)(10)(10)(10)(10))
+
+
+
+        function price(initialrent) {
+
+            rent = initialrent;
+            console.log(rent)
+
+            return {
+
+                getrent: function () {
+                    console.log(rent)
+                },
+
+                incrementrent: function (amt) {
+                    rent += amt;
+                    console.log(rent)
+
+                },
+
+                decrementrent: function (amt) {
+
+                    rent -= amt
+                    console.log(rent)
+                },
+            }
+        }
+
+        save12 = price(10000)
+
+        save12.getrent(5000)
+
+        save12.incrementrent(5000)
+
+        save12.decrementrent(10000)
+
+        console.log(save12)
+
+
+        function first() {
+            let initialcount = 0;
+
+            setTimeout(function () {
+                count = 0;
+                initialcount++
+
+                setTimeout(function () {
+
+                    count += 1
+                    initialcount++
+                    initialcount++
+
+                    console.log('coun', count, 'initialcount', initialcount)
+                }, 1000)
+            }, 1000)
+        }
+
+        first()
+
+
+
+        //  arrow
+
+        const nameassign = () => {
+
+            let name1 = '1';
+
+            return () => {
+
+                name2 = '2';
+
+                return () => {
+
+                    name3 = '3';
+
+                    return () => {
+
+                        name4 = '4';
+
+                        return () => {
+
+                            name5 = '5';
+
+                            return () => {
+
+                                return [name1, name2, name3, name4, name5]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        save13 = nameassign()()()()()
+
+        console.log(save13())
+
+
+        //  HOF
+
+        arr = [2, 5, 6, 9, 8, 11, 13, 12, 78, 25, 21]
+
+        function even(arr) {
+
+            return arr % 2 === 0
+        }
+
+        function odd(arr) {
+
+            return arr % 2 == 1
+        }
+
+        function hof(arr, fn) {
+
+            const filteredArr = [];
+
+            for (i = 0; i < arr.length; i++) {
+
+                //   filteredArr.push(fn(arr[i]))
+                fn(arr[i]) ? filteredArr.push(arr[i]) : null;
+            }
+            return filteredArr
+        }
+        console.log(hof(arr, even))
+        console.log(hof(arr, odd))
+
+
+        arry = [2, 5, 6, 8]
+
+        let circumference = function (arry) {
+            return 2 * Math.PI * arry
+        }
+
+        function hof1(arry, fnc) {
+
+            let output = [];
+
+            for (i = 0; i < arry.length; i++) {
+
+                output.push(fnc(arry[i]))
+            }
+            return output
+        }
+        console.log(hof1(arry, circumference))
+
+
+
+        //  callback
+
+
+        // function createQuote(argu, fn) {
+        //     name = 'shubham';
+
+        //     fn(`my name is'${name}`)
+
+        // }
+
+        // logQuote = ((argu) => console.log(argu))
+
+        // createQuote('deshmukh', logQuote)
+
+
+        // function check() {
+
+        //     for (i = 0; i < 5; i++) {
+
+        //         function closure(a) {
+
+        //             setTimeout(() => {
+
+        //                 console.log(a)
+        //             }, 2000)
+        //         }
+        //         closure(i)
+
+        //     }
+        // }
+
+        // check()
+
+
+        // function one(argu, fn) {
+        //     setTimeout(function () {
+
+        //         let declare = `its store and declare the value  here and transfer to other function ${argu} `
+
+        //         console.log(declare)
+        //         fn(declare)
+        //     }, 2000)
+        // }
+
+        // function two(take) {
+
+        //     console.log(`${take}`)
+        // }
+
+        // one('chetan patil mad', two)
+
+
+
+
+
+
+
+    </script>
+
+
+    <script>
+ 
+ function Car (type,fueltype)  {
+
+    this.type =type;
+    this.fueltype=fueltype
+ }
+
+
+ function setBrand (brand)  {
+    Car.call (this,'fuel','convert')
+    this.brand = brand
+    console.log('car details : ',this)
+ }
+
+ Car.call (this,'diesel','notconvert')
+
+ function definePrice (price)  {
+
+   this.price = price
+   console.log('car details : ',this)
+
+ }
+
+   newBrand = new setBrand('bmw')
+ 
+  newcarprice = new definePrice(10000)
+
+// function setBrand(brand){
+
+// 	this.brand = brand;
+// 	console.log(`Car details = `, this);
+// }
+
+
+ const  getName = {
+
+    name: 'prajwal',
+    lname: 'dehmukh',
+
+   method : function () {
+       console.log( this.name + ' '+ this.lname)
+    }, 
+ }
+
+ methoding = function ()  {
+
+    console.log( this.name + ' '+ this.lname)
+
+ }
+
+ const setName = {
+
+    name :'hari',
+    lname :'pandu',
+ }
+
+  getName.method () 
+
+  methoding.call (getName) 
+
+  methoding.call(setName)
+
+
+  getName.method.call(setName)
+
+
+  method1 = function (town,location,dist)  {
+
+    console.log(this.name +' '+this.lname+' '+town+' '+location+' '+dist)
+  }
+
+  method1.call(setName,'vidharbha','maharashtra','amravati')
+
+  method1.call(getName,'vidharbha','maharashtra','akola')
+
+  method1.apply(getName, ['vidharbha','maharashtra','akola'])
+
+  printName = method1.bind(getName,'vidharbha','maharashtra','nagpur')
+ printName()
+
+
+ obj = {
+    num : 20,
+ }
+
+ function add (a,b)  {
+
+    let d= a+b
+    console.log(this.num +' '+d )
+ }
+
+ add.call(obj,10,20)
+
+ add.apply(obj,[20,30])
+ 
+ sum =add.bind(obj,30,30)
+  sum ()
+
+
+
+  function item (name,type) {
+    this.name=name;
+    this.type = type;
+
+  } 
+  function car1 (price,fueltype)  {
+
+    item.call(this,'alto','four')
+    this.price=price;
+    this.fueltype = type;
+
+    console.log(`car detail `,this)
+  }
+
+  function shine (fueltype,price) {
+  
+    item.call(this,'shine','four')
+
+    this.fueltype = fueltype;
+    this.price = price;
+    console.log(`shine detail :  `,this)
+  }
+
+  newcar = new car1 ('diesel',75000)
+
+  newshine = new shine ('petrol',500000)
+
+ console.log(newcar)
+
+ console.log(newshine)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

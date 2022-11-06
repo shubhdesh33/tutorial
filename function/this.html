@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //                          Execution Context
+        //  The environment (or scope) in which the line is being executed is known as the execution context. 
+        //  The JavaScript runtime maintains a stack of these execution contexts, and the execution context 
+        //   present at the top of this stack is the one currently being executed.
+        //          The object this refers to changes every time the execution context is changed.
+
+
+
+
+
+        console.log(this);
+
+        this.rao = 'shubham';
+
+        console.log(this.rao)
+        console.log(window.rao)
+        console.log(rao)
+
+        // inside a function  //
+
+
+        function rahul() {
+
+            console.log(this)
+        }
+        rahul();
+
+
+        // if strictmode is in effect globally or inside getPokemon, 
+        // the global object is not permitted default binding
+        //  TypeError : 'this' is 'undefined'.
+
+        function getpokeman() {
+            //  'use strict'
+            console.log(this.ultraball)
+        }
+
+        var ultraball = 'i am pokeman'
+
+        getpokeman()
+
+
+        //   INSIDE AN OBJECT  //
+
+
+
+        const person = {
+            firstName: 'raj',
+            lastName: 'dk',
+             // names : 'rahh',
+
+            checkthis: function () {
+              //  this.names= 'rao'
+                console.log(this);
+
+                function checkthisagain() {          //  this is a global funct
+
+                   this.names = 'shvbbnnm'        // ha this assign to window/global // point kart ahe window la
+                    console.log(this);
+
+                }
+                checkthisagain();                 // ya line la calling context nhi ahe
+
+
+                console.log(this.names)        //[ THIS ha assign kela ahe obj la [ person ] tyamule toh obj cha inside search kart ]  
+
+                // undefined it search global not inside obj funct
+
+                console.log(window.names)         // pointing towards global =>  its show ans in checkthisagain
+
+            }
+        }
+
+        person.checkthis();                //  ya line la person ha call kart ahe checkthis 
+        //                                     //  person ha obj ahe mhnun this ha tyacha context obj ghenar 
+        console.log(person)                      //  ya line la person ch obj ahe console madhe
+        //  console.log(checkthis)
+
+        const func = person.checkthis
+        func();                  // func la calling context nhi ahe obj mhnun this ha window la point kart ahe             //  ya line this ha window la point kart ahe because  func la calling without obj name na hot ahe
+
+
+        //  this ha tyacha context/ two thing vr based ahe 
+        //  1]  toh konacha inside ahe 
+        //  2]  tyala function calling kon kart ahe //(object name) object name + method name calling
+
+
+
+        const dilmera = {
+            x: 45,
+            dell: function () {
+
+                var x = 5;
+                console.log(x)                              //  5
+                console.log(this.x)                          //  45
+
+                function das() {                           // this is a window function  //  global funct
+
+                    this.x = 40;                           //   ha this pointing to the obj mere
+                    console.log(this.x)
+
+                }
+                das();                                     //    function calling without obj name
+                console.log(x)         // 5  //    ha this point kart ahe window / global scope la
+                console.log(window.x)
+            }
+
+        }
+        dilmera.dell();
+        console.log(x)                                    //  imp
+
+
+
+
+
+        let obj1 = {
+            name: 'ram',
+            manish: function namo() {
+
+                console.log('23', this)
+            }
+        }
+
+        obj1.manish()                     // obj1 calling  /  context is imp
+
+
+
+
+
+        let obj3 = {
+
+            names: 'raja',
+            age: '23',
+            middlename: 'namo',
+            //  getobjname: getobjname,
+        }
+
+        let obj4 = {
+
+            names: 'rajma',
+            age: '24',
+            middlename: 'rastraaa',
+            //  getobjname: getobjname,
+        }
+
+        let obj5 = {
+
+            names: 'rajhri',
+            age: '25',
+            middlename: 'rasberry',
+            //   getobjname: getobjname,
+        }
+
+        let obj6 = {
+
+            names: 'rajiv',
+            age: '26',
+            middlename: 'astr',
+            //   getobjname: getobjname,
+        }
+
+
+        let obj7 = {
+
+            names: 'rajesh',
+            age: '27',
+            middlename: 'aghb',
+            //  getobjname: getobjname,
+        }
+
+
+        let obj8 = {
+
+            names: 'rajyog',
+            age: '28',
+            middlename: 'rastr',
+            //  getobjname: getobjname,
+        }
+
+        let obj9 = {
+
+            names: 'rajendra',
+            age: '29',
+            middlename: 'rastr',
+            //  getobjname: getobjname,
+        }
+
+
+        function getobjname() {
+
+            //   console.log(this)
+            console.log(this.age + ' ' + ' ' + this.names)
+        }
+
+        //  what is bind  //
+
+        //  1  bind an obj to a function
+        // 2   reference it using this
+
+        getobjname.call(obj4)
+
+        let obj3rao = getobjname.bind(obj3);
+        let obj4func = getobjname.bind(obj4);
+        let obj5func = getobjname.bind(obj5);
+        let obj6_func = getobjname.bind(obj6);
+        let obj7_func = getobjname.bind(obj7);
+        let obj8_func = getobjname.bind(obj8);
+        let obj9_func = getobjname.bind(obj9);
+
+        obj3rao();
+        obj4func();
+        obj5func();
+        obj6_func();
+        obj7_func();
+        obj8_func();
+        obj9_func();
+
+
+        //  Implict binding
+
+
+        // obj3.getobjname();
+        // obj4.getobjname();
+        // obj5.getobjname();
+        // obj6.getobjname();
+        // obj7.getobjname();
+        // obj8.getobjname();
+        // obj9.getobjname();
+
+
+
+
+        //    arrow function with this   //
+
+
+        let sanam = () => {              // arrow function depend upon where the function defined not how we are calling arrow function          
+     //                                       // sanam define in window                                   
+            console.log(this)
+        }
+        sanam();
+
+
+
+        var empty = '500';
+
+        let objbhai = {
+
+            empty: '300',                                  // empty he obj property ahe
+
+            sayhello: function () {
+
+                console.log('27', this.empty);
+
+                var empty = 450;                          // empty he variable declaration ahe
+
+                function samar() {
+                    console.log('30', this.empty)
+                }
+                samar();                                            // without dot notation calling
+
+
+                saybye = () => {
+                    console.log('36', this.empty)                 // o/p denar obj method 300 cha arrow funct
+                }
+                saybye();
+
+            },
+
+            sayhello1: function () {
+                console.log('33', this)
+            }
+
+
+        }
+        objbhai.sayhello();
+        objbhai.sayhello1();
+
+
+
+
+
+        function sum(a) {
+            // var sume = '25'
+            this.a = 10;                        // this point to  a window obj
+            console.log(a)
+        }
+        sum(20)                               //  its declare in window
+
+
+
+
+        let bobby = {
+            firstName: 'akshay ',
+            lastName: 'kumar',
+            getfullName: function () {
+
+                console.log(this.firstName + '  ' + this.lastName)
+            },
+
+            anothergetfullName: function (msg) {
+
+                console.log(this.lastName + ' ' + msg)
+            },
+
+            saybye: () => {
+                console.log('36', this.lastName)                 // o/p denar obj method 300 cha arrow funct
+            },
+
+            adress: {
+                street: '123 gandhi marg',
+                ciyt: 'amravati',
+                getadress: function () {
+
+                    console.log(this.street + ' ' + this.city)
+                    //               console.log(this.firstName)                  //  focus on this
+                }
+            }
+        }
+        bobby.getfullName()
+
+        bobby.anothergetfullName('i am argu')
+
+        bobby.adress.getadress()
+
+        bobby.saybye()
+
+
+
+        // keyword new create a new empty obj ani this chya property filled karte obj madhe
+
+        // obj constructor function  //
+
+        function Student(first, last, age, classed, city) {
+
+            this.firstName = first;       // he statement obj ani funct parameter la link kart ahe by using this
+            this.lastName = last;           // its a property
+            this.age = age;
+            this.classed = classed;
+            this.city = city;
+
+            this.name = function () {
+
+                console.log(this.firstName + '  ' + this.lastName + ' ' + this.city + '  ' + this)  
+                 // ya line cha this student1 cha obj proprty la point kart ahe
+            };
+        }
+           
+
+
+        //  student1.nationality = 'indian';          // add property 
+        //  Student.nationality = ' indian'          // not add because its function not obj
+
+
+        var student1 = new Student('shubham', 'deshmukh', '26', 'first', 'amravati');
+
+        student1.name()
+
+
+
+        // // another method //
+
+        // student1.name = function () {
+
+        //     console.log(this.firstName + '  ' + this.lastName + ' ' + this.age)  
+        //      // ya line cha this student1 cha obj proprty la point kart ahe
+        // };
+
+
+
+
+
+
+        //  new keyword  create new empty obj & add below property   === {empty obj}
+
+        //  real obj  //
+
+
+        var student2 = new Student('ravi', 'shinde', '27', 'second', 'amravati');  //  constructor obj
+        student2.name()
+
+        var student3 = new Student('rahul', 'deshpande', '28', 'third', 'akola');
+        var student4 = new Student('adam', 'vaidhya', '29', 'first', 'nagpur');
+        var student5 = new Student('ritesh', 'teli', '21', 'second', 'pune');
+        var student6 = new Student('adiyta', 'adhau', '22', 'first', 'satara');
+
+        console.log(student1);
+        console.log(student2);
+        console.log(student3);
+        console.log(student4);
+        console.log(student5);
+        console.log(student6);
+
+        //  FACTORY FUNCTION
+        //             A factory function is a function that returns a new object. 
+
+        //  function obj constructor  // 
+
+        function college(firstName, lastName, age, city, rank) {
+
+            //  this=  {}
+
+            this.firstName = firstName;                                 // this.firstName =is a property
+            this.lastName = lastName;                                  // lastname is avalue
+            this.age = age;
+            this.city = city;
+            this.rank = rank;
+            this.nationality = 'indian';                         // this.nationality = is a property == 'indian': value 
+
+
+            this.getdetail = function () {                      // this.getdetail is property
+
+
+                console.log(this===clg1)                      // this is check only for clg1
+             console.log(this);
+                console.log(this.firstName + ' ' + this.lastName + ' ' + this.age + ' ' + this.city)
+            }
+
+        }
+
+        // console.log(college());                     //  undefined
+
+        var clg1 = new college('akshay', 'deshmukh', 23, 'amt', 1);   // function obj constructor
+        var clg2 = new college('sham', 'kohli', 25, 'amt', 2);     // function obj constructor  
+        var clg3 = new college('ram', 'jagtap', 26, 'amt', 3);
+        var clg4 = new college('mahindra', 'dhoni', 27, 'amt', 4);
+        var clg5 = new college('suresh', 'raina', 28, 'amt', 5);
+        var clg6 = new college('rohit', 'sharma', 29, 'amt', 6);
+
+
+
+        //   function madhla this la call kart ahe below line
+
+        //   clg1.getdetail()  ya method la (.) na call kela ahe tyamule function madhe this ghetla ahe ani
+        //   ha this clg2 la point kart ahe
+
+        clg1.getdetail()                // this ha point karnar clg1 obj la because after ( . dot) clg 1 ghetla ahe
+        clg2.getdetail()                   //  this ha point karnar clg2 obj la
+        clg3.getdetail()
+        clg4.getdetail()
+        clg5.getdetail()
+        clg6.getdetail()
+
+        var thislooseimplcit = clg6.getdetail
+
+        const age = 50;
+        thislooseimplcit()                    //change value age=50  //'this' context convert to global object
+
+
+        //  another option to get a o/p
+
+        //  optional //   ya method madhe func cha all property get honar
+
+        //  ya method la this chi need nhi ahe
+        // ya line cha o/p jya line la call kela tya line la bhete 
+
+        console.log(clg1)
+        console.log(clg2)
+        console.log(clg3)
+        console.log(clg4)
+        console.log(clg5)
+        console.log(clg6)
+
+
+
+        function printmessage() {
+
+            console.log(this);
+        }
+        var obj13 = new printmessage();             // ya line la printmessage function call zala
+
+
+
+
+        // var myVar = 100;
+
+        // function WhoIsThis() {
+        //     var myVar = 200;                            // variable declaration
+
+        //     console.log(myVar); 
+        //     console.log(this.myVar); 
+        // }
+
+        // WhoIsThis(); 
+
+        // var obj = new WhoIsThis();
+        // console.log(obj.myVar); 
+
+
+
+        var myVar = 100;
+
+        function WhoIsThis() {
+            this.myVar = 200;                          // this.myvar is a function property ani assign zali empty obj la
+
+            this.display = function () {                   // this.display is a funct property of whoisthis
+
+                var myVar = 300;                                // declare with var dont confuse
+
+                //                                            both property are assign in new obj constrector
+                console.log("myVar = " + myVar); // 300                      
+                console.log("this.myVar = " + this.myVar);  // 200   // so the context of this is ' OBJECT'
+            };
+        }
+        var obj = new WhoIsThis();                                    // function obj consteuctor
+
+        obj.display();
+
+
+
+
+        // var myVar = 100;
+
+        // var obj = { 
+        //             myVar : 300,                                // obj method ahe
+        // 	    whoIsThis: function(){
+        //                         var myVar = 200;               //  variable declaration
+
+        //                         alert(myVar); // 200
+        //                         alert(this.myVar); // 300        // context ghenar obj method cha
+        // 	            }
+        // };
+
+        // obj.whoIsThis(); 
+
+
+        // obj will have two properties myVar and display, where display is a function expression. 
+        //  So, this inside display() method points to obj when calling obj.display().
+
+
+
+
+
+        function foo() {
+            'use strict';
+            console.log("Simple function call")
+            console.log(this === window);
+        }
+
+
+        let user = {
+            count: 10,
+            foo: foo,
+            foo1: function () {
+                console.log(this === window);           // this === global / window
+                console.log(this.count)
+            }
+        }
+
+
+        user.foo()  // Prints false because now “this” refers to user object instead of global object.
+
+        let fun1 = user.foo1;
+        fun1() // Prints true as this method is invoked as a simple function.
+
+        user.foo1()  // Prints false on console as foo1 is invoked as a object’s method
+
+
+
+
+
+        var obj20 = { num: 20 }
+
+        var add = function (a, b) {
+
+            return this.num + a + b
+        }
+
+        var bound = add.bind(obj20)
+        console.log(bound(10, 15))
+
+
+
+
+
+
+
+
+
+
+        // let ram = [
+
+        // obj3 = {
+
+        // names : 'raja',
+        // age :  '24',
+        // middlename:'namo',
+        // getobjname:getobjname,
+        // },
+
+        //  obj4 = {
+
+        // names : 'rajma',
+        // age :  '26',
+        // middlename:'rastraaa',
+        // getobjname:getobjname,
+        // },
+
+        //  obj5 = {
+
+        // names : 'rajhri',
+        // age :  '29',
+        // middlename:'rasberry',
+        // getobjname:getobjname,
+        // },
+
+        //  obj6 = {
+
+        // names : 'rajiv',
+        // age :  '32',
+        // middlename:'astr',
+        // getobjname:getobjname,
+        // },
+
+
+        //  obj7 = {
+
+        // names : 'rajesh',
+        // age :  '33',
+        // middlename:'aghb',
+        // getobjname:getobjname,
+        // },
+
+
+        //  obj8 = {
+
+        // names : 'rajyog',
+        // age :  '63',
+        // middlename:'rastr',
+        // getobjname:getobjname,
+        // },
+
+        //  obj9 = {
+
+        // names : 'rajendra',
+        // age :  '53',
+        // middlename:'rastr',
+        // getobjname:getobjname,
+        // },
+
+        // ]
+
+        // function getobjname1()  {
+
+        // console.log(this.ram[names] + ' ' + ' '+ this.ram[age])
+        // }
+
+        // getobjname1()
+
+
+
+
+        console.log(clg1)
+
+        clg1.getdetail()
+
+
+
+        //  https://medium.com/yavar/arrow-functions-in-javascript-33e21da3a9d6
+
+        //  Avoid 2 things while using arrow function:
+
+        //  Should not use arrow functions to create methods inside objects.
+
+        let personarrow = {
+            name: "Ram",
+            age: 56,
+            sayName: () => {
+                // this refers to the global .....
+                console.log(this.age);
+            },
+        };
+
+        personarrow.sayName(); // undefined
+
+        //  Cannot use an arrow function as a constructor.
+
+        // let data1 = () => {};
+        // let data = new data1(); // TypeError: Foo is not a constructor
+
+        //  https://www.codementor.io/@dariogarciamoya/understanding-this-in-javascript-with-arrow-functions-gcpjwfyuc
+
+
+
+        //  this with arrow function  //
+
+
+
+        const myFunction = () => {
+            console.log(this);
+        };
+
+        // call it
+        myFunction()
+
+
+
+
+        const myObject1 = {
+            myMethod: () => {
+                console.log(this);
+            }
+        };
+
+        myObject1.myMethod() // this === window or global object
+
+        const myMethod = myObject1.myMethod;
+        myMethod() // this === window or global object
+
+
+
+
+        const myObject = {
+            myArrowFunction: null,
+            myMethod: function () {
+                this.myArrowFunction = () => { console.log(this) };
+            }
+        };
+
+        myObject.myMethod() // this === myObject
+
+        myObject.myArrowFunction() // this === myObject
+
+        const myArrowFunction = myObject.myArrowFunction;
+        myArrowFunction() // this === myObject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  VVIMP //  https://www.freecodecamp.org/news/learn-es6-the-dope-way-part-ii-arrow-functions-and-the-this-keyword-381ac7a32881/
+
+
+
+
+//https://www.freecodecamp.org/news/javascript-this-keyword-binding-rules/
+
+
+
+
+// https://www.guru99.com/javascript-interview-questions-answers.html
+
+// https://www.simplilearn.com/tutorials/javascript-tutorial/javascript-interview-questions
+
+// https://medium.com/@matthew.holman/js-interview-what-is-this-4daaf797dd4
+
+// https://dmitripavlutin.com/javascript-this-interview-questions/
+
+// https://www.toolsqa.com/javascript/this-keyword-in-javascript/
+
+// https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript     //   1 no   //
+
+// https://blog.bitsrc.io/what-is-this-in-javascript-3b03480514a7
+
+// https://www.geeksforgeeks.org/this-in-javascript/
+
+// https://www.simplilearn.com/tutorials/javascript-tutorial/javascript-this-keyword
+
+
+
+
+
+//https://www.w3docs.com/learn-javascript/function-binding.html
+
+
+
+//https://blog.sessionstack.com/how-javascript-works-the-this-variable-and-the-execution-context-12d8f04a40d3
+
+// https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
+
+
+
+
+    </script>
+</body>
+
+</html>

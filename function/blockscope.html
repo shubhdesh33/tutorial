@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+
+        // {
+        //     let fan = 'irfan khan'
+        //     console.log(fan);                    //  block scope
+
+        // }
+        // // console.log(fan);
+
+
+        {
+            var fans = 'khan irfan'
+            console.log(fans)
+        };
+        console.log(fans)
+
+         let wrong = 'right';
+
+         if (true)  {
+
+            let fruit = 'apple';
+            console.log(fruit);
+            console.log(wrong);
+
+         }
+           // console.log(fruit);
+
+
+          var right = 'wrong';
+
+          if (true)   {
+
+             var animal = 'tiger';
+             console.log(animal);
+             console.log(right);
+
+          }
+          console.log(animal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+console.log(person.fullName())
+
+
+
+console.log(this)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //            function scope  ++  Block scope
+
+        function scope() {                       //   function scope  start
+
+            if (true) {
+      //                                              block scope if with let const  
+                var x = 1;                   
+                let y = 2;
+                const z = 52;
+            }                                    //    block scope end
+            console.log(x)
+      //      console.log(y)
+      //      console.log(z)
+
+        }                                      //      function scope  end
+
+      //      console.log(x)
+      
+      
+        scope();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

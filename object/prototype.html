@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //  PROTOTYPE  //
+
+        const Person = function (name, lname) {
+
+            this.name = name;
+            this.lname = lname;
+        }
+
+        Person.prototype.age = 33
+
+        Person.prototype.fullname = function () {
+
+            return this.name + ' ' + this.lname + ' ' + this.age
+        }
+        myFather = new Person('KHD', 'deshmukh', 55)
+
+        console.log(myFather.fullname())
+
+
+
+        function iPhone(name) { this.name = name; }; // constructor
+        // a method for recognizing faces
+
+        iPhone.prototype.faceID = function () { return this.name; };
+        // a method for taking 4k video
+
+        iPhone.prototype.video = function () { return this.name; };
+        let newPhone = new iPhone('iPhone 11');
+
+        console.log(newPhone.faceID())
+
+        const Student = {
+
+            name: 'radhe',
+            lname: 'bhaiya',
+        }
+
+        console.log(Object.getOwnPropertyDescriptor(Student, name))
+
+        console.log(Object.getOwnPropertyNames(Student))
+
+
+        class Classname  {
+  
+  constructor (name,year)  {
+    this.name= name;
+    this.year = year;
+    
+  }
+   age ()  {
+     
+     date = new Date();
+     return date.getFullYear() - this.year
+   }
+   
+   fullname () {
+     
+     return this.name +' '+ this.year
+   }
+ }
+ 
+ save = new Classname ("ford",2012)
+ 
+ console.log(save.age())
+ console.log(save.fullname())
+
+
+    </script>
+
+</body>
+
+</html>

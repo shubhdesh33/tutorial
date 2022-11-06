@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <script>
+
+
+
+class Person {
+
+constructor(name, id) {
+    this.name = name;
+    this.id = id
+}
+
+add_address(add) {
+    this.add = add;
+}
+
+getdetails() {
+
+    console.log(`${this.name} ${this.id} ${this.add}`)
+}
+}
+
+person = new Person('sajay', 112)
+
+person.add_address('amravati')
+
+person.getdetails()
+
+
+
+                ///  for revision of class programiz and scaler
+           //   most IMP == https://www.scaler.com/topics/javascript/classes-in-javascript/
+
+
+        //    SYNTAX   //
+
+        emp = class {
+
+            constructor(name, lastname) {
+
+                this.name = name;
+                this.lastname = lastname;
+            }
+            method() {
+                console.log(this.name + ' ' + this.lastname)
+
+                console.log('access the class property by using above method ')
+            }
+        }
+       //  scaler link ==   The new keyword binds the this keyword to the object. Hence, we should always create instances using the new keyword.
+
+        //Creating instances using the `new` keyword
+        var obj1 = new emp('shubham', 'deshmukh')
+
+        obj1.method()
+
+
+
+            ///  https://www.scaler.com/topics/javascript/oops-in-javascript/
+        //  Using Object.create() Method
+           
+
+        //  object
+
+        const student5 = {
+            fname: 'harish',
+            lname: 'hande',
+
+            display_fullName: function () {
+
+                return `${this.fname} ${this.lname}`
+            }
+        }
+
+        //Creating an instance for the student object
+        const student6 = Object.create(student5);
+
+            student6.lname ='handu'
+
+            console.log(student6.display_fullName());
+
+
+
+          // function  + obj == create
+
+          //  https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+          // Object.create uses the argument passed to it to become the prototype.
+
+
+          
+
+          function Dogobject (name,age)  {
+
+         //  class / funct cha object method banavasathi (' CREATE ') Method use hote
+
+            let dog = Object.create( constructobj)
+
+            dog.name =name;
+            dog.age= age
+
+            return dog                     //  retun necessary
+          }
+
+
+          //   obj
+          constructobj = {
+
+            //  onj funct method
+            speak : function ()  {
+
+                return 'i am a dog'
+            }
+          }
+
+          let bingo = Dogobject('raja', 15)
+
+          console.log(bingo)
+
+        //  https://www.scaler.com/topics/javascript/encapsulation-in-javascript/
+
+        //  https://sebhastian.com/encapsulation-javascript/
+
+        // imp ==  https://www.scaler.com/topics/javascript/new-keyword-in-javascript/
+
+        //  https://www.scaler.com/topics/javascript/classes-in-javascript/
+
+        // 
+
+
+        var employ = {
+
+            name: 'shubham ',
+
+            setName: function (value) {
+                var exp = new RegExp(/\d+/);
+
+                if (exp.test(value)) {              // test is property of regex
+
+                    console.log('invalid name')
+                }
+                else {
+                    this.name = value;
+                }
+            },
+            getName: function () {
+
+                return this.name
+            }
+        }
+        console.log(employ.getName())
+
+        employ.setName('deshmukh')
+        console.log(employ.getName())
+
+        employ.setName('42')              //  invalid Name; Here name won’t be changed.
+        console.log(employ.getName())
+
+        employ.name = '42';
+        console.log(employ.getName())
+
+
+
+
+        var employ2 = function () {
+
+            name = 'aditya ';
+            var exp = new RegExp(/\d+/);
+            return {
+                setName: function (value) {
+
+
+                    if (exp.test(value)) {              // test is property of regex
+
+                        console.log('invalid name')
+                    }
+                    else {
+                        name = value;
+                    }
+                },
+
+                getName: function () {
+
+                    return name
+                }
+            };
+        }()
+        console.log(employ2.getName())
+        employ2.setName(42); // Invalid Name; the name does'nt changes.
+        employ2.name = 42;     // Doesn't affect the private fullName variable.
+        console.log(employ2.getName());
+
+
+        class Escape {
+
+            constructor(name, lastname, age) {
+
+                this.name = name;
+            }
+        }
+
+
+
+
+        class Car2 {
+
+            constructor(name, year) {
+
+                this.name = name;
+                this.year = year;
+
+            }
+
+            age(x) {
+
+                return x - this.year
+            }
+        }
+
+        const date = new Date();
+        const year = date.getFullYear()
+
+        const myCar = new Car2('ford', 2014)
+
+        console.log(`my car is old ${myCar.age(year)}`)
+
+
+        //  imp ==  https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+// imp == https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+    //   https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+// https://www.freecodecamp.org/news/four-pillars-of-object-oriented-programming/
+
+//  https://www.freecodecamp.org/news/object-oriented-concepts/
+
+
+
+
+
+   //  difference between in encap vs abstraction
+
+    </script>
+
+
+
+</body>
+
+</html>

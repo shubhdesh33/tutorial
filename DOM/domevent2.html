@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            height: 2500px;
+            width: 500px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="image1" width=500px src="/DOM/pexels-zhang-kaiyv-1138369.jpg" alt="">
+
+    <!-- <div id="box" onclick='fun ()'></div> -->
+    <!-- <div id="box" oncontextmenu='fun ()'></div> -->
+    <!-- <div id="box" ondblclick='fun ()'></div> -->
+    <!-- <div id="box" onmousedown='fun ()'></div> -->
+    <!-- <div id="box" onmouseup='fun ()'></div> -->
+    <!-- <div id="box" onmouseover='fun ()'></div> -->
+    <div id="box" onmouseover='fun ()'></div>
+
+
+
+
+
+
+    <script>
+
+        window.addEventListener('DOMContentLoaded', function () {
+
+            console.log('dom tree is created')
+        });
+
+        let img = document.getElementById('image1')
+
+        img.addEventListener('load', function () {
+
+            console.log('dom full loadeed')
+        })
+
+
+        function fun() {
+
+            alert('on click event')
+        }
+
+
+        //  keydown 
+
+        window.addEventListener('keydown', checkkey);
+
+        function checkkey(event) {
+            console.log(event)
+            //   console.log(event.key)
+
+        }
+
+
+        // scroll event
+
+        window.addEventListener('scroll', function () {
+            console.log('scroll...')
+        })
+
+        window.addEventListener('wheel', function (event) {
+
+            if (event.deltaY < 0) {
+                console.log('scroll up')
+            }
+            else if (event.deltaY > 0) {
+
+                console.log('scroll down')
+            }
+        })
+
+        window.addEventListener('scroll', function (event) {
+         
+            if (window.pageYOffset > 150) {
+
+                document.body.style.background= 'red'
+            }else {
+                document.body.style.background= 'white'
+            }
+           
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <form action="" id="myform">
+       
+       <input type="text"  id="myinput" placeholder=" none">
+       <input type="submit"  id="myinput" placeholder="">
+
+    </form>
+
+    <style>
+
+        body {
+          padding: 100px;
+          background-color: cornsilk;
+        }
+
+        #mydiv {
+
+            padding: 50px;
+            background-color: aqua;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+   
+    <div id = 'mydiv'>
+
+        <button id="btn">Click me</button>
+    </div>
+
+    <a href="https://www.google.co.in" id="anchor"> Click me!</a>
+
+    <script>
+       let x= document.getElementById('myinput')
+
+       x.addEventListener('focus',myfocusfunction);
+       x.addEventListener('blur',myblurfunction)
+       
+       //  change event 
+       x.addEventListener('change',function ()  {
+        console.log(this.value)
+       })
+
+       function myfocusfunction ()  {
+       x.style.background = 'yellow'
+       }
+
+       function myblurfunction ()  {
+
+        x.style.background = 'white'
+       }
+
+       //  Event bubbling and capturing
+
+      let d = document.getElementById('mydiv')
+
+      let b = document.getElementById('btn')
+
+      d.addEventListener('click',divClicked,true)
+        
+      b.addEventListener('click',btnClicked,true)
+      document.body.addEventListener('click',bodyClicked,true)
+
+
+      function btnClicked (event) {
+        console.log('btn click')
+        //  event.stopPropagation()        //  remove true
+
+      }
+
+      function divClicked () {
+        console.log(' div click')
+      }
+
+      function bodyClicked () {
+        console.log('body click')
+      }
+
+      // prevent default
+
+      let link = document.getElementById('anchor');
+
+      link.addEventListener('click',function (event) {
+
+        console.log('link clicked')
+        event.preventDefault()
+      })
+
+      let form = document.getElementById('myform')
+
+      form.addEventListener('submit',function (event) {
+        
+        event.preventDefault()
+      })
+
+
+    </script>
+</body>
+</html>

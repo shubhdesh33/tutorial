@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    
+<script>
+
+ // Encapsulation //
+        // https://www.freecodecamp.org/news/object-oriented-javascript-for-beginners/#encapsulation
+
+
+
+        class Shubham {
+            #birthyear
+            constructor(age, birthyear) {
+
+                this.age = age
+                this.#birthyear = birthyear
+            }
+
+            enclose = () =>{return this.#birthyear + ' ' + this.age}
+
+            enclosed ()  {
+
+                console.log(this.#birthyear +' '+ this.age)
+            }
+        }
+
+        const encapulate = new Shubham(26, 1996)
+
+        encapulate.enclosed()
+        console.log( encapulate.enclose())
+
+
+
+
+
+        //  https://css-tricks.com/implementing-private-variables-in-javascript/#:~:text=TC39%20private%20class%20field%20proposal,variable%2C%20and%20it%20becomes%20private.
+
+
+        class CarModule {
+            // private
+            #old                   //   put a # before the name of a variable, and it becomes private. 
+              accessoutside = 'shambu'
+
+            constructor(names, year, old,mile) {        //  notice on name's  & mile's
+
+                // private
+                let speed = 0;
+                let miles                  //  private  //  miles propert only access inside the constructro scope
+
+                this.#old = old
+
+                //  public
+                this.name = names;
+                this.year = year
+                 this.mlies=mile                         // undefined
+
+                //    method                               //  method is used to access property publicly
+                this.accelerate = (amount) => {
+
+                    speed += amount;
+                    miles += speed;
+                }
+                  
+                //  private method by using this
+                this.getmiles = () => miles           // this is bind to the == constructor// so its get private
+            }                                         // outside construt not get O/P ===  (miles)
+
+            //  public method
+            enclose = () => console.log(this.#old + ' ' + this.name + ' ' + this.year + ' '+ this.miles)
+        }                                                                                  //  undefined 
+
+
+        testcar = new CarModule('creata', 2012, 26,'miles')
+
+        console.log(testcar.accessoutside)
+
+
+        console.log(testcar.name)      // O/P == creta its public property
+
+        testcar.accelerate(5)
+        testcar.accelerate(5)
+
+
+        console.log(testcar.miles)   // undefined due to private property
+
+        console.log(testcar.getmiles())
+
+        testcar.enclose()
+
+
+
+        //  https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+
+      
+
+
+
+
+</script>
+
+</body>
+</html>

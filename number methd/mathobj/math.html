@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var x = Math.ceil(4.2);
+document.write(x);
+
+document.write(Math.floor(4.6) + '<br>');
+document.write(Math.trunc(4.6) + '<br>');
+document.write(Math.sqrt(100))
+document.write(Math.max(100,200,300,400) + '<br>')
+document.write(Math.min(100,22,236,452) + '<br>')
+document.write(Math.pow(45,3)+ '<br>')
+document.write(Math.round(4.8) + '<br>')
+document.write(Math.PI + '<br>')
+console.log("Math.PI", Math.PI);
+
+
+
+const getMaxNumberFromArray = (numArray) => Math.max.apply(null, numArray);
+
+getMaxNumberFromArray([3,5,6,7,8,99]) // returns 99
+
+
+
+    </script>
+</body>
+</html>

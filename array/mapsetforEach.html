@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+
+<script>
+
+
+
+// forEach Map and Sets
+
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+fruits.forEach((ele,ind,map)=> {
+
+  console.log(`the price of ${ind} is ${ele}`)
+;},)
+
+//  HAS  //
+
+console.log(fruits.has('oranges'))
+
+
+
+//   Sets
+
+const fruitset = new Map();
+
+// Set Map Values
+
+fruitset.set("apples", 500);
+fruitset.set("bananas", 300);
+fruitset.set("oranges", 200);
+
+//  get  /
+
+console.log(fruitset.get('oranges'))
+
+//  size  //
+
+
+console.log(fruitset.size)
+console.log(fruits.size)
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

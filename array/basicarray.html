@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='main.js'></script>
+</head>
+
+<body>
+  <script>
+
+
+
+    //  https://javascript.info/array
+
+
+   // https://dev.to/victorhazbun/daily-tasks-with-javascript-arrays-1npi
+
+
+
+
+
+
+
+
+
+
+    debugger
+    let book = ['math', 'bio', 'eng', 'marathi']
+
+    // document.writeln(book[0 ]);
+    // document.writeln(book[1]);
+    // document.writeln(book[2]);
+    // document.writeln(book.push='hindi');
+    document.writeln(book.length);         // The length property is always one more than the highest array index.
+
+    book[0] = "dan";
+    // document.write(book[0]);
+    // document.writeln(book);
+   console.log(book[book.length - 2]);
+    // document.write(typeof(book));
+    // typeof(book);
+
+    // console.log(years['2'] !== years['02']);
+
+    document.writeln('<h3>ConcatArray ()</h3>')
+
+    //concat array = merge array 
+    const subject = ['phy', 'sci', 'math']
+    const std = [1, 2, 3, 4]
+
+    const concatedArray = subject.concat(std + ' ')
+    document.writeln('concatedArray: ' + concatedArray)
+
+
+    document.writeln('<h3>Copywithin Array ()</h3>')
+
+    var num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    copywithinArray = num.copyWithin(1, 4, 7);
+    document.writeln(copywithinArray)
+
+
+    document.writeln('<h3>Entries()</h3>')
+
+    const team = ['mumbai', 'delhi', 'kolkata', 'rajas', 'pune'];
+
+    const ever = team.entries();
+
+
+    for (value of ever) {                 // for loop madhe entries cha ans yete
+      document.write(value + '<br>');
+    }
+    // document.write(ever.next().value+'<br>');
+    // document.write(ever.next().value+'<br>');         or ya method pn ans get honar
+    // document.write(ever.next().value+'<br>');
+    // document.write(ever.next().value+'<br>');
+    // document.write(ever.next().value+'<br>');
+    // document.write(ever.next().value+'<br>');
+
+
+
+    document.writeln('<h3> Every ()</h3>')
+
+    var num = [30, 40, 20, 66, 25];
+
+    function eve(value) {
+      return value > 40;                  // only condition operator use honar
+    }
+
+    var gt = num.every(eve);           //function madhe he declaration scope ch baher pahije
+    //                                 document.write(num.every(eve))
+    console.log(gt);                  //function return madhe he o/p scope ch baher pahije
+
+
+
+    document.writeln('<h3>flat ()</h3>')
+
+    var array4 = [11, 12, 30, [35, 53, 65, 56], [[23, 24, 25]]]
+
+    const flat = array4.flat();
+    document.write('flat:' + flat);
+    document.write('<br>')
+
+    var arr4 = [1, [2, 3], [[]], [4, [5]], 6];   //comma must ahe / pls observe array element no-3
+    var zeroflatarray = arr4.flat(0);
+    document.write('zeroflatarray : ' + arr4);
+
+
+    document.writeln('<h3> Flatmap()</h3>')
+
+
+    var array5 = [20, 30, [40], [50, 60], [], 28, 26];   // ya madhe flat property pn apply hote
+    var flatmap = array5.flatMap(x => [x / 2]);
+    document.writeln("flatmap : " + flatmap);
+    document.write('<br>')
+
+
+    var flatmap = array5.flatMap(x => [x * 2]);
+    document.writeln("flatmap : " + flatmap);
+    document.write('<br>')
+    var flatmap = array5.flatMap(x => [x * 2]);
+    document.writeln("flatmap : " + flatmap);
+    document.write('<br>')
+
+    var flatmap = array5.flatMap(x => [x >= 20]);         // ya madhe condition pass keli    document.writeln("flatmap : " + flatmap);           // pls observe o/p get booolean value
+    document.write('<br>')
+
+    var map = array5.map(x => [x >= 25]);
+    document.writeln("map : " + map + '<br>');
+
+    var map = array5.map(x => [x * 2]);
+    document.writeln("map : " + map);
+
+    const arr1 = [1, 2, [3], [4, 55], 6, []];
+    const flattened = arr1.flatMap(num => num);
+
+    console.log(flattened);
+
+
+    
+    document.writeln('<h3> Fill()</h3>')
+
+    var array6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2]
+    var static = array6.fill("fill", 3, 6)
+    document.writeln("new array after perform fill property : " + static);
+
+
+    document.write("<hr>")
+    var array6 = ['s,h,u,b,h,a,m,m,m', "rushi", "dfg", 'cvb']
+    var staticvalue = array6.fill("d,e,s,h,m,u,k,h", 0, 2)
+    document.writeln("new array after perform fill property : " + staticvalue);
+
+    document.writeln('<h3> From()</h3>')
+
+    const nam = 'shubham';
+    const namo = Array.from(nam)                   //Array.from ha syntax ahe
+    document.write(namo)
+    document.write("<hr>")
+
+    var func = function () {
+      document.write(Array.from(arguments))  // ya made Array.from ha syntax ahe (A) ha capital pahije    arguments pn compulsary ahe
+    }
+    func('a', 'b', 'c')                   //function calling with arguments. arguments ('a'b','c') pass kele nhi tr o/p yenar nhi 
+
+    document.writeln('<h3> Filter()</h3>')
+
+    //FUNCTION METHOD
+    var num = [51, 61, 71, 56, 81, 63, 45]
+    function check(value) {
+      return value > 70;
+    }
+    document.write(num.filter(check));
+    document.write('<br>');
+
+    // SIMPLE METHOD 
+
+    var word = ['desh', 'mumbai', 'delhi', 'pune', 'sagar', 'rahul'];
+    const filters = word.filter(word => word.length > 4);
+    document.write(filters);
+    document.write("<hr>");
+    document.write('<br>');
+
+    const filter = word.filter(word => word.length > 5);
+
+    //  FOR LOOP METHOD
+    for (value of filter) {
+      document.write(value)
+    }
+
+    document.writeln('<h3> Find()</h3>')
+
+    var num = [51, 61, 71, 56, 81, 63, 45]
+
+    const found = num.find(num => 10);   // num => num > 60 ya pattern madhe pn gheu shakta /const found = array1.find(element => element > 10);   example of another quwstion
+    document.write(found);
+    document.write("<hr>")
+
+    document.writeln('<h3> Findindex()</h3>')
+
+    var num = [1, 61, 71, 56, 81, 63, 45]
+    const foundindex = num.findIndex(num => 60);         //I ha capital pahije
+    document.write(foundindex);
+    document.write("<hr>")
+
+    document.writeln('<h3> ForEach()</h3>')
+
+    var word = ['desh', 'mumbai', 'delhi', 'pune', 'sagar', 'rahul']
+    word.forEach(myfunction)        //(myfunction) kay ahe kasha sathi use hote find it
+
+    function myfunction(item) {     // In the above program, the forEach() method takes myFunction() function that displays each element of a students array.
+
+      document.write(item + ' ');
+      console.log(item + ' ')
+    }
+    document.writeln('<br>')
+
+    
+    //Updating the Array Elements
+
+    const city = ['akola', 'amravati', 'nagpur']
+    city.forEach(myFunction);                    // ya madhe (F) capital nhi ghetla mhnun output aala nhi
+    function myFunction(item, index, arr) {           // item index arr he parameter ahe
+
+      // adding strings to the array elements     arr[0] = element add kara chi method ahe
+      arr[0] = "hello" + item;           // hello insert kara sathi ya pattern madhe write 
+
+      //  arr[index] = "hello" +  item;
+    }
+    document.writeln(city + ' ' + ' ');
+    document.writeln('<br>')
+
+    num.forEach(function (fetch) {             //fetch ha function cha variable ahe
+      document.writeln(fetch + 2);
+    });                                   // function cha () bracket closing ya line la hote
+
+    document.write("<hr>")
+
+    document.writeln('<h3> Includes()</h3>')
+
+    const induce = ['dhoni', 'raine', 'rohit']
+    document.writeln(induce.includes('dhoni'));
+    document.write(induce.includes('akola') + '<br>');
+    const ggg = induce.includes('raine');
+    document.write(ggg);
+    document.write("<hr>")
+
+    document.writeln('<h3> Indexof()</h3>')
+
+    const chec = ['dhoni', 'raina', 'rohit', 'virat', 'java', 'rava', 'rohit'];
+    document.write(chec.indexOf('rohit', 3) + '<br>');            //Of ghetana mistake zali
+    document.write(chec.indexOf('ghj') + '<br>');             // o/p = -1 ==je element nhi ahe present tyana -1 return karte
+    document.write(chec.indexOf('rohit'));
+    document.write("<hr>")
+
+
+    document.writeln('<h3> isArray()</h3>')
+    document.write(Array.isArray(chec) + '<br>');
+    document.write(Array.isArray('dhoni') + '<br>');
+    document.write("<hr>")
+
+    document.writeln('<h3> join()</h3>')
+    document.writeln(chec.join('*') + '<br> ' + '  ');        //
+    document.writeln('<br>')
+
+    document.writeln(chec.join('-'));
+    document.write("<hr>")
+
+    document.writeln('<h3> keys()</h3>')
+
+    document.writeln(chec.keys(' '));          // check O/P
+    var keyarray = chec.keys();
+
+    for (key of keyarray) {
+      document.write(key);             // check example given in mdn website
+    }
+    document.write("<hr>")
+
+    document.writeln('<h3> last indexof()</h3>')
+
+    const animals = ['dog', 'Tiger', 'Penguin', 'dog', 'cat', 'rat', 'Penguin'];
+    document.write(animals.lastIndexOf('dog') + '<br>')
+    document.write(animals.lastIndexOf('Penguin') + '<br>')
+    document.write(animals.lastIndexOf('cat') + '<br>')
+    document.write("<hr>")
+
+    document.writeln('<h3>map ()</h3>')
+
+    var digit = [50, 40, 60, 20, 30];
+    var mapArray = digit.map(x => x / 10); // like flatmap sarkha ahe  (=>) he arrow function
+    document.write(mapArray);
+    document.write("<hr>")
+
+    document.writeln('<h3>of()</h3>')
+
+
+    document.writeln(Array.of(1, 2, 3, 'shubham') + '<br>');  //diff data type array pn ghete (shubham) o/p sathi
+    document.writeln(Array(1, 2, 'deshmukh'));
+    console.log(Array(8));               //pls check th eexamle of mdn
+    document.write("<hr>")
+
+    const ab = ['Wind', 'Water', 'Fire'];
+    dk = ab.join(' and  ')
+    console.log(dk)
+
+    document.writeln('<h3>push()</h3>')
+
+    animals.push('cow', 'buffalo', 'hamba');
+    document.write(animals + '<br> ');
+
+    document.writeln('<br>')
+    const adding = animals.push('elephant', 'lion');
+    document.write(adding + '<br>');                     //  o/p = 9
+    document.write(animals);           //  document madhe array cha variable name ghetla (animals)
+    document.write("<hr>");
+
+    document.writeln('<h3>pop()</h3>')
+
+
+    document.write(animals.pop() + '<br> ');
+    document.write(animals.pop() + '<br>');
+    document.write(animals.pop() + '<br>');
+    document.write(animals.pop() + '<br>');
+
+    document.write("<hr>")
+
+    document.writeln('<h3>reverse()</h3>')
+    document.write(animals.reverse() + ' ');
+    document.write("<hr>")
+
+    document.writeln('<h3>reduce()</h3>')
+
+    const original = [305, 30, 40, 50]
+    const salary = 1500;
+    const summ = original.reduce(
+      (accumulator, currentValue) => accumulator + currentValue      //accu /curr value he parameter ahe
+    );
+    document.write(summ);
+    document.writeln('<br>')
+
+
+    const summs = original.reduce(
+      (accumulator, currentValue) => accumulator - currentValue
+    );
+    document.write(summs);
+    document.writeln('<br>')
+
+    function sum(accumulator, currentValue) {
+      return accumulator * currentValue;
+    }
+    let add = original.reduce(sum);
+    document.writeln(add)
+
+    let expenses = original.reduce(
+      (accumulator, currentValue) => accumulator - currentValue, salary   // pls check salary
+    );
+    document.writeln(expenses);
+    document.write("<hr>")
+
+
+    document.writeln('<h3>some()</h3>')
+
+    let personage = [30, 40, 33, 20, 45]
+
+    function identity(element) {
+      return element < 42;
+    }
+    let red = personage.some(identity)
+    document.write(red)
+    document.write("<hr>")
+
+    document.writeln('<h3>shift()</h3>')
+    let white = personage.shift(identity)                // O/P = 30
+    document.write(white + '<br>')
+
+    let whites = personage.shift(identity)
+    document.write(whites)                              // O/P = 40
+    document.write("<hr>")
+
+
+    document.writeln('<h3>slice()</h3>')
+    let slices = [22, 333, 444, 555, 66, 77, 88]
+    document.write(slices.slice(1, 4))             // fourth position value ghet nhi remember
+
+    document.write("<hr>")
+
+
+    document.writeln('<h3>sort()</h3>')
+    let month = ['january', 'feb', 'march', 'june', 'july']
+    let arre = [22, 56, 32, 15, 21, 66]
+    month.sort();
+    document.write(month)
+
+    document.write("<hr>")
+
+    document.writeln('<h3>splice()</h3>')
+
+    let months = ['january', 'feb', 'march', 'june', 'july', 'jan', 'dec', 'april']
+    let remove = months.splice(2, 2, 'shu', 'bham', 'desh')
+    document.write(months + '<br>')                    // document cha o/p madhe months ghya laghte because month madhe add kara laghte // remove gheu naka          
+    document.write(remove)          // remove ghetlya vr o/p madhe delete item bhetnar difference remember between months and removed  
+
+    document.write("<hr>")
+
+    document.writeln('<h3>toLocalString()</h3>')
+
+    const array1 = [1, 'a', new Date('21 Dec 1997 14:12:00 UTC')];
+    const localeString = array1.toLocaleString('en', { timeZone: 'UTC' });
+    document.write(localeString)
+
+    let convertstring = months.toLocaleString()
+    document.write(convertstring)
+
+    document.write("<hr>")
+    document.writeln('<h3>LocalString()</h3>')
+
+    const localeStrings = array1.toString('en', { timeZone: 'UTC' });
+    document.write(localeStrings)
+
+    document.write("<hr>")
+
+    document.writeln('<h3>unshift()</h3>')
+
+    var unshiftarray = [6, 8, 9, 6]
+    //document.write(unshifts.unshift(8));     // ya type madhe ghetla ki o/p chi length show karte push prperty sarkha
+
+    unshiftarray.unshift(89);         // ha unshiftarray.unshift(89); ha pattern samjun ghya
+    document.write(unshiftarray + ' <br>');
+
+    unshiftarray.unshift(-1, -2);
+    document.write(unshiftarray);
+    document.write("<hr>")
+
+    document.writeln('<h3>values()</h3>')
+
+    const weekly = ['monday', 'tues', 'weds', 'thurs', 'fri', 'sat', 'sun']
+
+    document.write(weekly + ' <br>');
+
+    var valueweek = weekly.values();
+    document.write(valueweek);          // ya O/P la iterator made zala ahe object nhi
+
+    for (value of valueweek) {                 //  iterator cha object made kara sathi for loop ghetla
+      document.write(value + ' <br>')
+    }
+
+    // document.write(valueweek.next().value+ '<br>')    // object madhe next value find kara sathi ya type madhe ghya laghte 
+    // document.write(valueweek.next().value+ '<br>')
+    // document.write(valueweek.next().value+ '<br>')
+    // document.write(valueweek.next().value+ '<br>')
+    // document.write(valueweek.next().value+ '<br>') 
+    // document.write(valueweek.next().value+ '<br>')
+    // document.write(valueweek.next().value+ '<br>')
+    // document.write(valueweek.next().value+ '<br>')    // undefined aale mhne
+    // document.write(valueweek.next().value+ '<br>')
+
+
+    //
+
+    document.writeln('<h3>entries()</h3>')
+
+    let cc = ['gg', 'tg', 'tr', 'gh', 'kk', 'df', 'gh'];
+
+    rr = cc.entries();
+    for (keys of rr) {
+      document.write(keys)
+    }
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// https://javascript.plainenglish.io/6-ways-to-convert-string-to-array-in-javascript-a57dac463464
+
+  </script>
+</body>
+
+</html>

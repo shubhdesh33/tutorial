@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+      
+    array1=[12,14,23,45]
+    array1.forEach(function(number,i)   {
+        array1[i]*=25;
+    });
+
+    document.write(array1+'<br>')
+
+
+    array2=['asdd','adsf','acvb','vccx']
+     array2.forEach(function(item,i){
+        array2[i]+='hello'
+     })
+      document.write(array2+'<br>')
+
+      array3=['dghh','cvbb','nbvc','mnv'];
+        copy=[1,2,3];
+
+      array3.forEach(function(item){
+        copy.push(item+copy);
+      })                                   
+      document.write(copy+'<br>');
+
+
+      array4 =[45,65,32,45,32]
+         copy=[];
+      array4.forEach(function(item) {
+          copy.push(item*item) 
+
+      })
+      document.write(copy+'<br>');
+
+      array4 =[45,65,32,45,32]
+      function add (accumulator,currentValue){
+        return accumulator+currentValue
+      }
+   const st = array4.reduce(add);
+   document.write(st)
+
+
+
+  // jonas bhai  //
+
+
+  const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+
+
+const movements =  [200, 450, -400, 3000, -650, -130, 70, 1300]
+
+
+
+
+movements.forEach((ele,ind,array)=> {
+
+if (ele > 0) {
+  console.log(`its deposite money ${ind} : ${ele} `)
+}
+else {
+  console.log(`its withdraw money ${ind} : ${Math.abs(ele)} `)
+}
+})
+
+
+ console.log('  ')
+ console.log('  ')
+
+
+
+
+for (i =0; i<movements.length ;i++)  {
+
+  if (movements > 0) {
+  console.log(`its deposite money ${ind} : ${movements[i]} `)
+}
+else {
+  console.log(`its withdraw money : ${Math.abs(movements[i])} `)
+}
+}
+
+
+console.log('  ')
+ console.log('  ')
+
+
+
+const fullname = 'Shubham Kailashrao Deshmukh'
+
+changename = fullname.toLowerCase().split(' ').map((ele)=>{
+  return ele[0]
+;},)
+
+console.log(changename)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+name = 'Shubham Kailashrao Deshmukh '
+
+let save = name.toLowerCase().split(' ')
+console.log(save)
+
+
+
+names = 'shubham'
+
+saver = names.split('')
+console.log(saver)
+
+
+
+
+
+
+// for (i, move of movements.entries())  {
+
+//   if (move > 0) {
+//     console.log(`deposit money : ${move}`)
+//   }
+//   else  {console.log(`withdraw money : ${Math.abs(move)}`)}
+// }
+
+// console.log('  ')
+// console.log('forEach')
+ 
+
+
+// movements.forEach((ele,ind,arr)=>{
+//   if (ele > 0) {
+//     console.log(`deposit money  ${ind + 1} : ${ele} `)
+//   }
+//   else  {console.log(`withdra money ${ind + 1}: ${Math.abs(ele)}`)}
+// ;},)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

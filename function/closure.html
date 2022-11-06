@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    function myname() {
+
+      var firstname = 'shubham';
+      console.log('hey sagar')
+
+      function sayfirstname() {
+
+        console.log(firstname)
+      }
+      return sayfirstname                     // not call sayfirstname  only return
+    }
+    var value = myname()         // ya line la value he fakta hold kart ahe execution of myname function
+
+    value()                         // its gets value of sayfirst because only reference point
+
+
+
+    function doadd(x) {
+      return function (y) {
+        return x + y
+      }
+    }
+
+    var addition = doadd(15)
+    console.log(addition(20))
+
+
+    // don,t need  to hold reference always i.e addition
+    //  we can also write i.e line no = 39
+
+    console.log(doadd(10)(20))
+
+
+
+    var d = 200;                   //  
+    let outer = (a) => {          //
+      let b = 20;                  //
+      var inner = () => {             //
+
+        let sum = a + b + d             //
+        console.log(sum);
+      }
+      return inner;
+    }
+
+    let innersave = outer(5)
+    console.log(innersave())
+
+    innersave()
+
+
+    /*  let b= 10;
+
+  function outer1 () {
+
+    let a = 15
+
+    function inner1 (c)  {
+
+     let s = a+b+c
+     return s
+    }
+    return inner1
+  }
+
+  val = outer1 (6)
+  console.log(val(10))            /// its give a o/p      */
+
+
+
+
+    function sum(x, y, z, ...number) {
+      console.log(x);
+      console.log(y);
+      //console.log(z);
+      console.log(...number);
+
+
+    }
+
+    const numbers = [1, 2, 3, 4, 5];
+
+    //console.log(sum(10,numbers));
+
+
+
+    //   Nested function can access the containing functions scope== its lexical scope
+
+    function passargument(a, b) {
+
+      function nested(message) {
+
+        console.log(message)
+
+      }
+      let result = a + b
+
+      nested(result)                           // invoke nested function  pass argu ==result to the message
+    }
+
+    passargument(10, 15)
+
+
+
+    //                             2) Data Hiding and Encapsulation  ==  We can say we can encapsulate the data 
+    //                                                   so that other part of program cannot access it.
+    //     WITH RETURN ++COUNT
+
+
+
+    // function counter() {
+    //   count = 0;
+
+    //   increment = function () {
+
+    //     return ++count;
+    //   };
+
+    //   return increment
+    // }
+
+    // //                       storing the inner or nested function // end the funct execution counter
+    // //  we invoke the Counter, which initializes the count to 0 and returns the increment function.
+
+    //        console.log(count)         ===  Data Hiding and Encapsulation Here, count variable is private or 
+    //                                            hidden and will not be accessible outside
+
+    // let closureexample = counter()
+
+    // console.log(closureexample())                 // O/P== 1
+    // console.log(closureexample())                 // O/P== 2
+    // console.log(closureexample())                 // O/P== 3
+    // console.log(closureexample())
+    // console.log(closureexample())
+
+
+
+    //  WITHOUT RETURN ++COUNT
+
+    //      function counter () {
+    //   count = 0 ;
+
+    //   increment = function () {
+
+    //     console.log(count)
+    //   };
+    //      ++ count;
+    //     return increment
+    //  }
+
+    //  let closureexample = counter()
+
+    //     closureexample()                         //  O/P== 1
+    //     closureexample()                         //  O/P== 1
+    //     closureexample()                       //  O/P== 1
+
+
+    //  WITHOUT RETURN BUT ++ COUNT INSIDE INCREMENT
+
+    function counter() {
+      count = 0;
+
+      increment = function () {
+
+        console.log(count)
+        return ++count;
+      };
+
+      return increment
+    }
+
+    let closureexample = counter()
+
+    console.log(closureexample())                       //       O/P== 0
+    closureexample()                        //      O/P== 1
+    closureexample()                         //      O/P== 2                */
+
+    //  Here a counter object is made with the help of the constructor function.
+
+    function countered() {
+
+      let count = 0;
+
+      this.incrementcounter = function () {
+        count++;
+        console.log(count)
+      }
+
+      this.decrementcounter = function () {
+        count--
+        console.log(count)
+
+      }
+    }
+
+    savecountered = new countered()             //  function constructor create new obj by using new keyword
+    //                                store the(value / O/P) of 1 calling of savecountered.incrementcounter();
+
+
+    savecountered.incrementcounter();            //     O/P ===  1
+    savecountered.incrementcounter()              //     O/P ===  2
+
+    savecountered.decrementcounter()                 // O/P === 1
+
+
+
+
+
+    function last(countername) {
+      count = 0;
+      let objcount = {
+        name: countername,
+        increment: function () {
+
+          ++count
+
+          console.log(this.name, count)
+          //   return count
+        }
+      }
+      return objcount
+    }
+
+
+    counter1 = last('counter1')
+    counter2 = last('counter2')
+
+    counter1.increment()
+    counter1.increment()
+    counter1.increment()
+    counter2.increment()
+    counter1.increment()
+
+
+
+    function outerFunc(a) {
+
+      function inner(b) {
+
+        function innermost(c) {
+
+          console.log(a + b + c)
+        }
+        return innermost
+      }
+      return inner
+    }
+
+    outerFunc(10)(20)(30)
+
+
+    // another way to invoke       i
+    //   its happen because of closure  //  a madhe store kela function, ' a' la argu  pass kela, call kela 
+    //   o/p bhetla because of closure same procedure for 'b', 'c'
+
+    a = outerFunc(20);
+    b = a(30);
+    c = b(40)
+
+    //  https://javascript.plainenglish.io/closures-in-javascript-37182198dc20
+
+    function outer1() {
+
+      let outervar = 'i am outside';           // lexical scope
+
+      function inner1() {
+
+        console.log(outervar);                     // closure
+      }
+      return inner1
+    }
+    const myinnerfunc = outer1()
+    myinnerfunc()
+
+
+
+
+    function outer5() {
+      var a = 5;
+      function inner() {
+        console.log(a);
+
+      }
+      return inner;
+    }
+    var x = outer5();
+    //x(); //5
+    outer5()() //5                           another way to call nested function
+
+
+
+    function parentfunction() {
+
+      parentvariable = 60;
+      function childfunction() {
+
+        return parentvariable += 1;
+
+      }
+      return childfunction;
+
+    }
+
+    const executechild = parentfunction()
+    console.log(executechild())
+    console.log(executechild())
+    console.log(executechild())
+    console.log(executechild())
+
+    //  Every closure has three scopes:
+
+    /*  1) Local Scope (Own scope)
+        2)  Outer Functions Scope
+        3)  Global Scope               */
+
+    var e = 10;
+
+    function sum(a) {
+      return function (b) {
+        return function (c) {                                   // outer function scope
+          return function (d) {
+            return a + b + c + d + e                                      // local scope
+          }
+        }
+      }
+    }
+
+    console.log(sum(10)(5)(15)(5))
+
+
+
+    var rentprice = function (initialRent) {
+
+      //                   Define private variables for the closure //  rent is private variable 
+      var rent = initialRent;
+      console.log(rent)
+
+
+      return {
+        getRent: function () {
+          console.log(rent)                  //  getrent access the value of (private variable)rent because closure
+        },
+
+        insRent: function (amount) {
+          rent += amount;
+          console.log(rent)
+        },
+
+        decRent: function (amount) {
+          rent -= amount;
+          console.log(rent)
+
+        }
+      }
+      //      console.log(rent)                //  o/p denar nhi because return nantr funct end hote
+
+    }
+
+    const gettingRent = rentprice(5000)
+
+    console.log(gettingRent)
+
+
+    // Access the private methods  because of closure
+    gettingRent.getRent()
+
+    // Access the private methods  because of closure
+    gettingRent.insRent(2000)
+    gettingRent.insRent(3000)
+
+    // Access the private methods  because of closure
+    gettingRent.decRent(6000)
+    gettingRent.decRent(4000)
+    gettingRent.getRent()
+
+    // https://www.freecodecamp.org/news/closures-in-javascript/
+
+
+    // const module = (function () {
+    //   function privateMethod () {
+    // 	}
+    //   var privatevalue = 'something'
+
+    //   return {
+
+    //     get :privatevalue,
+    //     set : function (v)  { privatevalue=v}
+    //   }
+    // }) () 
+
+    // var freecode = module
+
+    // freecode.get()
+    // freecode.set('another value')
+    // freecode.get();
+    // freecode.privatevalue
+
+    // FACTORY FUNCTION //
+
+    function createperson(firstName, lastName) {
+
+      return {
+
+        firstName: firstName,
+        lastName: lastName,
+
+        getfullName() {
+          return firstName + '  ' + lastName;
+        },
+
+      };
+    }
+
+    let person1 = new createperson('shubham', 'deshmukh')
+    let person2 = new createperson('rushi', 'teli')
+
+    console.log(person1.getfullName())
+    console.log(person2)
+
+
+
+
+    function job(title) {
+      return function (prefix) {
+
+        return prefix + ' ' + title;
+      }
+    }
+
+    const sales = job('Salesman')
+    const manager = job('Manager')
+
+    console.log(sales('i am'))
+    console.log(manager('i am'))
+
+    //  Using closures as function factories is a great way to keep your JavaScript DRY.
+
+
+
+    // 5) Run function only once
+
+    var something = (function () {
+
+      var executed = false;
+
+      return function () {
+        if (!executed) {
+          executed = true;
+          console.log('do something')
+        }
+      }
+    })()
+
+    something();
+    something()                   //  nothing get any o/p
+
+
+    // 6) setTimeout
+    //  It is a method that calls a function or evaluates an 
+    //  expression after a specified number of milliseconds.
+
+    function settimefunc() {
+
+      var i = 1
+      setTimeout(function () {
+
+        console.log(i)
+
+      }, 9000)
+      console.log('settimeout example')
+    }
+
+    settimefunc()
+
+    // 7) Memoization
+
+
+    //  8) Anoynamous with closure
+
+    function annoy() {
+
+      let counter = 0;
+
+      setTimeout(function () {
+        let innercounter = 0;
+
+        counter += 1
+        console.log('counter', counter)
+
+        setTimeout(function () {
+          counter += 1
+          innercounter += 1
+
+          console.log('innercounter', innercounter, 'counter', counter)
+        }, 5000)
+
+      }, 1000)
+    }
+
+
+    annoy()
+
+
+
+    //  arrow function
+
+    let nameassign = () => {
+
+      let name1 = 'shubham';
+
+      return () => {
+
+        let name2 = 'rushi';
+
+        return () => {
+
+          let name3 = 'aditya'
+
+          return () => {
+            let name4 = 'akash'
+
+            return () => {
+
+              return [name1, name2, name3, name4]
+            }
+          }
+        }
+      }
+    }
+
+    let savearrow = nameassign()()()()
+
+    console.log(savearrow())
+
+
+
+    //  https://www.geeksforgeeks.org/what-is-the-practical-use-for-a-closure-in-javascript/
+
+    const multfn = function () {
+
+      var mult = 10;
+
+      return function (val) {
+        //  var mult = 10;
+        mult = mult * val
+        return mult
+      }
+    }
+    var mult2 = multfn();
+
+    console.log(mult2(9))
+    console.log(mult2(8))
+    console.log(mult2(7))
+    console.log(mult2(6))
+
+
+
+    function counter() {
+
+      // Private counter variable
+      let count = 0;
+
+      // To increment the value of counter
+      function increment() {
+        count++;
+      }
+
+      // To decrement the value of counter
+      function decrement() {
+        count--;
+      }
+
+      // Modify function forms closure
+      // here which is used outside
+      function modify(val) {
+
+        // To check increment or decrement
+        // button has been clicked
+        if (val === "1") increment();
+        else if (val === "0") decrement();
+
+        // Return the counter
+        return count;
+      }
+
+      // Returning to make it available
+      // outside counter function
+      return modify;
+    }
+
+    // Storing the closure modify
+    const closure = counter();
+
+    console.log(closure())
+    console.log(closure())
+    console.log(closure())
+    console.log(closure())
+
+
+    // https://www.geeksforgeeks.org/how-to-use-a-closure-to-create-a-private-counter-in-javascript/?ref=rp
+
+
+    // function counted ()  {
+
+    //   var count=0;
+
+    //   function incremented () {
+    //     count++
+    //   }
+    //   function decremented () {
+    //   count--
+    //   }
+    //    function modify (val) {
+
+    //     if(val===1) incremented();
+    //     else if(val===0) decremented();
+
+    //     return count
+    //    }
+    //    return modify
+    // }
+
+    // const closured = counted()
+
+    // console.log(closured)
+    // console.log(closured)
+    // console.log(closured)
+
+
+
+    //https://javascript.info/closure
+
+
+    function makeArmy() {
+      let shooters = [];
+
+      let i = 0;
+      while (i < 10) {
+        let shooter = function () { // create a shooter function,
+          console.log(i); // that should show its number
+        };
+        shooters.push(shooter); // and add it to the array
+        i++;
+      }
+
+      // ...and return the array of shooters
+      return shooters;
+    }
+
+    let army = makeArmy();
+
+    // all shooters show 10 instead of their numbers 0, 1, 2, 3...
+    army[0](); // 10 from the shooter number 0
+    army[1](); // 10 from the shooter number 1
+    army[2](); // 10 .
+
+
+
+    //   MDN   
+
+    function counting() {
+
+     let privatecounter = 0;
+
+      function changeby(val) {
+       return privatecounter += val
+      }  
+
+      return {
+
+        increment ()  {
+          changeby (1);
+        },
+
+        decrement () {
+          changeby (-1);
+        },
+
+        value ()  {
+         return  privatecounter
+        } 
+      };
+    }
+
+     
+ console.log(counting.value)
+ console.log(counting.decrement())
+ console.log(counting.decrement())
+ console.log(counting.increment())
+ console.log(counting.decrement())
+ console.log(counting.decrement())
+ console.log(counting.increment())
+ console.log(counting.decrement())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MOST IMP === https://www.geeksforgeeks.org/closure-in-javascript/
+
+// RETURN KEYWORD===https://www.sohamkamani.com/javascript/closures/
+
+//  MCQ === https://www.sanfoundry.com/1000-javascript-questions-answers/
+
+// THEORY === https://www.calibraint.com/blog/closures-in-javascript-for-beginners
+
+
+
+// IMP ===  https://javascript.plainenglish.io/closures-in-javascript-37182198dc20
+
+// https://www.freecodecamp.org/news/closures-in-javascript/
+
+//https://leanpub.com/ydkjsy-scope-closures/read_sample
+
+
+
+//https://blog.greenroots.info/understanding-javascript-closure-with-example
+
+
+// https://www.folkstalk.com/2022/09/what-is-closure-in-javascript-with-code-examples.html
+
+
+  </script>
+
+</body>
+
+</html>

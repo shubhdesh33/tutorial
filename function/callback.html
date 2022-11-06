@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //  https://www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/
+
+
+
+    function createQuote(quote, callback) {
+
+      myQuote = `my name is shubham ${quote}`;
+
+      callback(myQuote)
+    }
+
+
+    function logquote(quot) {
+
+      console.log(quot)
+    }
+
+    createQuote('deshmukh', logquote)
+
+
+    
+    function check() {
+
+      for (var i = 0; i <= 5; i++) {
+
+        function closure(a) {
+          setTimeout(() => {
+            console.log(a);
+
+          }, 2000)
+        }
+        closure(i)
+      }
+    }
+
+    check()
+
+
+    function one(callback) {
+
+      setTimeout(function () {
+
+        let declare = 'its store and declare the value  here and transfer to other function '
+        console.log('func 0ne :    ', declare)
+        callback(declare)
+
+      }, 2000)
+
+    }
+
+    const two = (takevariable) => {
+
+      console.log(`function two :    ${takevariable}`)
+    }
+    one(two)
+
+
+    //  https://www.geeksforgeeks.org/what-to-understand-callback-and-callback-hell-in-javascript/
+
+
+    function main(callback) {
+
+      setTimeout(() => {
+
+        console.log()
+        callback([2, 4, 6])
+      }, 3000)
+
+    }
+
+    const addon = (array) => {
+
+      let sum = 0
+
+      for (value of array) {
+
+        sum += value
+      }
+      console.log(sum)
+    }
+
+
+    main(addon);
+
+
+    //  Callback not always a async . it can be a sync ex = forEach array method ,filter
+    // forEach is a example of callback
+
+    const rollNo = [33, 5, 9, 26]
+
+    rollNo.forEach((ele) => console.log(ele))
+
+
+
+    const numbers = [12, 32, 56, 45, 89, 21, 05]
+
+    getlessthan20 = (ele) => { return ele < 20 }
+
+    lesserthanfive = numbers.filter(getlessthan20)
+
+    console.log(lesserthanfive)
+
+
+    //  In this case, getLessThanFive is the callback. Array.filter is a
+    //  function that accepts a callback function.
+
+
+    array1 = [2, 33, 45, 66, 89, 65, 21, 40, 47]
+
+
+    function even(number) {
+
+      return number % 2 == 0;
+    }
+    function odd(number) {
+
+      return number % 2 != 0;
+    }
+
+
+
+    function store(array1, callback) {
+
+      let result = [];
+
+      for (number of array1) {
+
+        if (callback(number)) {
+          result.push(callback)
+        }
+      }
+      return result;
+    }
+
+    console.log(store(array1, even));
+    console.log(store(array1, odd));
+
+
+    let array2 = [1, 2, 4, 7, 3, 5, 6];
+
+
+
+
+    //  Callback HELL
+
+    //  https://www.geeksforgeeks.org/what-to-understand-callback-and-callback-hell-in-javascript/
+
+
+
+    // arr2 = [33, 44, 55, 66, 7, 8]
+
+    // function higherorderfunc(callback, arr2) {
+
+    //   setTimeout(() => {
+
+    //     callback(arr2)
+
+    //     setTimeout(() => {
+
+    //       callback(arr2)
+
+    //       setTimeout(() => {
+
+    //         callback(arr2)
+
+    //         setTimeout(() => {
+
+    //           callback(arr2)
+
+
+    //           setTimeout(() => {
+
+    //             callback(arr2)
+
+    //           }, 1000, [4])
+    //         }, 2000)
+    //       }, 3000)
+    //     }, 1000)
+    //   }, 1000)
+    // }
+
+    // function passtoHOF(takearray) {
+
+    //   for (i = 0; i <= takearray.length; i++) {
+
+    //     console.log(takearray[i])
+    //   }
+
+    // }
+
+
+    // console.log(higherorderfunc(passtoHOF, arr2))
+
+
+
+
+
+
+    function doStep1(init, callback) {       //  init == 0, callback== (result1) => {...copy  }
+      const result = init + 1;
+      callback(result);                          //  callback (result1)
+    }
+
+    function doStep2(init, callback) {
+      const result = init + 2;
+      callback(result);
+    }
+
+    function doStep3(init, callback) {
+      const result = init + 3;
+      callback(result);
+    }
+
+    function doOperation() {
+      doStep1(0, (result1) => {
+        doStep2(result1, (result2) => {
+          doStep3(result2, (result3) => {
+            console.log(`result: ${result3}`);
+          });
+        });
+      });
+    }
+
+    doOperation();
+
+
+
+
+    const getrollNo = () => {
+
+      setTimeout(() => {
+
+        const rollNo = [2, 4, 6, 8, 10]
+        console.log(rollNo)
+
+        setTimeout((rollno) => {
+
+          const biodata = {
+
+            name: 'shubham',
+            age: 26,
+            gender: 'female',
+          }
+
+          console.log(`my roll no is ${rollno} and my name ${biodata.name}`)
+
+          setTimeout(() => {
+
+            console.log(`my roll no is ${rollno} and my name ${biodata.name}  & gender is${biodata.gender}`)
+
+          }, 2000)
+        }, 2000, rollNo[2])
+      }, 2000)
+    }
+
+    getrollNo()
+
+
+
+    //  EXAMPLE FREECODECAMP
+
+//  CALLBACK // CALLBACKHELL
+
+    stocks = {
+      fruits: ['strawberry', 'banana', 'orange', 'guava'],
+      liquid: ['wine', 'coke', 'water', 'ice'],
+      holder: ['cup', 'cone'],
+      topping: ['choco', 'emile', 'eclairs']
+
+    };
+
+
+    orders = (getorder, callbackproduction) => {
+
+      setTimeout(() => {
+        console.log(` get order of ${getorder}`)
+
+        production(getorder)
+
+      }, 2000);
+
+    }
+
+    production = (getorder) => {
+
+      setTimeout(() => {
+        console.log(`production start of ${getorder}`)
+
+        setTimeout(() => {
+          console.log('fruit has been chopped');
+
+          setTimeout(() => {
+            console.log(`${stocks.liquid[2]} and ${stocks.liquid[3]} was added`)
+
+            setTimeout(() => {
+              console.log(`${stocks.holder[0]} `)
+
+              setTimeout(() => {
+                console.log(`item of ${stocks.topping[0]} is ready `)
+
+                setTimeout(() => {
+                  console.log(`item of ${stocks.topping[0]}  serve `)
+
+                  setTimeout(() => {
+                    console.log(`bill the customer `)
+                  }, 2000)
+                }, 0000)
+              }, 2000)
+            }, 0000)
+          }, 0000);
+        }, 2000);
+      }, 0000);
+    };
+
+    orders(stocks.fruits[0], production)
+
+
+//  https://zellwk.com/blog/callbacks/
+
+
+
+//  https://www.programiz.com/javascript/callback
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+<script>
+
+
+array5 = [30,40,50,60,70]
+var flatmap = array5.flatMap(x => [x + 2]);
+
+console.log(flatmap)
+
+array6 = [30,40,50,60,70]
+var flatmap = array6.flatMap(x => [x * 2]);
+
+console.log(flatmap)
+
+
+
+const characters = [{
+  'name':'Tarak Mehta',
+  'height':'172',
+  'mass':'77',
+  'eye-color':'brown',
+  'gender':'male'
+},
+{
+  'name':'Jethalal',
+  'height':'145',
+  'mass':'136',
+  'eye-color':'black',
+  'gender':'male'
+},
+{
+  'name':'Babita ji',
+  'height':'150',
+  'mass':'49',
+  'eye-color':'grey',
+  'gender':'female'
+}
+,
+{
+  'name':'Krishna Iyer',
+  'height':'168',
+  'mass':'84',
+  'eye-color':'black',
+  'gender':'male'
+    }]
+
+
+function data (value)  {
+
+   return  value.mass > 100
+}
+
+console.log(characters.filter(data) )
+
+
+let namo = characters.map((item) => item.name ) 
+
+ console.log(namo)
+
+
+ let hari = characters.map((item) => item.name +' '+ item.height ) 
+console.log(hari)
+
+
+
+
+
+
+    let findgender=characters.filter(function(item) {
+      return item["gender"] === 'male';
+});
+
+console.log(findgender)
+
+function newobj (a,b) {
+    name1 = a.gender.toUpperCase();         
+    name2 = b.gender.toUpperCase();
+
+    if (name1>name2) {
+        return 1
+    }
+     if (name1<name2)    {      
+        return -1 
+     }
+    return 0;
+}
+
+console.log(characters.sort(newobj))
+
+ 
+
+
+    const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+
+    
+
+var arr = [1,2,3]
+   
+
+let numbers = [1, 2, 3, 4, 5];
+let reversedNumbers = numbers.slice().reverse();
+
+console.log(reversedNumbers);
+
+
+/////
+
+
+
+
+// 1) Get an array of all names
+
+getname = (ele) => {return ele.name;}
+
+savename = characters.map(getname)
+console.log(savename)
+
+
+
+//  2)   Get an array of Objects with name and height properties
+
+
+getnameheight = (ele) => {return ele.name+' '+ele.height;}
+
+savenameheight = characters.map(getnameheight)
+console.log(savenameheight)
+
+
+
+// 3)  Get the total height of characters
+
+
+getheight = (ele) => {return ele.height;}
+
+saveheight = characters.map(getheight)
+
+console.log(saveheight)
+
+ var new_numbers =saveheight.map(function(x) { return parseInt(x, 10) ;})
+
+ console.log( new_numbers)
+ 
+totalheight = new_numbers.reduce((ele,accu)=> {return ele + accu;},)
+ 
+    console.log(totalheight)
+
+
+// var numbers = ["1", "20000", "3"];
+// var new_numbers = numbers.map(function(x) { return parseInt(x, 10) ;})
+
+// console.log( new_numbers)
+
+
+
+
+variable =5
+ let getheight1 = characters.reduce((ele,accu)=>{return ele+parseInt(accu.height);},0)
+
+ console.log(getheight1)
+
+
+
+let convertnumber= saveheight.reduce((x,y)=>{return x+parseInt(y);},0)
+
+ console.log(convertnumber)
+ 
+ 
+ // 4)  get characters with mass greater than 100 
+ 
+ 
+ findmass = characters.filter((ele)=> {return ele.mass>100;},) 
+ 
+ console.log(findmass)
+
+ 
+ // 5) get all male characters
+ 
+ 
+ getmale = characters.filter((ele)=> {return ele.gender=='male';},) 
+
+  console.log(getmale)
+  
+
+
+  
+  // 6)  Sort the gender     // not get proper o/p
+  
+ let sortgender = characters.sort((a,b)=> {return b.gender.toUpperCase() - a.gender.toUpperCase();},)
+  
+  console.log(sortgender)
+
+  
+  
+  // 7)  does EVERY characters has mass more than 40
+  
+  
+  searchmass = characters.every((ele)=> {return ele.mass > 40;},)
+  
+  console.log(searchmass)
+  
+  
+  // 8)  does EVERY characters has blue eye 
+  
+  
+//    searchblueeyes = characters.find((ele)=> {return  ele.eye === 'black';},)
+  
+//    console.log(searchblueeyes)
+  
+  
+ 
+ // 9) is there atlease one male characters // Array.some
+  
+  somemale = characters.some((ele)=> ele.gender=='male')
+
+console.log(somemale)
+
+
+
+  
+  somemale = characters.some((ele)=> ele.gender=='male')
+
+console.log(somemale)
+
+//   10) is there at lease one character taller than 200?
+
+
+ sometaller = characters.some((ele)=> ele.height > 200)
+
+console.log(sometaller)
+
+
+//  Write function for sum and multiplyBy2
+
+arr1 = [2,4,6,8]
+
+let bothsummultiply = arr1.reduce((ele,accu)=> { return ele + accu*2})
+
+console.log(bothsummultiply )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

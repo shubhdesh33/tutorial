@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+
+        (function () {
+            let date = new Date().toString();
+            // document.querySelector('.output').textContent = date;
+            document.write(date);
+
+            // Assign to global window making it
+            // accessible to outside
+            window.date = date;
+        })();
+
+        console.log('The date accessed is: ' + date);
+
+
+        function definne(x, y) {
+            if (y == undefined) {
+                return true
+            }
+            else {
+                return false;
+            }
+        }
+
+
+
+        console.log(definne(4))
+
+        //    this object function method
+
+        //         const personed = {
+        //             firstName: 'rahul',
+        //             lastName: 'naik',
+        //             fullName: function () {
+
+        //                 return this.firstName + '  ' + this.lastName;
+
+        //             }
+        //         }
+        //         console.log(personed.fullName())
+
+        const person = {
+
+            fullNamed: function (city, place) {
+
+                return this.firstName + ' ' + this.lastName + ' , ' + city + ' , ' + place;
+            }
+        }
+
+        person1 = {
+            firstName: 'ravi',
+            lastName: 'erukallu',
+            id: '2316',
+        }
+        console.log(person1.firstName + ' ' + person1.lastName)
+
+        person2 = {
+            firstName: 'ravindra',
+            lastName: 'kalki',
+            id: '2000',
+        }
+        console.log(person.fullNamed.call(person1, 'oslo', 'german'))
+        console.log(person.fullNamed.call(person2, 'amt', 'akola'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

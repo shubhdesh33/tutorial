@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="myFunction()">Count!</button>
+
+    <button type="button" onclick="myFunction1()">decrement!</button>
+    <p id="demo">0</p>
+
+
+<script>
+
+function counter4 ()  {
+  let count = 0
+   return this.increment = function () {
+      count ++
+     return count
+
+    }
+
+   return this.decrement = function ()  {
+
+        count--
+    return count
+    }
+
+    return this.increment
+    return this.decrement
+  }
+
+  save4 = new counter4 ()
+
+
+  function myFunction(){
+  document.getElementById("demo").innerHTML = save4.this.decrement();
+}
+
+
+function myFunction1(){
+  document.getElementById("demo").innerHTML =   save4.decrement();
+}
+
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+
+
+var grades = [
+    {name: 'John', grade: 8, sex: 'M'},
+    {name: 'Sarah', grade: 12, sex: 'F'},
+    {name: 'Bob', grade: 16, sex: 'M'},
+    {name: 'Johnny', grade: 2, sex: 'M'},
+    {name: 'Ethan', grade: 4, sex: 'M'},
+    {name: 'Paula', grade: 18, sex: 'F'},
+    {name: 'Donald', grade: 5, sex: 'M'},
+    {name: 'Jennifer', grade: 13, sex: 'F'},
+    {name: 'Courtney', grade: 15, sex: 'F'},
+    {name: 'Jane', grade: 9, sex: 'F'}
+]
+
+let isBoy = student => student.sex === 'M'
+
+let isGirl = student => student.sex === 'F'
+
+let getBoys = grades => (
+    grades.filter(isBoy)
+)
+
+let getGirls = grades => (
+    grades.filter(isGirl)
+)
+
+let average = grades => (
+    grades.reduce((acc, curr) => (
+        acc + curr.grade
+    ), 0) / grades.length
+)
+
+let maxGrade = grades => (
+    Math.max(grades.map(student => student.grade))
+)
+
+let minGrade = grades => (
+    Math.min(grades.map(student => student.grade))
+)
+
+
+let classroomAverage = average(grades) // 10.2
+let boysAverage = average(getBoys(grades)) // 7
+let girlsAverage = average(getGirls(grades)) // 13.4
+let highestGrade = maxGrade(grades) // 18
+let lowestGrade = minGrade(grades) // 2
+let highestBoysGrade = maxGrade(getBoys(grades)) // 16
+let lowestBoysGrade = minGrade(getBoys(grades)) // 2
+let highestGirlsGrade = maxGrade(getGirls(grades)) // 18
+let lowestGirlsGrade = minGrade(getGirls(grades)) // 9
+
+
+console.log(classroomAverage)
+
+
+
+// program for a simple calculator
+let result;
+
+// take the operator input
+const operator = prompt('Enter operator ( either +, -, * or / ): ');
+
+// take the operand input
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+
+switch(operator) {
+    case '+':
+        result = number1 + number2;
+        console.log(`${number1} + ${number2} = ${result}`);
+        break;
+    case '-':
+        result = number1 - number2;
+        console.log(`${number1} - ${number2} = ${result}`);
+        break;
+    case '*':
+        result = number1 * number2;
+        console.log(`${number1} * ${number2} = ${result}`);
+        break;
+    case '/':
+        result = number1 / number2;
+        console.log(`${number1} / ${number2} = ${result}`);
+        break;
+
+    default:
+        console.log('Invalid operator');
+        break;
+}
+console.log(a)
+
+     var a;
+
+     for (let i=0;i<5;i++) {                         //  for (var i=0;i<5;i++)
+
+        setTimeout(function() {console.log(i),i*1000})
+     }
+     console.log(i)
+
+
+</script>
+
+</body>
+</html>

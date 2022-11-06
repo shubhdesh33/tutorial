@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="/third.js"></script> -->
+</head>
+<body>
+    <!-- <script>
+        alert("i am javascript")
+
+    </script> -->
+    <script>
+  let name = 'deshmukh';
+  let admin=name;
+  document.write(admin);
+  document.write('<br>');
+
+   let planet = 'earth';
+   document.write(planet);
+
+   let x;                             
+   x = 6;
+   document.write(x);
+
+   x =9;
+   document.write(x);                                         //with let variable reassign it
+
+   const sd= 25;
+   document.write(sd);              
+
+//    sd=45;
+//    document.write(sd);       with const variable we cannot reassign it
+
+document.write('<br>');
+const m = 51;
+document.write(m);
+document.write('<br>');
+
+{
+    const m =66;
+    document.write(m);
+    document.write('<br>');
+
+}
+
+   
+let harname ="shubham";
+document.write("my name is: "+ harname);             //string text + variable
+ harname=x;
+ document.write(x);
+ document.write('<br>');
+
+ const greet = 'john'; 
+ const names =  "doe";
+ document.write(greet+'  '+names);                    //variable creating space
+ document.write('<br>');
+
+ let x1='john + doe';
+ document.write(x1);      
+ document.write('<br>');
+                    
+ let x2 = 'john doe';
+ document.write(x2);                                    //
+ document.write('<br>');
+
+ let x3 = 'john'+'doe';
+ document.write(x3);                                    //
+ document.write('<br>');
+
+ let x4 = 'john'+'        '+'doe';
+ document.write(x2);                                    //
+ document.write('<br>');
+
+    //let x5 ;                     UNDEFINED  VALUE
+
+    let $="shubham";
+    let $$= 'shubham';
+    let $my = 'shubham';
+    let _name='shubham';
+    document.write($$+'  '+$$);                                    //
+    document.write('<br>');
+
+    // BLOCK SCOPE  //
+
+    var block ='scope';
+    {
+     var block = 'scopes';
+    }
+    document.write('block'+'  ');                              //pls pls check this
+
+    document.write(block);
+
+    //online compilier 
+
+    // const namess= prompt('Enter your name');
+   // console.log('hello',namess);
+    document.write('<br>');
+    document.write(typeof(namess));
+    document.write('<br>');
+
+    // const age = prompt("Enter your age");
+   // document.write(age);
+  //  document.write(typeof(age));
+
+        //  DATA TYPE //
+      //  The Object OR ARRAY data type (non-primitive type) can store collections of data, whereas primitive data type can only store a single data.
+        //  primitive data type : NUMBER ; STRING ; BIGINT ; TYPEOF ; BOOLEAN ;UNDEFINED ;NULL
+
+        //    let how= ;      its shows undefined in console
+        //    how = 
+        //    document.write(how);
+            
+//         Undefined == It means a variable declared, but no value has been assigned a value.
+
+
+// It represents uninitialized variables in TypeScript and JavaScript. It has only one value, which is undefined.
+//  The undefined keyword defines the undefined type in TypeScript, but it is not useful because 
+//  we can only assign an undefined value to it.
+
+//                     Null  ==  null in  is an assignment value. You can assign it to a variable.
+
+// Null is used to represent an intentional absence of value. It represents a variable whose value is undefined. It accepts only one value, which is null. The Null keyword is used to define the Null type 
+
+//   	Null/
+//  1.	It is an assignment value. It can be assigned to a variable which indicates that a variable does not point any object.	
+//  2.	It is an object.	
+//  3.	The null value is a primitive value which represents the null, empty, or non-existent reference.	
+//  4.	Null indicates the absence of a value for a variable.	
+//  5.	Null is converted to zero (0) while performing primitive operations.	
+
+//              undefined
+//  1) It is not an assignment value. It means a variable has been declared but has not yet been assigned a value.
+//  2)  It is a type itself.
+//  3) The undefined value is a primitive value, which is used when a variable has not been assigned a value.
+//  4)Undefined indicates the absence of the variable itself.
+//  5) Undefined is converted to NaN while performing primitive operations.
+
+function multiply (a,b) {
+    return a*b
+}
+function add (a,b) {
+    return a+b
+}
+function sub (a,b) {
+    return a-b
+}
+function calculator (a,b,operator){
+   return operator(a,b);
+
+    
+}
+document.write(calculator(20,40,multiply));
+
+console.log(console)
+
+    </script>
+</body>
+</html>

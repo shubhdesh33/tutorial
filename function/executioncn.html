@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <script>
+
+        // Global variable
+
+        var global_variable = 20;
+
+        function main_function() {
+            // Local Variable
+            var local_variable = 30;
+
+            var nested_function = function () {
+
+                // Display the value inside the local variable
+                console.log(local_variable);
+            }
+
+            var another_nested_function = function () {
+
+                // Displays the value inside the global variable
+                console.log(global_variable);
+            }
+
+            nested_function();
+            another_nested_function();
+        }
+
+        main_function();
+
+
+        //                        nested function
+
+        // . Function scope within a function (nested function): The nested function can be called inside the parent function only. The nested function can access the variables of the parent function as well as the global variables. But the parent function cannot access the variables of the inner function. It can be useful when there is a need to create a variable that is passed to function. Using global variables it is not good to create a function because other functions can modify it. so for here, this context nested function is useful. It will prevent the other functions to use this variable.              The scope of the nested function is only lexical.
+        // 
+
+
+
+
+        var i = 0;
+        function gfg() {
+            var j = 1;
+            console.log(i); // This will print 0
+            console.log(j); // This will print 1
+            var article = "Not publish";
+            const result = publish(article);   //  article is a only argument of function public
+            console.log(result);
+        }
+        function publish(article) {
+            console.log("gfg article");
+
+            console.log(article);
+            return "published";
+        }
+        gfg();
+        // console.log(j);
+
+
+        // https://www.geeksforgeeks.org/explore-the-concept-of-javascript-function-scope-and-different-types-of-javascript-functions/
+
+        function totalCount() {
+            var count = 0;
+
+            // Nested function definition
+            function increaseCount() {
+                count++;
+            }
+
+            // Nested function invocation
+            increaseCount();
+            increaseCount();
+            increaseCount();
+            return count;
+        }
+        console.log(totalCount());
+
+
+
+        //    SCOPE CHAIN   ///
+        var ram = 'ram';
+
+        function parent() {
+            var name = 'Aastha';
+            console.log(name);
+
+
+            //  Reference error: age is not defined
+            //  console.log(age); 
+
+
+            //  Reference error: places is not defined
+            //  console.log(places); 
+
+
+            function child() {
+                // function linked to parent() thats why name is accessible.
+
+                var age = 23;
+
+                console.log(name);
+
+                console.log(age);
+
+
+                //  Reference error: places is not defined
+                // console.log(places); 
+
+
+                function grandchild() {
+                    // this function is linked to child() & parent() thats why name, age are  accessible.
+
+
+                    var places = 'Coding';
+                    console.log(name);
+                    console.log(age);
+                    console.log(places);
+                    console.log(ram);
+                }
+                grandchild();
+            }
+            child();
+        }
+        parent();
+
+
+
+        function jerry() {
+            console.log(name);
+        }
+
+        function tom() {
+            var name = 'tom';
+            jerry();
+        }
+
+        var name = 'cartoon';
+
+        tom();
+
+
+
+
+        //  getting ans of sequence
+
+        // var x = 1;
+
+        // a()
+        // b()
+
+        // console.log(x)
+
+        // function a() {
+
+        //     var x = 10
+        //     console.log(x)
+        // }
+
+        // function b() {
+
+        //     var x = 50;
+        //     console.log(x)
+        // }
+
+
+        function x() {
+            var d = 10;
+            y()
+            //                                          var d = 10;
+            function y() {
+
+                console.log(d)
+
+                m()
+                function m() {
+
+                    console.log(g)
+                }
+
+            }
+            //                                                not call here == m()
+        }
+
+        x()
+
+        var g = 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//https://blog.greenroots.info/javascript-scope-fundamentals-with-tom-and-jerry
+
+
+
+//https://blog.greenroots.info/understanding-javascript-execution-context-like-never-before
+
+
+    </script>
+
+
+</body>
+
+</html>

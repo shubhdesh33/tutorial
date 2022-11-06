@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src='main.js'></script> -->
+</head>
+
+<body>
+    <script>
+        const shubham = [1, 2, 3, 4, 5, 6];
+            shubham[0]='ggg';
+           document.write(shubham[shubham.length-1]);
+           document.write(typeof(shubham )+"<br> ")
+           document.write(Array.isArray(shubham))
+
+        //    const fruits = ["Banana", "Orange", "Apple", "Mango",'lemon','chilly','jamun','guava'];
+
+        //    document.writeln(fruits.copyWithin(1,3,7))
+
+
+//         myFunction();
+
+//         var carName = "Volvo";
+
+//         function myFunction() {
+
+//             console.log(typeof carName + " " + carName);
+                
+//         }
+
+//         console.log(typeof carName);
+            
+// function outerFunction () {
+//     var a= 7;
+//     function innerFunction (){          // closure function
+//         console.log(a);
+//     }
+//     innerFunction()
+//     console.log(a);
+
+// } 
+// outerFunction()                  // call outer it must
+
+
+// //self invoking function
+// // annomous func
+// (function()  {
+//     // private
+//     return  {
+//         // public //module design pattern
+
+
+//     }
+// }
+// )
+
+// function sum(a,b,c) {
+//     return a+b+c;
+// }
+ 
+//  document.write(sum (2,3,4))
+
+
+//  let sum = function(a) {
+//     return function (b) {
+//   return function (c)  {
+//      return a+b+c;
+//   };
+//     }
+//  }
+//  console.log(sum(2)(3)(4))
+
+//  let val1 = sum(2)
+//  console.log(val1)
+
+
+
+
+var colorss = 'red';
+function juicer (apple,orange) {
+    return apple+orange ;
+}
+
+
+
+// console.log (app);
+
+const app = juicer ( "make a juice of "+ 10 +" apples and "+ 0 + " oranges")
+//const app = juicer("make a juice of "+ 10 +" and " + 0 + " or" );
+console.log (app);
+
+
+
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// // take input from the user
+// let number1 = parseFloat(prompt("Enter first number: "));
+// let number2 = parseFloat(prompt("Enter second number: "));
+
+// // calling function
+// let result = add(number1,number2);
+// let sam = add(8,6)
+// // display the result
+// console.log(add(4,3));
+
+
+
+
+
+function sumMarks (hin,math,eng,mar,phy) {
+    var a = hin + math + eng+ mar + phy;  
+    
+    return a;
+}
+
+let gd = sumMarks(50,60,70,80,45);
+console.log(gd);
+
+function percent (gd) {
+
+    var c = gd/500*100;
+    return c
+}
+
+var gg = percent(gd)
+console.log(gg);
+
+
+ function juicer (apple,orange) {
+    var aa = `make a juice of  ${apple} and  ${orange}  oranges `;
+   
+    return aa ;
+   
+};
+
+const a = juicer(10,0);
+console.log(a);
+
+const b = juicer(20,7);
+console.log(b);
+
+const c = juicer(30,26);
+console.log(c);
+
+
+
+let ad = [12,23,45,45,56,78,89,63,45]
+
+ kd = ad.shift()
+
+console.log(kd)
+
+
+
+let axd = [120,45,78,54,21];
+function ed (value) {
+    return value > 50 ;
+}
+ 
+let reds = axd.some(ed)
+
+console.log(reds);
+
+sx = ['gg','tg','tr','gh','kk','df','gh'];
+
+ ra = sx.fill('fill',1,3)
+ console.log(ra)
+
+
+ sxx = ['gg','tg','tr','gh','kk','df','gh'];
+
+sxx.forEach(function (item,i) {
+    sxx[i]+=2;
+
+
+});
+console.log(sxx)
+
+
+df = ['gh','vb','nb','nm']
+  rt = df.keys()
+for (value of rt) {
+
+    console.log(value)
+}
+
+check = [33,56,21,36,45]
+ function radha (value)  {
+
+    return value > 30
+ }
+console.log(check.filter(radha))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+square = [25,36,49,100,121]
+
+function sqr (value)  {
+
+    return Math.sqrt(value)
+}
+console.log(square.map(sqr))
+
+
+
+
+function  first () {
+    var a= 20;
+
+    function second () {
+       var c = 30;
+      return  function third () {
+
+            var b = 56;
+          console.log(a,b,c)
+        }
+        third ()
+    }
+    second()
+}
+first ();
+
+
+  var lengthss = 'i am shubham deshmukh'
+
+console.log(lengthss.length-1)
+
+
+
+
+
+
+// https://dev.to/victorhazbun/daily-tasks-with-javascript-arrays-1npi
+ //  https://www.tutorialrepublic.com/javascript-reference/javascript-array-object.php
+// https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
+
+
+// https://www.javascripttutorial.net/javascript-array-some/
+
+//  https://www.javatpoint.com/javascript-array
+
+// https://www.tutorialstonight.com/js/js-array
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

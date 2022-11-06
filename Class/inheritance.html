@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+<script>
+
+    //  PROTOTYPE  //
+
+
+
+    class Car {                                 //   parent class for super-extend keyword example
+
+constructor(name, id) {
+
+    this.name = name;
+    this.id = id;
+    this.year = 1996;
+}
+}
+
+Car.prototype.price = 25000                         // add property by using prototype
+
+obj2 = new Car('alto', 'maruti')
+
+console.log(obj2)
+
+Car.prototype.method1 = function () {
+
+return this.name + ' ' + this.id + ' ' + this.price
+}
+
+
+
+var obj3 = new Car('swift', 'suzuki')
+
+console.log(obj2.method1())
+console.log(obj3.method1())
+
+
+
+
+//  SUPER  //
+//  CHILD CLASS  //
+
+class Company extends Car {          // child class
+
+constructor(employ) {
+
+    //  // call the super class constructor and pass in the year parameter
+    super()
+
+    this.employ = employ;                       
+}
+}
+
+// create object
+
+const obj5 = new Company('akshay')
+
+console.log(obj5.employ + ' ' + obj5.price + ' ' + obj5.year)  // we can access a parent property 
+
+
+
+
+
+//  INHERITANCE  //
+
+//  Date is a class method  //
+// learn vern
+
+
+class Moment extends Date {
+
+constructor() {
+    super()
+
+}
+
+}
+m = new Moment()
+
+console.log(`today date is ${m.getDate()}-${m.getMonth()}-${m.getYear()} `)
+
+//  CUSTOM CLASS  // 
+
+class Companyies {
+
+constructor(compname) {
+
+    this.compname = 'Honda';
+}
+
+}
+
+class Bike extends Companyies {
+
+constructor(name, price) {
+    super()
+    this.name = name;
+    this.price = price;
+}
+
+}
+
+bike1 = new Bike('shine', 70000)
+
+console.log(`${bike1.name} ${bike1.price}${bike1.compname}`)
+
+bike2 = new Bike('CBR', 120000)
+
+console.log(`${bike2.name} ${bike2.price}${bike2.compname}`)
+
+
+//  PROTOTYPE BASE ==  its use function not class 
+
+function Biker (company)  {
+
+this.company=company;
+
+}
+
+//  prototype method  for accessing the property company 
+
+Biker.prototype.getname = function ()  {
+
+return this.name
+}
+
+function Vehicle (name,price)  {
+
+this.name= name;
+this.price= price
+}
+
+//  obj create  for parent class/ function
+var bike = new Biker ('honda')
+
+//  ya line la ==  child inherit with parent
+Vehicle.prototype= bike;
+
+
+//  obj create for  child class
+var v1= new Vehicle ('shine',700000)
+
+// parent che property accesss here
+console.log(v1.name + ' '+ v1.company)
+
+
+//  https://www.programiz.com/javascript/inheritance
+
+// Overriding Method or Property in inheritance
+
+
+class Bank {
+
+constructor(name) {
+
+    this.name = name
+
+
+    this.occupation = 'user'
+
+}
+greet() {
+    console.log(`Hello ${this.name}.`);
+}
+
+}
+
+class Customer extends Bank {
+
+constructor(name) {
+
+    super(name)
+    // Overriding an occupation property
+    this.occupation = ' worker'
+}
+
+// overriding Person's method
+greet() {
+    console.log(`Hello student ${this.name}.`);
+    console.log('occupation: ' + this.occupation);
+}
+}
+let p = new Customer('Jack');
+p.greet();
+
+
+
+
+//  https://www.freecodecamp.org/news/object-oriented-concepts/
+
+/// https://www.freecodecamp.org/news/object-oriented-javascript-for-beginners/#encapsulation
+
+
+
+class Characters {
+
+constructor(india) {
+    this.india = india
+}
+define = () => console.log(this.india)
+}
+
+
+class Enemy extends Characters {
+
+constructor(power, india) {
+    //   //'super' calls the parent constructor
+    super(india)
+
+    this.power = power
+
+}
+// method    //method to return the parentmethod
+parentmethod = () => console.log(this.power)
+}
+
+// / 'extends' is used to inherit from parent class
+
+class Childclass extends Enemy {
+
+constructor(attack, power, india) {
+
+    //  //super keyword for calling the above class constructor
+    super(power, india)
+
+    this.attack = attack;
+
+}
+
+childmethod = () => console.log(this.attack+' '+this.india)
+}
+
+const accessparentproperty = new Childclass('chaku', 'gun', 'missile')    // Childclass is a child class access parent method & property
+const accessparentmethod = new Childclass('china', 'pakis', 'turkis')
+
+accessparentmethod.parentmethod()          // focus on calling func
+
+console.log(accessparentproperty.power)  // access parent property by using child class
+
+accessparentmethod.childmethod()
+
+//  debugg the example how obj class work
+
+//  https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+
+
+class Animals {
+
+constructor(name, age) {
+    this.name = name;
+    this.age = age;
+
+}
+sing() {
+    console.log(`${this.name} can sing`)
+
+}
+
+dance() {
+
+    return `${this.name} can dance  and at age ${this.age}`
+}
+
+}
+
+newparent = new Animals ('rahul',27)
+
+newparent.sing()
+console.log(newparent.dance())
+
+
+class Cats extends Animals {
+
+constructor(name, age, color) {
+    super(name, age)
+    this.color = color
+}
+
+witch() {
+
+    return ` i am ${this.age} year old my color is ${this.color}`
+}
+}
+
+clara = new Cats('lilly', 10, 'white')
+
+clara.sing()
+
+console.log(clara.dance())
+
+console.log(clara.witch())
+
+
+
+//   https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+
+class Grandparent {
+
+constructor(name) {
+    this.name = name;
+}
+
+toString() {
+
+    return `Name of person: ${this.name}`
+}
+
+}
+
+class Parent extends Grandparent {
+
+constructor(name, id) {
+    //super keyword for calling the above class constructor
+
+    super(name)
+    this.id = id;
+
+}
+
+toString() {
+    return (`${super.toString()},Student ID: ${this.id}`);
+}
+}
+
+let getparent = new Parent('akash', 26)
+
+console.log(getparent.toString());
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

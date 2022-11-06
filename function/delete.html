@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+
+    <h2>JavaScript async / await</h2>
+
+    <p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+
+    <h1 id="demo"></h1>
+
+    <!-- <script>
+
+        debugger
+        async function myDisplay() {
+            debugger
+            let myPromise = new Promise(function (resolve) {
+                setTimeout(function () { resolve("I love You !!"); }, 3000);
+
+                function name() {
+                    document.write('shubham')
+                }
+                name()
+            });
+            document.getElementById("demo").innerHTML = await myPromise;
+        }
+
+        myDisplay();
+
+
+        function sum (a,x,y,z,b)  {
+
+            return x+y+z+a+b
+        }
+
+        number =[1,2,3]
+
+        console.log(sum('shu',...number,'desh'))
+
+        //  [a,b,...c] = [10,20,30,40]
+        //   console.log(c)
+
+         const obj = {
+
+            a:1,
+            b:2,
+            c:{d:3}
+         }
+
+         const {a,b,c} = obj
+         console.log(c)
+    </script> -->
+
+
+<script>
+    var ab = [10, 20,30,40];
+    //  var vir1 = ab[0];
+    //  var vir2= ab[1];
+    //  var vir3 = ab[2];
+    //  var vir4 = ab[3];
+
+     var [ vir1, ...shubh] = ab;
+
+     console.log(vir1);
+     console.log(shubh);
+</script>
+
+<script>
+    var pqr = {
+        name:"shubh",
+        age:20,
+        city:"pune"
+    }
+    var azd = pqr.name;
+    console.log(azd);
+
+    const { name:n , age:a , city:c } = pqr;
+    //console.log(name);
+    console.log(n);
+</script>
+
+<script>
+    
+    function funName (a,b,...rest){
+        // var sum = a+b;
+        // for( i=0; i< rest.length; i++){
+        //    console.log(rest[0])
+        // }/
+        
+        console.log(a)
+    }
+    var abc = [10,20,30,40,50,60]
+    funName([abc])
+
+</script>
+
+
+</body>
+
+</html>

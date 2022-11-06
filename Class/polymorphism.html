@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+<script>
+
+
+//  learn vern
+class A {
+
+    display ()  {
+
+    console.log(' A classes display method is called')
+    }
+}
+
+class B extends A  {
+
+    display ()  {
+
+console.log(' B classes display method is called')
+}
+
+}
+
+var b = new B()
+
+  b.display ()
+
+// a = [new A (), new B()]
+
+// a.forEach(element => { element.display()
+    
+// });
+
+
+
+// Inheritance Polymorphism in JavaScript  // greek
+
+class firstclass {
+    
+    add ()  {
+        console.log('first method')
+    }
+}
+
+ class secondclass extends firstclass {
+
+    add ()  {
+
+        console.log('second class')
+    }
+ }
+
+
+ class thirdclass extends secondclass{
+
+    add ()  {
+
+        console.log ('third class')
+    }
+ }
+
+  b = [new firstclass () , new secondclass(), new thirdclass()]
+
+  b.forEach(element => { element.add()
+    
+  });
+
+
+
+  
+
+  //  polymorphism with Prototype
+
+  //  prototype madhe class yet nhi only function 
+
+  function C () {
+
+
+  }
+
+  //  we create a method by using prototype // method for assescing the funct property
+  C.prototype.display = function ()  {
+
+   return  ' A classes display method is called'
+  }
+
+  function D ()  {
+
+  // no method create for funct D like [ display method  ]  so when we callback through forEach 
+   // method funct D ha funct C chi display method ghenar ani output denar
+   //  ya effect la polymorphism through prototype mhntat
+  }
+
+
+  //  prototype through D ha child  ahe C cha 
+  D.prototype =Object.create(C.prototype)
+
+  const c = [new C (), new D()];
+
+  c.forEach(element => { console.log(element.display() ) 
+    
+  });
+
+
+
+// refer the program 
+
+// https://www.freecodecamp.org/news/object-oriented-javascript-for-beginners/#abstraction
+
+//  https://www.tutorialspoint.com/how-to-implement-polymorphism-in-javascript
+
+</script>
+
+</body>
+</html>

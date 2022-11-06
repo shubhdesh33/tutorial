@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <script>
+        //    SYNTAX   //
+        emp = class {
+
+            constructor(name, lastname) {
+
+                this.name = name;
+                this.lastname = lastname;
+            }
+            method() {
+                console.log(this.name + ' ' + this.lastname)
+
+                console.log('access the class property by using above method ')
+            }
+        }
+
+        var obj1 = new emp('shubham', 'deshmukh')
+
+        obj1.method()
+
+
+
+
+        //  PROTOTYPE  //
+
+
+
+        class Car {                                 //   parent class for super-extend keyword example
+
+            constructor(name, id) {
+
+                this.name = name;
+                this.id = id;
+                this.year = 1996;
+            }
+        }
+
+        Car.prototype.price = 25000
+
+        obj2 = new Car('alto', 'maruti')
+
+        console.log(obj2)
+
+        Car.prototype.method1 = function () {
+
+            return this.name + ' ' + this.id + ' ' + this.price
+        }
+
+        var obj3 = new Car('swift', 'suzuki')
+
+        console.log(obj2.method1())
+        console.log(obj3.method1())
+
+
+
+
+        //  SUPER  //
+        //  CHILD CLASS  //
+
+        class Company extends Car {          // child class
+
+            constructor(employ) {
+
+                //  // call the super class constructor and pass in the year parameter
+                super()
+
+                this.employ = employ;
+            }
+        }
+
+        // create object
+
+        const obj5 = new Company('akshay')
+
+        console.log(obj5.employ + ' ' + obj5.price + ' ' + obj5.year)  // we can access a parent property 
+
+
+
+
+
+        //  INHERITANCE  //
+
+        //  Date is a class method  //
+        // learn vern
+
+
+        class Moment extends Date {
+
+            constructor() {
+                super()
+
+            }
+
+        }
+        m = new Moment()
+
+        console.log(`today date is ${m.getDate()}-${m.getMonth()}-${m.getYear()} `)
+
+        //  CUSTOM CLASS  // 
+
+        class Companyies {
+
+            constructor(compname) {
+
+                this.compname = 'Honda';
+            }
+
+        }
+
+        class Bike extends Companyies {
+
+            constructor(name, price) {
+                super()
+                this.name = name;
+                this.price = price;
+            }
+
+        }
+
+        bike1 = new Bike('shine', 70000)
+
+        console.log(`${bike1.name} ${bike1.price}${bike1.compname}`)
+
+        bike2 = new Bike('CBR', 120000)
+
+        console.log(`${bike2.name} ${bike2.price}${bike2.compname}`)
+
+
+        //  PROTOTYPE BASE ==  its use function not class 
+
+        function Biker (company)  {
+
+            this.company=company;
+           
+        }
+        Biker.prototype.getname = function ()  {
+
+            return this.name
+        }
+
+         function Vehicle (name,price)  {
+
+            this.name= name;
+            this.price= price
+         }
+
+         var bike = new Biker ('honda')
+
+         Vehicle.prototype= bike;
+
+         var v1= new Vehicle ('shine',700000)
+
+         console.log(v1.name + ' '+ v1.company)
+
+
+        //  https://www.programiz.com/javascript/inheritance
+
+        // Overriding Method or Property in inheritance
+
+
+        class Bank {
+
+            constructor(name) {
+
+                this.name = name
+
+
+                this.occupation = 'user'
+
+            }
+            greet() {
+                console.log(`Hello ${this.name}.`);
+            }
+
+        }
+
+        class Customer extends Bank {
+
+            constructor(name) {
+
+                super(name)
+                // Overriding an occupation property
+                this.occupation = ' worker'
+            }
+
+            // overriding Person's method
+            greet() {
+                console.log(`Hello student ${this.name}.`);
+                console.log('occupation: ' + this.occupation);
+            }
+        }
+        let p = new Customer('Jack');
+        p.greet();
+
+
+
+
+        //  https://www.freecodecamp.org/news/object-oriented-concepts/
+
+        /// https://www.freecodecamp.org/news/object-oriented-javascript-for-beginners/#encapsulation
+
+
+
+        class Characters {
+
+            constructor(india) {
+                this.india = india
+            }
+            define = () => console.log(this.india)
+        }
+
+        class Enemy extends Characters {
+
+            constructor(power, india) {
+                //   //'super' calls the parent constructor
+                super(india)
+
+                this.power = power
+
+            }
+            // method    //method to return the parentmethod
+            parentmethod = () => console.log(this.power)
+        }
+
+    // / 'extends' is used to inherit from parent class
+
+        class Childclass extends Enemy {
+
+            constructor(attack, power, india) {
+
+                //  //super keyword for calling the above class constructor
+                super(power, india)
+
+                this.attack = attack;
+
+            }
+
+            childmethod = () => console.log(attack)
+        }
+
+        const accessparentproperty = new Childclass('chaku', 'gun', 'missile')    // Childclass is a child class access parent method & property
+        const accessparentmethod = new Childclass('china', 'pakis', 'turkis')
+
+        accessparentmethod.parentmethod()          // focus on calling func
+
+        console.log(accessparentproperty.power)  // access parent property by using child class
+
+
+        //  debugg the example how obj class work
+
+        //  https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+
+
+        class Animals {
+
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+
+            }
+            sing() {
+                console.log(`${this.name} can sing`)
+
+            }
+
+            dance() {
+
+                return `${this.name} can dance`
+            }
+
+        }
+
+
+
+        class Cats extends Animals {
+
+            constructor(name, age, color) {
+                super(name, age)
+                this.color = color
+            }
+
+            witch() {
+
+                return ` i am ${this.age} year old my color is ${this.color}`
+            }
+        }
+
+        clara = new Cats('lilly', 10, 'white')
+
+        clara.sing()
+
+        console.log(clara.dance())
+
+        console.log(clara.witch())
+
+
+
+        //   https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+
+        class Grandparent {
+
+            constructor(name) {
+                this.name = name;
+            }
+
+            toString() {
+
+                return `Name of person: ${this.name}`
+            }
+
+        }
+
+        class Parent extends Grandparent {
+
+            constructor(name, id) {
+                //super keyword for calling the above class constructor
+
+                super(name)
+                this.id = id;
+
+            }
+
+            toString() {
+                return (`${super.toString()},Student ID: ${this.id}`);
+            }
+        }
+
+        let getparent = new Parent('akash', 26)
+
+        console.log(getparent.toString());
+
+
+        // [ 1 ] STATIC  //  how to call Static method == Test.display1
+
+        class Test {
+
+            static display1() {
+
+                return ' a statuc method'
+            }
+
+            static display2() {
+
+                return ' another static method'
+            }
+        }
+
+        console.log(Test.display1())
+
+
+
+        // [ 2 ]  constructor with static method
+
+        class Tested {
+
+            constructor() {
+
+                console.log(Tested.display3())
+                console.log(this.constructor.display3())  // call using constructor method
+            }
+            static display3() {
+
+                return ' another static method , calling by using constructor method'
+            }
+        }
+
+
+        //  to call a contructor we want a new object
+
+        var tea = new Tested()
+
+
+
+        // [ 3 ] STATIC METHOD WITH NON STATIC METHOD  //
+
+        //  by using non static method ( ) we can call static method
+
+        class Testing {
+
+            static staticmethod() {
+                //       console.log(Testing.staticmethod())
+
+                return 'static method called'
+
+
+            }
+
+            forstaticmethodcall() {
+
+                console.log(Testing.staticmethod())
+
+                return 'nonstatic method called'
+            }
+        }
+
+
+        //      to create a obj for calling  
+        teatea = new Testing()
+        console.log(teatea.forstaticmethodcall())
+
+
+
+        // Encapsulation //
+        // https://www.freecodecamp.org/news/object-oriented-javascript-for-beginners/#encapsulation
+
+
+
+        class Shubham {
+            #birthyear
+            constructor(age, birthyear) {
+
+                this.age = age
+                this.#birthyear = birthyear
+            }
+
+            enclose = () => console.log(this.#birthyear + ' ' + this.age)
+        }
+
+        const encapulate = new Shubham(26, 1996)
+
+        encapulate.enclose()
+
+
+
+
+
+        //  https://css-tricks.com/implementing-private-variables-in-javascript/#:~:text=TC39%20private%20class%20field%20proposal,variable%2C%20and%20it%20becomes%20private.
+
+
+        class CarModule {
+            // private
+            #old                   //   put a # before the name of a variable, and it becomes private. 
+
+            constructor(name, year, old) {
+
+                // private
+                let speed = 0;
+                let miles = 0;
+
+                this.#old = old
+
+                //  public
+                this.name = name;
+                this.year = year
+
+
+                //    method                               //  method is used to access property publicly
+                this.accelerate = (amount) => {
+
+                    speed += amount;
+                    miles += speed;
+                }
+
+                this.getmiles = () => miles
+            }
+
+            //  public method
+            enclose = () => console.log(this.#old + ' ' + this.name + ' ' + this.year)
+        }
+
+
+        testcar = new CarModule('creata', 2012, 26)
+
+        console.log(testcar.name)      // O/P == creta its public property
+
+        testcar.accelerate(5)
+
+
+
+        console.log(testcar.miles)   // undefined due to private property
+
+        console.log(testcar.getmiles())
+
+        testcar.enclose()
+
+
+
+        //  https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+
+        class Person {
+
+            constructor(name, id) {
+                this.name = name;
+                this.id = id
+            }
+
+            add_address(add) {
+                this.add = add;
+            }
+
+            getdetails() {
+
+                console.log(`${this.name} ${this.id} ${this.add}`)
+            }
+        }
+
+        person = new Person('sajay', 112)
+
+        person.add_address('amravati')
+
+        person.getdetails()
+
+
+        //  abstraction example
+
+        function person5(fname, lname, age) {
+
+            let firstname = fname;
+            let lastname = lname;
+            let aged = age;
+
+            getdetail_noaccess = () => { return `my name is ${firstname} ${lastname} and age is ${aged}` }
+
+            this.getdetail_access = function () {
+
+                return `my name is ${firstname} ${lastname} and age is ${aged}`
+            }
+
+        }
+
+        personalise = new person5('aditya', 'adhau', 26)
+
+
+
+        console.log(personalise.firstname)
+
+        //   By changing the way we define a function we can restrict its scope. and hide the data
+
+        console.log(personalise.getdetail_access())
+
+        console.log(personalise.getdetail_noaccess)
+
+
+
+        //  https://www.scaler.com/topics/javascript/encapsulation-in-javascript/
+
+        //  https://sebhastian.com/encapsulation-javascript/
+
+        // imp ==  https://www.scaler.com/topics/javascript/new-keyword-in-javascript/
+
+        //  https://www.scaler.com/topics/javascript/classes-in-javascript/
+
+        // 
+
+
+        var employ = {
+
+            name: 'shubham ',
+
+            setName: function (value) {
+                var exp = new RegExp(/\d+/);
+
+                if (exp.test(value)) {              // test is property of regex
+
+                    console.log('invalid name')
+                }
+                else {
+                    this.name = value;
+                }
+            },
+            getName: function () {
+
+                return this.name
+            }
+        }
+        console.log(employ.getName())
+
+        employ.setName('deshmukh')
+        console.log(employ.getName())
+
+        employ.setName('42')              //  invalid Name; Here name won’t be changed.
+        console.log(employ.getName())
+
+        employ.name = '42';
+        console.log(employ.getName())
+
+
+
+
+        var employ2 = function () {
+
+            name = 'aditya ';
+            var exp = new RegExp(/\d+/);
+            return {
+                setName: function (value) {
+
+
+                    if (exp.test(value)) {              // test is property of regex
+
+                        console.log('invalid name')
+                    }
+                    else {
+                        name = value;
+                    }
+                },
+
+                getName: function () {
+
+                    return name
+                }
+            };
+        }()
+        console.log(employ2.getName())
+        employ2.setName(42); // Invalid Name; the name does'nt changes.
+        employ2.name = 42;     // Doesn't affect the private fullName variable.
+        console.log(employ2.getName());
+
+
+        class Escape {
+
+            constructor(name, lastname, age) {
+
+                this.name = name;
+            }
+        }
+
+
+
+
+        class Car2 {
+
+            constructor(name, year) {
+
+                this.name = name;
+                this.year = year;
+
+            }
+
+            age(x) {
+
+                return x - this.year
+            }
+        }
+
+        const date = new Date();
+        const year = date.getFullYear()
+
+        const myCar = new Car2('ford', 2014)
+
+        console.log(`my car is old ${myCar.age(year)}`)
+
+
+        //  imp ==  https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+// imp == https://www.freecodecamp.org/news/how-javascript-implements-oop/
+
+    //   https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
+
+// https://www.freecodecamp.org/news/four-pillars-of-object-oriented-programming/
+
+//  https://www.freecodecamp.org/news/object-oriented-concepts/
+
+
+
+
+
+   //  difference between in encap vs abstraction
+
+    </script>
+
+
+
+</body>
+
+</html>
