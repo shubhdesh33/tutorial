@@ -231,7 +231,7 @@
         console.log(person.addmethod())
 
 
-        
+
 
         console.log(person.fname);
 
@@ -248,7 +248,59 @@
 
         console.log(person.getname1(5))
 
+
+        let x = "";
+        const myObj = {
+            name: "John",
+            age: 30,
+            cars: [
+                { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+                { name: "BMW", models: ["320", "X3", "X5"] },
+                { name: "Fiat", models: ["500", "Panda"], height: 30 }
+            ]
+        }
         
+        for (const m in myObj)  {
+            console.log(myObj[m])
+            console.log(m)
+            console.log(myObj)
+        }
+
+        for (let i in myObj.cars)  {
+            x += myObj.cars[i].name
+
+        for (let j in myObj.cars[i].models)
+          x+= myObj.cars[i].models[j]+' '
+        }
+          console.log(x)
+
+         
+
+        const userm = {
+
+            name: 'John Doe',
+
+            email: 'john.doe@example.com',
+
+            age: 25,
+
+            dob: '08/02/1989',
+
+            active: true
+        };
+
+        for (let key in userm)  {
+            console.log(userm[key])
+        }
+        console.log(userm)
+
+        Object.values(userm).forEach(element => {
+            console.log(element+' '+'hello')
+        });
+
+
+
+
 
 
     </script>

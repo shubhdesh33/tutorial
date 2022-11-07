@@ -211,15 +211,17 @@
 
             name: 'adi',
             lname: 'adhau',
-            today: new Date,
+            today: new Date (),
 
             display: function () {
 
-                console.log(this.name + ' ' + this.lname)
+                console.log(this.name + ' ' + this.today)
             }
         }
 
         console.log(student1.name)
+        student1.display()
+
 
         // object property convert to string
 
