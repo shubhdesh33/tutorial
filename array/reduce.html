@@ -11,14 +11,14 @@
     
 
 <script>
-let name = 'Shubham Deshmukh Ghatladki'
+// let name = 'Shubham Deshmukh Ghatladki'
 
-namelowercase = name.toUpperCase().split(' ')    // split is array method so convert in array
-// console.log(namelowercase)
+// namelowercase = name.toUpperCase().split(' ')    // split is array method so convert in array
+// // console.log(namelowercase)
   
-getfirst = namelowercase.map((ele)=> { ele[0];},).join('')
+// getfirst = namelowercase.map((ele)=> { ele[0];},).join('')
 
-console.log(getfirst())
+// console.log(getfirst())
 
 
 const account1 = {
@@ -51,7 +51,33 @@ const account4 = {
 
 const accounts = [account1, account2, account3, account4];
 
+const arr = [1, 2, 3, 4, 5];
+const average = arr.reduce((a, b) => a + b, 0) / arr.length;
+console.log(average);
 
+
+let shoppingCart = [
+  {
+    product: 'phone',
+    qty: 1,
+    price: 500,
+  },
+  {
+    product: 'Screen Protector',
+    qty: 1,
+    price: 10,
+  },
+  {
+    product: 'Memory Card',
+    qty: 2,
+    price: 20,
+  },
+];
+
+
+  let  getprice = shoppingCart.map((ele) => ele.price)
+  totalprice= getprice.reduce((ele , accu) => ele + accu,0)
+  console.log(totalprice)
 
 </script>
 

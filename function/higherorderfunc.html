@@ -110,7 +110,6 @@ function area (radius) {
 
 // radius.map(area)                                        //  
 
-
 function diameter (radius) {                              // remember argument
 
 return 2*radius
@@ -118,7 +117,22 @@ return 2*radius
 
 circumference = (radius) =>  2*Math.PI*radius
 
+ 
 
+calculate = function (radius,func) {
+
+let output =[]
+
+for (let i=0; i<radius.length; i++)  {
+
+    output.push(func(radius[i]))                 //  area function call here  // remember [i]
+}
+return output;
+}
+
+console.log(calculate(radius,area))
+console.log(calculate(radius,circumference))
+console.log(calculate(radius,diameter))
 
 
  
@@ -140,21 +154,6 @@ circumference = (radius) =>  2*Math.PI*radius
 
 
 
-
-calculate = function (radius,func) {
-
-    let output =[]
-
-    for (let i=0; i<radius.length; i++)  {
-
-        output.push(func(radius[i]))                 //  area function call here  // remember [i]
-    }
-    return output;
-}
-
-console.log(calculate(radius,area))
-console.log(calculate(radius,circumference))
-console.log(calculate(radius,diameter))
 
 
 
@@ -199,12 +198,10 @@ function surname () {
 
 
 function add (a,b)  {
-
 return a+b
 }
 
 function power (a,b) {
-
 return  Math.pow(a,b)
 }
 
@@ -214,7 +211,6 @@ let result = funct(a,b)
 console.log(result)
 
 }
-
 operation(0,5,add)
 operation(2,5,power)
 
@@ -245,6 +241,72 @@ let sorry = 33 ;
 return sorry 
 }
 
+
+// arr =[2,5,4,9,5,6,7]
+// let output =[]
+
+// function hof (arr,func) {
+  
+//   for (i=0;i<=arr.length;i++) {
+ 
+//     func(arr[i]) ? output.push(arr[i]):null
+//   }
+//   return output
+// }
+//   console.log(hof(arr,even))
+//   console.log(hof(arr,odd))
+
+
+//  function even (arr)  {
+ 
+//  return arr%2===0;
+// }
+
+// function odd (arr) {
+//   return arr %2!=0;
+// }
+
+  
+// // arr = [2, 5, 4, 9, 5, 6, 7]
+//   let output = []
+
+//   function hof(arr, func) {
+
+//     for (i = 0; i <= arr.length; i++) {
+//       if (func(arr[i]))
+//         output.push(arr[i])
+
+//     }
+//     return output
+//   }
+//   console.log(hof(arr, even))
+
+
+
+arr = [2, 5, 4, 9, 5, 6, 7]
+  let output = []
+
+  function hof(arr, func) {
+
+    for (i = 0; i <= arr.length; i++) {
+      if (func(arr[i]))
+        output.push(arr[i])
+
+    }
+    return output
+  }
+  console.log(hof(arr, even))
+
+  function even(arr) {
+    let save = []
+
+    if (arr % 2 === 0)
+      return true
+
+    else
+      return false;
+
+  }
 
 
 

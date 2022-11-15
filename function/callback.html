@@ -68,6 +68,25 @@
     one(two)
 
 
+// Callback Function Example
+function greet(name, myFunction) {
+    console.log('Hello world');
+
+    // callback function
+    // executed only after the greet() is executed
+    myFunction(name);
+}
+
+// callback function
+function sayName(name) {
+    console.log('Hello' + ' ' + name);
+}
+
+// calling the function after 2 seconds
+setTimeout(greet, 2000, 'John', sayName);
+
+
+
     //  https://www.geeksforgeeks.org/what-to-understand-callback-and-callback-hell-in-javascript/
 
 
@@ -75,14 +94,12 @@
 
       setTimeout(() => {
 
-        console.log()
+        console.log('wait for 3 sec')
         callback([2, 4, 6])
       }, 3000)
 
     }
-
     const addon = (array) => {
-
       let sum = 0
 
       for (value of array) {
@@ -91,8 +108,6 @@
       }
       console.log(sum)
     }
-
-
     main(addon);
 
 
@@ -225,7 +240,7 @@
     }
 
     function doOperation() {
-      doStep1(0, (result1) => {
+      doStep1(0, (result1) => {                           // result1 ha arrow function ahe
         doStep2(result1, (result2) => {
           doStep3(result2, (result3) => {
             console.log(`result: ${result3}`);

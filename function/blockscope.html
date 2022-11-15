@@ -6,55 +6,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-    <script src='main.js'></script>
+  <script src='main.js'></script>
 </head>
 
 <body>
-    <script>
+  <script>
 
-        // {
-        //     let fan = 'irfan khan'
-        //     console.log(fan);                    //  block scope
+    // {
+    //     let fan = 'irfan khan'
+    //     console.log(fan);                    //  block scope
 
-        // }
-        // // console.log(fan);
+    // }
+    // // console.log(fan);
 
 
-        {
-            var fans = 'khan irfan'
-            console.log(fans)
-        };
-        console.log(fans)
+    {
+      var fans = 'khan irfan'
+      console.log(fans)
+    };
+    console.log(fans)
 
-         let wrong = 'right';
+    let wrong = 'right';
 
-         if (true)  {
+    if (true) {
 
-            let fruit = 'apple';
-            console.log(fruit);
-            console.log(wrong);
+      let fruit = 'apple';
+      console.log(fruit);
+      console.log(wrong);
 
-         }
-           // console.log(fruit);
+    }
+    // console.log(fruit);
 
 
-          var right = 'wrong';
+    var right = 'wrong';
 
-          if (true)   {
+    if (true) {
 
-             var animal = 'tiger';
-             console.log(animal);
-             console.log(right);
+      var animal = 'tiger';
+      console.log(animal);
+      console.log(right);
 
-          }
-          console.log(animal);
+    }
+    console.log(animal);
 
 
 
+    const person = {
+      firstName: "John",
+      lastName: "Doe",
+      id: 5566,
+      fullName: function () {
+        return this.firstName + " " + this.lastName;
+      }
+    };
 
+    console.log(person.fullName())
 
 
 
+    console.log(this)
 
 
 
@@ -65,20 +75,10 @@
 
 
 
-          const person = {
-  firstName: "John",
-  lastName: "Doe",
-  id: 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
 
-console.log(person.fullName())
 
 
 
-console.log(this)
 
 
 
@@ -180,42 +180,26 @@ console.log(this)
 
 
 
+    //            function scope  ++  Block scope
 
+    function scope() {                       //   function scope  start
 
-
-
-
-
-
-
-
-
-
-
-
-
-        //            function scope  ++  Block scope
-
-        function scope() {                       //   function scope  start
-
-            if (true) {
-      //                                              block scope if with let const  
-                var x = 1;                   
-                let y = 2;
-                const z = 52;
-            }                                    //    block scope end
-            console.log(x)
+      if (true) {
+        //                                              block scope if with let const  
+        var x = 1;
+        let y = 2;
+        const z = 52;
+      }                                    //    block scope end
+      console.log(x)
       //      console.log(y)
       //      console.log(z)
 
-        }                                      //      function scope  end
+    }                                      //      function scope  end
 
-      //      console.log(x)
-      
-      
-        scope();
+    //      console.log(x)
 
 
+    scope();
 
 
 
@@ -235,7 +219,9 @@ console.log(this)
 
 
 
-    </script>
+
+
+  </script>
 </body>
 
 </html>

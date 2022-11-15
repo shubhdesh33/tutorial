@@ -37,7 +37,7 @@ function desh(a,b,c) {
 
 </script> -->
   <script>
-    
+
     function Info(fname, lname, city, country, state) {
       this.fname = fname;
       this.lname = lname;
@@ -62,37 +62,63 @@ function desh(a,b,c) {
     document.write("<br>");
 
   </script>
-  <P id="demo"></P>
   <script>
 
-    function ipl(mumbai, kkr, rcb, chena) {
-      this.mumbai = mumbai;
-      this.kkr = kkr;
-      this.rcb = rcb;
-      this.chena = chena;
+
+    //  callback hell
+
+    function dostep1(val, callback) {
+      const result = val + 1;
+      callback(result)
     }
-    function team1(mumbai, kkr, rcb, chena) {
-      ipl.call(this, mumbai, kkr, rcb, chena);
 
+    function dostep2(val, callback) {
+      const result = val + 1;
+      callback(result)
     }
-    function team2(mumbai, kkr, rcb, chena) {
-      ipl.call(this, mumbai, kkr, rcb, chena);
+
+    function dostep3(val, callback) {
+      const result = val + 1;
+      callback(result)
     }
-    var teams1 = new team1("rohit", "gautam", "vitat", "dhoni");
-    var teams2 = new team2('pollard', 'sam', 'ram', 'kaka');
 
-    document.write(teams1.mumbai + '  ' + teams1.kkr + '  ' + teams1.rcb + '  ' + teams1.chena);
-    document.write("<br>");
+    function dostep4(val, callback) {
+      const result = val + 1;
+      callback(result)
+    }
 
-    document.write(teams2.mumbai + '  ' + teams2.kkr + '  ' + teams2.rcb + '  ' + teams2.chena);
-    document.write("<br>");
+    dostep1(0, result1)
+    dostep2(result1, result2)
+    dostep3(result2, result3)
+    dostep4(result3, result4)
 
-    
+    function result1(res1) {
+      return res1
+      return function result2(res2) {
+        return res2
 
-   
+        function result3(res3) {
+          return res3
 
-    
-    
+        }
+        function result3(res3) {
+          return res3
+
+          function result4(res4) {
+            console.log(res4)
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
   </script>
 </body>
 

@@ -11,40 +11,211 @@
 
 <script>
 
-const getRollNo = () => {
+// const getRollNo = () => {
 
-setTimeout(() => {
+// setTimeout(() => {
 
 
-const Roll_No = [2, 3, 4, 5];
+// const Roll_No = [2, 3, 4, 5];
 
-console.log(Roll_No);
+// console.log(Roll_No);
 
-setTimeout((rollno) => {
+// setTimeout((rollno) => {
 
- const biodata = {
+//  const biodata = {
 
-   name: 'Rushikesh',
-   age: 25
- }
- console.log(`My roll no is ${rollno},My name is ${biodata.name}, Age ${biodata.age} years old`)
+//    name: 'Rushikesh',
+//    age: 25
+//  }
+//  console.log(`My roll no is ${rollno},My name is ${biodata.name}, Age ${biodata.age} years old`)
 
- setTimeout((name) => {
+//  setTimeout((name) => {
 
-   biodata.gender = 'Male';
+//    biodata.gender = 'Male';
 
-   console.log(`My roll no is ${rollno},My name is ${biodata.name}, Age ${biodata.age} years old,I am ${biodata.gender}`)
+//    console.log(`My roll no is ${rollno},My name is ${biodata.name}, Age ${biodata.age} years old,I am ${biodata.gender}`)
 
- }, 2000, biodata);
+//  }, 2000, biodata);
 
-}, 2000, Roll_No[2]);
+// }, 2000, Roll_No[2]);
 
-}, 2000);
+// }, 2000);
 
-};
-   getRollNo()
+// };
+//      getRollNo()
+
+
+check = [10,15,14,23,51,199999999999999941501]
+
+function hof2 (check ,func) {
+  
+  let save =[]
+  
+  for (i=0;i<check.length;i++)  {
+    
+    save.push(func(check[i]))
+    
+  }
+  return save
+}
+
+console.log(hof2 (check,even))
+
+function even (take)  {
+  
+if (take %2===0) {
+  return take
+}
+
+}
+
+//ex call,apply,bind.................
+
+ 
+ function obj (flightNo,name) {
+
+    this.flightNo= flightNo;
+    this.name= name;
+   return this
+   }
+
+   function obj1 (passName)  {
+  this.passName = passName;
+    obj.call(this,432,'air-india')
+   //  console.log(this)
+   }
+
+   function obj2 (passName) {
+  this.passName = passName;
+
+  obj.apply(this,[123,'indi-go'])
+   // console.log(this)
+   }
+
+     
+
+   let save1=  new obj1 ('shubham',) 
+   let save2=  new obj1 ('shubham',) 
+   let save3=  new obj1 ('shubham',) 
+   let save4=  new obj1 ('shubham',) 
+   let save5=  new obj1 ('shubham',) 
+ 
+     saver = [save1,save2,save3,save4,save5]
+     console.log(saver)
+   let saver1 = new obj2 ('ishwar')
+   let saver2 = new obj2 ('ishwar')
+   let saver3 = new obj2 ('ishwar')
+   let saver4 = new obj2 ('ishwar')
+   let saver5 = new obj2 ('ishwar')
+
+   saving = [saver1,saver2,saver3,saver4,saver5]
+
+   console.log(Object.values(saving))
+
+
+  
+
 
 </script>
 
+
+<script>
+  let func = function(param1) {
+     this.param1 = param1;
+  };
+  func.prototype.display = function() {
+      return this.param1;
+   };
+  function display(val) {
+     document.write(val());
+  }
+  var res = new func(11.98);
+  display(res.display.bind(res));
+
+
+
+  array = [5,8,10,9,4,12]
+
+function hof (arr,func)  {
+  let output =[]
+
+  for (i=0;i<array.length;i++) {
+    
+   
+  //   if (func (arr[i]))
+  //   output.push(arr[i])
+  func(arr[i]) ?output.push(arr[i]):null
+   }
+    
+  
+  return output
+}
+console.log(hof(array,even))
+console.log(hof (array,odd))
+console.log(hof (array,greaterthanfive ))
+
+
+
+
+
+function even (array)  {
+  
+  if (array %2==0)  {
+    return array;
+  } 
+}
+
+function odd (array)  {
+   
+   if (array %2!=0)  {
+     return true;
+   }
+ }
+
+ function greaterthanfive (array)  {
+  
+  if (array > 5)  {
+    return true;
+  }
+}
+
+
+function  constructor (fname,lname) {
+  
+  // publis field
+  this.fname=fname;
+  this.lname=lname;
+
+  var id;
+  self = this
+  function private (val) {
+     var id= val
+    return self.id +this.fname
+  }
+
+  this.previlegefunction = function () {
+   return private(1321)
+  }
+
+}
+
+ constructor.prototype.publicfunc = function () {
+
+  console.log('i am public')
+ }
+   
+   dislay = new constructor() 
+
+   console.log(display.fname)   
+   console.log(display.lname)   
+   console.log(display.idname)   
+   console.log(display.previlegefunction())   
+   console.log(display.private ())   
+   console.log(display.publicfunc())  
+
+
+
+
+</script>
 </body>
 </html>

@@ -7,110 +7,69 @@
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <script src="/second.js"></script>
 
 
 </head>
 
 <body>
 
-  <!-- <h2 id="gh">dev d</h2>
-    <h1 id="h">java</h1>
-    <h1 id="ghi">j</h1>
-<script>
-    var x = 5;
-    x = 8;
-    y = x;
-    document.write (y);
-     document.getElementById('h').innerHTML="hello"; 
-</script>
-<script> document.getElementById('gh').innerHTML="shubham";    
-</script> -->
-
-  <!-- <script>
-    
-    function message() {
-        alert( "call me");
-    }
-        
-        </script>
-        <input type="button" on click="message()" value="click me">  -->
-
-
-   <script>
-    document.write("<br>")
-
-    function Emp(id, name, salary) {                             //sagle parameter aale pahije \ Emp ha "name" ahe toh call kara sathi use hote
-      this.id = id;
-      this.name = name;
-      this.salary = salary;
-    }
-    function PerEmp(id, name, salary) {                            //PerEmp = ha second function cha name ahe
-      Emp.call(this, id, name, salary);
-    }
-    function TempEmp(id, name) {
-      Emp.call(this, id, name);                                      //Emp.call= ha main Emp la call karte  ani parameter la pn
-    }
-    var pEmp = new PerEmp(1, "SHUBHAM DESHMUKH", 2500);         //var = declaration \ pEmp= variable \ new PerEmp = name \ (  ) = parameter
-    var tEmp = new TempEmp(2, "DESHMUKH SHUBHAM");                          // Emp ha 1St function madhla ghetla ahe tyachi link laga sathi
-
-    document.writeln(pEmp.id + " " + pEmp.name + " " + pEmp.salary);             //( ) = object \ object ha function  PerEmp sathi ghetla ahe
-    document.write("<br>")
-    document.writeln(tEmp.id + " " + tEmp.name);
-  
-  </script>
   <script>
-    document.write("<br>");
+    //  null 
 
-    function Table(num) {
-      for (i = 1; i <= 10; i++) {
-        document.write(`${num} * ${i} = ${num * i}`);
-        document.write("<br>");
+    console.log(typeof(null))
 
-      }
-      document.write("<br>");
+    let num= null
+    console.log(num)
+
+    missingobject = null;
+    existingobject = {name : 'shuham'}
+
+    console.log(missingobject==null)
+    console.log(existingobject==null)
+
+    console.log(Boolean(null))
+
+    //  null is falsey value
+
+    if (null) {
+      console.log('naull value is true')
     }
-    Emp(6,"rt",87);
-    Table(2);   
-    
-  //  Table(5);
-  //  Emp(); -->
+    console.log('null value is false')
+
+    console.log(null=== undefined)
+
+
+    // In JavaScript, when you pass undefined to a function parameter that takes a default value, 
+    // the undefined is ignored and the default value is used. 
+    function test (x =1) {
+      console.log(x)
+    }
+    test (undefined)
+
+
+    // when you pass null to a default parameter function, the function takes the null as a value. 
+    function test1 (x =1) {
+      console.log(x)
+    }
+    test1 (null)
+
+
+    ///           UNDEfINED
+
+
+    let name ;
+    console.log(name)
+
+   console.log( typeof(undefined) )
+
+
+
+
+
    </script>
 
 
-<script>
-  function Info(fname, lname, city, country,state) {
-    this.fname= fname;
-    this.lname= lname;
-    this.city= city;
-    this.country= country;
-  }
-   function Person1(fname, lname, city, country) {                
-    Info.call(this, fname, lname, city, country);
-   }
 
-   function Person2(fname,lname,city,country) {
-   Info.call(this,fname,lname,city,country);
-   }
-
-   var per1 =new Person1("shubham", "deshmukh", "amravati", "india");
-   var per2 =new Person1("ram", "dd", "akola", "india");
-
-   document.writeln(per1.fname+"  " + per1.lname+"   " + per1.city+"   " + per1.country+"   "+"maha");
-   document.write("<br>");
-
-   document.writeln(per2.fname+"  "+per2.lname+"   " +per2.city+"    "+per2.country);
-   document.write("<br>");
-   
-
-
-   
-  {
-    document.writeln(per1.fname+"  " + per1.lname+"   " + per1.city+"   " + per1.country+"   "+"maha");
-   document.write("<br>");
-  }
-  info();
-</script>
 
 </body>
 

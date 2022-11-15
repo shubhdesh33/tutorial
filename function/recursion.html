@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <script>
+  <script>
 
     //     let number = prompt ('take a number')
     //     console.log(number)
@@ -32,42 +34,105 @@
 
 
 
-  function factorial (x) {
 
-    if (x==0) {
-        return 1;
-    } else {
-        return x * factorial(x-1)
+
+
+
+    //   let takenum = prompt('take a number')
+    //   let fact = 1
+
+    //   function facto(n) {
+    //     if (n > takenum) {
+    //       return
+    //     }
+    //     fact = fact * n
+    //     n++
+    //     facto(n)
+    //   }
+    //   facto(1)
+    //   console.log(fact)
+
+
+
+
+
+    //   function countdown(val) {
+
+    //    console.log(val)
+
+    //     val -= 1
+    //    if (val > 1) {
+    //   countdown(val)
+    //    }
+    //  }
+    // countdown(5)
+
+
+
+    function factorial (a) {
+
+
+      if (a ==0)  {
+
+        return 1
+      } else 
+       { 
+       return  a* factorial(a-1)
+       }
     }
-  }
 
-      const numeric = prompt ('take a number')
-  //const num =5;
+     store = factorial (prompt('take a number'))
+    console.log(store)
 
-    let result = factorial(numeric)
-    console.log(`the ${numeric} is a ${result}`)
-
-
-
-
-
-    let takenum = prompt('take a number')
-    let fact=1
-
-    function facto (n)  {
-      if (n> takenum) {
-     return
-      }
-      fact = fact * n
-      n++
-      facto (n)
-    }
-       facto (1)
-       console.log(fact)
     
- 
+    function factorial(num){
+    if(num === 1){
+        return num;
+    }
+    return num * factorial(num-1) 
+}
+
+    console.log(factorial(2));
 
 
-    </script>
+    arrow = (n) => {
+      console.log(n)
+      if (n > 2) { n = counterdown(n - 1) }
+    }
+    arrow(5)
+
+    function counterdown(n) {
+
+      console.log(n)
+
+      if (n > 0) {
+        n = counterdown(n - 1)
+
+      }
+    }
+    save = counterdown(10)
+
+
+    function randomUntilFive(result = 0, count = 0) {
+      if (result === 5) {
+        console.log(`The random result: ${result}`);
+        console.log(`How many times random is executed: ${count}`);
+        return;
+      }
+      result = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+      count++;
+      randomUntilFive(result, count);
+    }
+
+    randomUntilFive();
+
+
+  
+
+
+  //  https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-1.php
+
+  </script>
 </body>
+
 </html>

@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src='main.js'></script>
 </head>
 
 <body>
@@ -50,7 +49,8 @@
 
     //  FUNCTION BORROWING  //
 
-    // call method madhe getname madhla thissss ha getname1 la point karto  means this borrow karto getname1 cha property
+    // call method madhe getname madhla thissss ha getname1 la point karto  means 
+    //  this borrow karto getname1 cha property
 
     getname.printfullName.call(getname1)
 
@@ -61,15 +61,15 @@
 
       firstName: 'suresh ',
       lastName: 'raina',
-
     }
+
 
     let getstudent = function (town, km, village) {
 
-      console.log(this.firstName + ' ' + this.lastName + ' ' + 'from ' + town + ' ' + km + ' ' + village)
+      return console.log(this.firstName + ' ' + this.lastName + ' ' + 'from ' + town + ' ' + km + ' ' + village)
     }
 
-    getstudent.call(student, 'acmt', '1200', 'chandur')
+    getstudent.apply(student, ['acmt', '1200', 'chandur'])
 
 
 
@@ -83,11 +83,12 @@
 
     //  in call method we pass the argument indivisually  //
 
-    getstudent.call(student1, 'akola', 1500, 'murti')
+    // getstudent.call(student1, 'akola', 1500, 'murti')
 
     //  apply method pass the argument in a array list type //
 
-    getstudent.apply(student1, ['alaska', 1900, 'murti']);
+   
+    , ['alaska', 1900, 'murti'];
 
     //  bind method  //
 
@@ -115,14 +116,9 @@
 
     const addbyapply = add.apply(obj, [25, 30])
 
-
     const bindadd = add.bind(obj, 75, 60)
 
     bindadd();
-
-
-
-
 
 
 
@@ -149,14 +145,36 @@
     const bmw = new Car("BMW", 120000, 'angular', 'black');
     const banana = new Fruit("Banana", 1, 'nagpur', 10);
 
-
     //   IMP
+    console.log(Object.values(bmw));
     console.log(bmw);
 
-    console.log(bmw);
 
 
-      
+    function ipl(mumbai, kkr, rcb, chena) {
+      this.mumbai = mumbai;
+      this.kkr = kkr;
+      this.rcb = rcb;
+      this.chena = chena;
+    }
+    function team1(mumbai, kkr, rcb, chena) {
+      ipl.call(this, mumbai, kkr, rcb, chena);
+
+    }
+    function team2(mumbai, kkr, rcb, chena) {
+      ipl.call(this, mumbai, kkr, rcb, chena);
+    }
+    var teams1 = new team1("rohit", "gautam", "vitat", "dhoni");
+    var teams2 = new team2('pollard', 'sam', 'ram', 'kaka');
+
+    document.write(teams1.mumbai + '  ' + teams1.kkr + '  ' + teams1.rcb + '  ' + teams1.chena);
+    document.write("<br>");
+
+    document.write(teams2.mumbai + '  ' + teams2.kkr + '  ' + teams2.rcb + '  ' + teams2.chena);
+    document.write("<br>");
+
+
+
 
 
 
@@ -234,10 +252,14 @@
       car.call(this, 'creta', "petrol")
       this.brand = brand
       console.log(this)
+
+      this.method = function () {
+        console.log(this.name + ' ' + this.fueltype + ' ' + this.brand)
+      }
     }
 
     function newbrand(price) {
-
+      //   you can change/set the value of ' this ' using call/apply methods.
       car.call(this, 'safari', "diesel")
       this.price = price,
         console.log(this)
@@ -247,7 +269,7 @@
 
     let savenewbrand = new newbrand(50000)
 
-    // savesetbrand()
+    savesetbrand.method()
     // avenewbrand ()
 
 
@@ -291,31 +313,96 @@
 
 
     const Vehicle = {
-    name: 'Vehicle',
-    type: 'vehicle',
-    start: function() { 
+      name: 'Vehicle',
+      type: 'vehicle',
+      start: function () {
         return `starting the ${this.name} ${this.type}`
-    },
-    stop: function() {
+      },
+      stop() {
         return `stopped the ${this.name} ${this.type}`
+      }
+    };
+
+    const cars = { name: 'Toyota', type: 'car' }
+    console.log(Vehicle.start.call(cars)) // returns starting the car Toyota
+    console.log(Vehicle.stop.call(cars)) // stopped the Toyota car
+
+
+    var obj = { name: "Niladri" };
+
+    var greeting = function (a, b, c) {
+      return "welcome " + this.name + " to " + a + " " + b + " in " + c;
+    };
+
+    //creates a bound function that has same body and parameters 
+    var bound = greeting.bind(obj);
+
+
+    console.dir(bound); ///returns a function
+
+    console.log("Output using .bind() below ");
+
+    console.log(bound("Newtown", "KOLKATA", "WB")); //call the bound function
+
+
+
+    this.x = 10;
+
+    var module = {
+      x: 20,
+
+      getX: function () {
+        return this.x
+      }
     }
-};
 
-const car = { name: 'Toyota', type: 'car' }
-Vehicle.start.call(car) // returns starting the car Toyota
-Vehicle.stop.call(car) // stopped the Toyota car
+    console.log(module.getX())
 
+    let retrive = module.getX
 
+    console.log(retrive())
 
+    let boundbind = retrive.bind(module)
 
-
-
-
+    console.log(boundbind())
 
 
 
+    getnames = function (obj, add, hobby1, hobby2) {
+
+      console.log(this.name + ' ' + this.add + ' ' + hobby1 + ' ' + hobby2)
+    }
+
+    let user = {
+      name: 'rohi',
+      add: 'yavatmal'
+    }
+
+    hobbyies = ['a', 'b']
+
+    getnames.call(user, hobbyies[0], hobbyies[1])
 
 
+
+
+    let runner = {
+      name: 'Runner',
+      run: function (speed) {
+        console.log(this.name + ' runs at ' + speed + ' mph.');
+      }
+    };
+
+    let flyer = {
+      name: 'Flyer',
+      fly: function (speed) {
+        console.log(this.name + ' flies at ' + speed + ' mph.');
+      }
+    };
+
+    let run = runner.run.bind(flyer, 20);
+    run();
+
+    
 
 
 

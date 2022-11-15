@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+function Constructor(){
+  this.foo = 'foo';
+  
+  // Needed for Private methods
+  var self = this;
+  
+  // Private methods need to be placed inside the Constructor.
+  // Doesn't perform as well as prototype methods (as not shared across instances)
+  function private(){
+    console.log('I am private');
+    console.log(self.foo);
+    console.log(this.foo)
+  }
+
+  // Privileged methods need to be placed inside the Constructor.
+  // This is so they can get access to the Private methods.
+  this.privileged = function(){
+    private();
+  };
+}
+
+Constructor.prototype.public = function(){
+  console.log('I am public');
+};
+
+constructor = new Constructor;
+
+console.log(constructor.foo);
+
+
+constructor.public();     // will work
+constructor.privileged(); // will work
+//constructor.private(); 
+
+
+
+
+
+function DisplayFullname(firstname,lastname)
+{
+
+    // this are public fields
+    this.FirstName=firstname;
+    this.LastName=lastname;
+
+    // this is Private variable which is accessible only inside of this constructor function.
+    var fullname="";
+
+      self = this
+    //private function
+    var getFullName=function()
+    {
+        fullname=this.FirstName+" "+this.LastName;
+        return fullname;
+
+        fullname=self.FirstName+" "+self.LastName;
+        return fullname;
+    }
+
+    //privileged function
+    this.previlageFunction=function()
+    {
+        return getFullName();
+    }
+
+    //public fucntion
+    DisplayFullname.prototype.publicgetFullName=function(){
+            return this.previlageFunction();
+    }
+}
+
+
+var dis=new DisplayFullname("Sagar", "Jaybhay");
+console.log(dis.FirstName); // Sagar
+console.log(dis.LastName);// Jaybhay
+console.log(dis.previlageFunction());// undefined
+console.log("<br/>");
+console.log(dis.fullname);//undefined
+console.log("<br/>");
+console.log(dis.publicgetFullName());//undefined
+
+
+
+
+function Employee(id, name) { //Constructor
+    //Public member variables
+    this.id = id;
+    this.name = name;
+    //Private member variables
+    var fName;
+    var lName;
+    var that = this;
+    //By convention, we create a private variable 'that'. This is used to     
+    //make the object available to the private methods. 
+
+    //Private function
+    function setFName(pfname) {
+        fName = pfname;
+        console.log('setFName called');
+    }
+    //Privileged function
+    this.setLName = function (plName, pfname) {
+        lName = plName;  //Has access to private variables
+        setFName(pfname); //Has access to private function
+        console.log('setLName called ' + this.id); //Has access to member variables
+    }
+    //Another privileged member has access to both member variables and private variables
+    //Note access of this.dataOfBirth created by public member setDateOfBirth
+    this.toString = function () {
+        return 'toString called ' + this.id + ' ' + this.name + ' ' + fName + ' ' + lName + ' ' + this.dataOfBirth; 
+    }
+}
+//Public function has access to member variable and can create on too but does not have access to private variable
+Employee.prototype.setDateOfBirth = function (dob) {
+    console.log('setDateOfBirth called ' + this.id);
+    this.dataOfBirth = dob;   //Creates new public member note this is accessed by toString
+    //alert(fName); //Does not have access to private member
+}
+
+
+    var employee = new Employee(5, 'Shyam'); //Create a new object and initialize it with constructor
+    employee.setLName('Bhaskar', 'Ram');  //Call privileged function
+    employee.setDateOfBirth('1/1/2000');  //Call public function
+    employee.id = 9;                     //Set up member value
+    //employee.setFName('Ram');  //can not call Private Privileged method
+    console.log(employee.toString());  //See the changed object
+
+
+
+
+
+//     function func (fn,ln)  {
+
+// this.fn=fn;
+// this.ln=ln;
+
+
+// var fullname;
+// var getfullname = 'deshmukh';
+// var id;
+//  //  var that = this;
+
+
+// function private (nam)  {
+//   fullname = nam;
+//   console.log('private func')
+// }
+
+// this.privilegfunc = function (no,nam)  {
+//   id= no
+//   private (nam)
+//  return getfullname+' '+this.fn+' '+fullname +' '+id+' '+this.dateob
+  
+// }
+
+// this.access = function ()  {
+ 
+//  return  getfullname+' '+this.fn+' '+fullname +' '+id+' '+this.dateob
+ 
+// }
+// private ('shubham')
+
+// }
+
+// // public method
+
+//   func.prototype.method= function (dob) {
+//     this.dateob =dob
+//     console.log(this.id)
+//   }
+
+// var employe = new func ('adi','adhau')
+
+//   console.log(employe.fn)
+
+// // console.log(employe.private())
+
+// employe.method('1/1/1996')
+
+// console.log(employe.privilegfunc('121','akash'))
+// console.log(employe.access(332))
+
+
+function employe (fn,ln)  {
+ this.fn = fn;
+ this.ln=ln;
+
+ var id;
+ var grade;
+
+ function private (grading) {
+ grade = grading
+ console.log(grade)
+ console.log(fn)
+
+ 
+ }
+
+ this.previlage = function (no,g) {
+  id =no
+  private(g)
+  return this.fn+' '+this.ln +' '+grade+' '+id+' '+this.getvalue
+ }
+
+
+}
+
+ employe.prototype.public = function (outsidevalue) {
+ this.getvalue =outsidevalue
+  console.log('public method')
+  console.log(this.fn+' '+this.ln +' '+this.getvalue)
+
+ }
+
+  var constructor = new employe ('harish','hande')
+ 
+  
+
+  constructor.public(56)
+
+  console.log(constructor.previlage(123,'A'))
+
+ //console.log(constructor.private())
+
+ 
+
+
+/*    If you don’t like the that = this work-around, above, you have the option to use bind (caveat: consumes more memory):
+    function Constr(...) {
+        var privateValue = ...;
+
+        var privateFunction = function (...) {
+            privateValue = ...;
+            this.publicField = ...;
+            this.publicMethod(...);
+        }.bind(this);
+    }
+
+    */
+
+
+
+    function Student() {
+    this.name = 'John';
+    this.gender = 'M';
+}
+
+var studObj = new Student();
+
+Student.prototype.age=26
+
+var studObj1 = new Student();
+ console.log(studObj.age)
+ console.log(studObj.__proto__)
+
+
+ console.log(studObj)
+
+
+
+ 
+   this.name='shubham'
+ function Dog(name) {
+    var that = this
+
+    that.name=name
+    setTimeout(function() {
+        alert(this.name); //window - setTimeout() has overwritten the 'this' context
+        alert(that.name); //we reference our cached, outer context
+    }, 500);
+}
+var fido = new Dog('Fido');
+
+
+
+//   self === this 
+
+
+//  https://medium.com/@vijay.j.shekhawat/javascript-why-var-self-this-bbbaf98ab9d9
+
+
+
+  let name ='rahul';
+    var obj = {
+        name:'shubham',
+        outerfunction : function  ()  {
+            var that =this
+          console.log(this ==obj)
+
+          function inner  () {
+               console.log(this==obj)
+               console.log(that===obj)
+
+               console.log(this.name)
+               console.log(that.name)
+
+          }
+          inner()
+        }
+    }
+
+ let    save = obj.outerfunction()
+        
+ 
+
+ 
+
+
+
+
+// https://morioh.com/p/1384922f859c 
+
+//  https://robertnyman.com/2008/10/14/javascript-how-to-get-private-privileged-public-and-static-members-properties-and-methods/
+
+ //  https://medium.com/@sagar_jaybhay/how-to-implement-private-privileged-functions-in-javascript-2020-sagar-jaybhay-bf689fe5704a
+
+  //  https://gist.github.com/Integralist/8419151
+
+  //  https://stackoverflow.com/questions/55611/javascript-private-methods
+
+  //   https://2ality.com/2012/03/private-data.html
+</script>
+
+</body>
+</html>

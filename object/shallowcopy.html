@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+<script>
+
+    //  in js data is not copy the value it copy the memorylocation/ address
+
+  let obj = {
+    name:'ram',
+  }
+
+
+    //  pass by reference
+  let user = obj
+   user.name='rahul';
+
+   console.log(user)
+   console.log(obj)
+
+//  primitive data type
+
+   //  pass by value
+
+   let x= 'shubham';
+   let y = x
+   y=30
+
+ console.dir(y)
+ console.log(x)
+
+
+  
+  //  Shallow copy
+
+  let obj1 = {
+    name:'adi',
+  }
+
+   let save = Object.assign({},obj1)
+
+  //  let save ={...obj1}   
+  save.name='deshmukh'
+
+  console.log('name in obj :', save)
+  console.log(obj1)
+
+  // deep copy
+
+  let obj2 = {
+    name:'adi',
+    add : {
+        city :'amt',
+        dist :'akola',
+    },
+    getname () {
+        this.name+' '+this.add.city
+    }
+  }
+
+ //  spread operator not work in nested obj
+
+//   let save1 ={...obj2}   
+//   save1.add.city='deshmukh'
+
+//   console.log('name in obj :', save1)
+//   console.dir(obj2)
+
+
+  //  Deep copy  //  
+  let deepcopy = JSON.parse( JSON.stringify(obj2))
+
+   deepcopy.add.city ='nagpur';
+
+     //  obj method show nhi karnar deep copy madhe
+   console.log(deepcopy)
+   console.log(obj2)
+
+   //  primitive 
+
+
+  originalvalue = 10
+   let copiedvalue = originalvalue
+
+   console.log(copiedvalue)
+   console.log(originalvalue)
+
+
+   copiedvalue=20
+
+   console.log(copiedvalue)
+   console.log(originalvalue)
+
+
+   //  Pass by value  and Pass by reference 
+
+    //  pass by value
+
+   let a ='chaman';
+
+   function change (val) {
+    return val =30
+   }
+  
+  
+   console.log(change (a))
+   console.log(a)
+
+
+   //  Pass by reference  // example of shallow copy
+
+   let a1 = {num :5};
+
+   let change1 = (val) => {
+    return val.num = 25
+   }
+
+   console.log(change1 (a1))
+
+   console.log(a1)
+
+
+
+
+   let Person = {
+    name : 'shubham',
+    age : 25,
+   }
+
+   function increaseage (obj)  {
+   //  this.age +                          because of ' this ' context o/p NaN
+    obj.age += 1
+    
+   }
+
+    increaseage(Person)
+
+    // increaseage.bind(Person)
+
+   console.log(Person)
+
+
+
+
+   /*  In JavaScript, all function arguments are always passed by value. It means that JavaScript copies the values of the variables into the function arguments.
+
+Any changes that you make to the arguments inside the function do not reflect the passing variables outside of the function. In other words, the changes made to the arguments are not reflected outside of the function.
+
+If function arguments are passed by reference, the changes of variables that you pass into the function will be reflected outside the function*/
+
+
+
+function car(name, fueltype) {
+
+this.name = name;
+this.fueltype = fueltype;
+return this
+}
+function setbrand(brand) {
+ this.brand = brand
+ car.call(this, 'creta', "petrol")
+ console.log(this)
+}
+function newbrand(price) {
+
+this.price = price,
+ store = car.bind(this)
+  return store
+}
+const brand = new setbrand ('2-generation')
+const brandnew = new newbrand (100)
+
+// function car (name,fueltype)  {
+//   this.name=name;
+//   this.fueltype=fueltype;
+//   return this
+// }
+// function setbrand (brand) {
+//   this.brand=brand
+//     car.call(this,'alto','petrol')
+//   console.log(this)
+// }
+// function newbrand (price) {
+ 
+//   this.price= price,
+//   store = car.bind(this)
+//    return store
+
+// }
+//  const brand = new setbrand ('2-generation')
+//   const brandnew = new newbrand('8-gen')
+
+
+  console.log(store('alto','diesel'))
+
+
+</script>
+
+</body>
+</html>

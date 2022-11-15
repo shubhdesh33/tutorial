@@ -1,309 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-    <script src='main.js'></script>
+  <script src='main.js'></script>
 </head>
+
 <body>
-    
 
-    <script>
 
-let arr1 = [9, 2, 42, 55, 71, 22, 4,  5,  90, 25, 26]
+  <script>
 
-let sum = 0
+    let arr1 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26]
 
-for (i=0;i<arr1.length;i++)  {
+    let sum = 0
+
+    for (i = 0; i < arr1.length; i++) {
+
+      sum += arr1[i]
+    }
+    console.log(sum)
+
+
+
+
+
+    let arr2 = [3, 5, 22, 5, 7, 2, 45, 75, 89, 21, 2]; // --> 276
+
+    let total = 0;
+
+    for (i = 0; i < arr2.length; i++) {
+
+      total += arr2[i]
+    }
+    console.log(total)
+
+    let add = sum + total
+
+    console.log(add)
+
+
+
+
+    let arr3 = [4, 6, 7];
+    let arr4 = [8, 1, 9];
+
+    sum = 0;
+    addtwoarray = [];
+    for (i = 0; i < arr3.length; i++) {
+
+      sum = arr3[i] + arr4[i]
+      addtwoarray.push(sum)
+    }
+    console.log(addtwoarray)
+
+
+
+
+
+    let str1 = "javascript";
+
+    let newarray = [];
+    for (i = 0; i < str1.length; i++) {
+
+      if ((i + 1) % 2 == 0) {
+
+        console.log(str1[i])
+      }
+    }
+
+
+    let n1 = 22;
+
+    for (i = 1; i <= n1; i++) {
+
+      if (i % 2 == 0) {
+        console.log(i + ' ' + 'is a even number')
+
+      }
+
+    }
+
+
+    const arr15 = [34, 5, 3, 3, 1, 6];
+    const arr25 = [5, 67, 8, 2, 6, 4];
+
+    const res = [];
+    for (let i = 0; i < arr15.length; i++) {
+      res[i] = (arr15[i]) + (arr25[arr25.length - 1]);
+    };
+    console.log(res);
+
+
+    const aa = [12, 23, 45, 63, 56]
+
+    rsm = aa.length
+    console.log(rsm)
+
+    //  Write a JavaScript program which iterates the integers from 1 to 100.
+    // But for multiples of three print "Fizz" instead of the number and for the multiples of 
+    // five print "Buzz". For numbers which are multiples
+    // of both three and five print "FizzBuzz"
+
+
+    for (i = 1; i < 100; i++) {
+
+      if (i % 3 === 0 && i % 5 === 0) {
+
+        console.log(i + ' ' + 'FIZZBUZZ')
+      }
+      else if (i % 5 == 0) {
+
+        console.log(i + ' ' + 'BUZZ')
+      }
+
+      else if (i % 3 == 0) {
+
+        console.log(i + ' ' + 'FIZZ')
+      }
+      else {
+        console.log(i)
+      }
+    }
+
+
+
+    // reverse the array element
+
+    reversearray = [56, 45, 12, 3, 6, 96, 85, 45]
+
+    empty = [];
+    for (i = reversearray.length - 1; i >= 0; i--) {
+
+      empty.push(reversearray[i])
+
+    }
+    console.log(empty)
+
+
+
+
+    let stocks = [
+      {
+        code: "GOOGL", price: 1700,
+      },
+
+      { code: "AAPL", price: 130, },
+
+      { code: "MSFT", price: 219, },
+
+      { code: "TSLA", price: 880, },
+
+      { code: "FB", price: 267, },
+
+      { code: "AMZN", price: 3182, },
+
+    ];
+
+
+    let empty1 = [];
+
+    for (i = 0; i < stocks.length; i++) {
+
+      if (stocks[i].price < 1000) {
+
+        // console.log(stocks[i].price)
+        empty1.push(stocks[i].price)
+      }
+    }
+
+    console.log(empty1)
+
+    //  largest  //
+
+    largest = [33, 45, 85, 63, 96, 100]
+
+    let large = '';
+
+    for (i = 0; i < largest.length; i++) {
+
+      if (largest[i] > large) {
+
+        large = largest[i]
+      }
+    }
+    console.log(large)
+
+
+
+    //   largest with function
+
+    function larger() {
+      let savevalue = 0;
+
+      for (i = 0; i < arguments.length; i++) {
+
+        if (arguments[i] > savevalue) {
+
+          savevalue = arguments[i]
+        }
+      }
+      return savevalue
+    }
+
+    console.log(larger(23, 45, 63, 89, 41, 52, 32, 96))
+
+
+    //  ARROW FUNCTION LARGEST  // 
+
+    let number = [23, 56, 41, 23, 78, 20, 199]
+
+    number.sort((a, b) => b - a);
+
+    console.log(number);
+
+    let x = number;
+    console.log(x[0])
+
+
+
+
+    //  SMALLEST  //
+
+    array = [23, 56, 41, 32, 89, 13, 47]
+
+    smallest = array[0];
+    for (i = 0; i < array.length; i++) {
+
+      if (array[i] < smallest) {
+        smallest = array[i];
+
+      }
+    }
+    console.log(smallest)
+
+
+
+    let n = 10;
+
+    let star = '';
+
+    for (i = 0; i < n; i++) {
+
+      for (j = 0; j <= i; j++) {
+
+        star += '*';
+      }
+      star += "\n";
+    }
+    console.log(star)
+
+
+    //  REST PARAMETER //       first param == 'A'
+
+    function myFunc(firstParam, ...remainingParams) {
+      console.log(firstParam);
+      for (var i = 0; i < remainingParams.length; i++) {
+        console.log(remainingParams[i]);
+      }
+    }
+    myFunc('A', 'B', 'V', 'F', 'T', 'H');
+
+
+    function myFunc() {
+      if (arguments.length > 0) {
+        for (var i = 0; i < arguments.length; i++)
+          console.log(arguments[i]);
+      }
+    }
+    myFunc(2, 3, 4, 6, 1, 7, 3);
+
+
+
+
+    //  triangle
+    let k = 1
+
+    for (i = 0; i <= 5; i++) {
+
+      for (j = 0; j <= i; j++) {
+       // document.write(k)
+       document.write('*')
+      }
+     document.write('<br>')
+
+    //  k++
+    }
   
-  sum+=arr1[i]
-}
-console.log(sum)
 
 
+    for (i = 1; i <= 5; i++) {
 
+  for (j = 1; j <= i; j++) {
+    document.write(j)
+    }
+   document.write('<br>')
 
+  }
 
-let arr2 = [3, 5, 22, 5,  7,  2,  45, 75, 89, 21, 2]; // --> 276
+  for (i=1;i<=3;i++) {
 
-let total = 0 ;
+    for (j=1;j<=10;j++)  {
 
-for (i=0;i<arr2.length;i++)  {
+      document.write(i+ " * " +j+" = "+ i * j+' '+'<br>')
+    }
+    document.write(' ')
   
-  total+=arr2[i]
-}
-console.log(total)
+  }
 
-let add = sum + total
-
-console.log(add)
-
-
-
-
-let arr3   = [4, 6, 7];
-let arr4    = [8, 1, 9];
-
-sum = 0;
-addtwoarray = [];
-for (i=0; i<arr3.length; i++)  {
-  
-  sum = arr3[i] + arr4[i]
-  addtwoarray.push(sum)
-}
-console.log(addtwoarray)
-
-
-
-
-
-let str1 = "javascript";  
-
-let newarray = [];
-for (i = 0; i<str1.length;i++)  {
-  
-  if ((i+1)%2 ==0) {
  
-  console.log(str1[i])
-  }
-}
+  for (i=5;i>=1;i--) {
 
+    for (j=1;j<=i ;j++) {
 
-let n1 = 22; 
-
-for (i=1;i<=n1;i++)  {
-  
-if (i%2==0) {
-  console.log(i + ' '+'is a even number')
-  
-}  
-  
-}
-
-
-const arr15 = [34, 5, 3, 3, 1, 6];
-const arr25 = [5, 67, 8, 2, 6, 4];
-
-   const res = [];
-   for(let i = 0; i < arr15.length; i++){
-      res[i] = (arr15[i]) + (arr25[arr25.length -1] );
-   };
-   console.log(res);
-
-
-   const aa= [12,23,45,63,56]
-
-   rsm = aa.length
-   console.log(rsm)
-
-   //  Write a JavaScript program which iterates the integers from 1 to 100.
-// But for multiples of three print "Fizz" instead of the number and for the multiples of 
-// five print "Buzz". For numbers which are multiples
-// of both three and five print "FizzBuzz"
-
-
-for (i=1 ; i<100 ; i++)  {
-  
-  if (i%3===0&&i%5===0)  {
-    
-    console.log(i+' '+'FIZZBUZZ')
-  }
-  else if (i%5==0) {
-    
-    console.log(i+' '+'BUZZ')
+      document.write(j)
+    }
+    document.write('<br>')
   }
 
-  else if (i%3==0) {
-    
-    console.log(i +' '+'FIZZ')
-  }
-  else {
-    console.log(i)
-  }
-}
 
 
 
-// reverse the array element
 
-reversearray = [56,45,12,3,6,96,85,45]
 
-empty= [];
-for (i=reversearray.length-1;i>=0; i--)  {
-  
-  empty.push(reversearray[i])
 
-}
-  console.log(empty)
 
 
 
 
-  let stocks = [
-  {
-    code: "GOOGL", price: 1700,},
-  
-  {  code: "AAPL", price: 130, },
-  
-  { code: "MSFT", price: 219,},
-  
-  { code: "TSLA", price: 880,},
-  
-  { code: "FB", price: 267,},
-  
-  {code: "AMZN", price: 3182,},
-    
-   ];
 
 
-  let empty1 = [];
 
-for (i =0; i< stocks.length ;i++)  {
-  
-  if (stocks[i].price<1000) {
-    
-   // console.log(stocks[i].price)
-    empty1.push(stocks[i].price)
-  }
-}
 
-console.log(empty1)
 
-//  largest  //
 
-largest = [33,45,85,63,96,100]
 
-let large = '';
 
- for (i=0 ; i<largest.length;i++ )  {
 
-if (largest[i] > large)  {
 
-  large = largest[i]
-}
-}
-console.log(large)
 
 
 
-//   largest with function
 
-function larger () {
-let savevalue = 0;
 
-for (i=0; i<arguments.length; i++){
 
-  if (arguments[i]>savevalue)  {
 
-    savevalue = arguments[i]
-  }
-}
-  return savevalue
-}
 
-console.log(larger (23,45,63,89,41,52,32,96))
 
 
-//  ARROW FUNCTION LARGEST  // 
 
-let number = [23,56,41,23,78,20,199]
 
-number.sort((a,b) =>b-a);
 
-console.log(number);
 
-let x= number ;
-console.log(x[0])
-
-
-
-
-//  SMALLEST  //
-
-array = [23,56,41,32,89,13,47]
-
-smallest =array[0];
-for (i=0;i<array.length;i++)  {
-  
-  if (array[i]<smallest)  {
- smallest= array[i] ;
- 
-  }
-}
-   console.log(smallest)
-
-
-
-   let n=10;
-
-let star = '';
-
-for (i=0; i<n; i++)  {
-  
-for (j=0; j<=i; j++)  {
-  
-  star+= '*';
-}
-    star += "\n";
-}
-  console.log(star)
-
-
-  //  REST PARAMETER //       first param == 'A'
-
-  function myFunc(firstParam, ...remainingParams) {
-     console.log(firstParam);
-     for(var i = 0; i < remainingParams.length; i++) { 
-          console.log(remainingParams[i]);
-     }
-}
-myFunc('A','B','V','F','T','H');
-
-
-function myFunc() {
-     if(arguments.length > 0) {
-          for(var i = 0; i < arguments.length; i++)
-                console.log(arguments[i]);
-     }
-}
-myFunc(2,3,4,6,1,7,3);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
+  </script>
 </body>
+
 </html>

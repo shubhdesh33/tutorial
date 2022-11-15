@@ -201,6 +201,62 @@ console.log(check.filter(radha))
 
 
 
+var grades = [
+    {name: 'John', grade: 8, sex: 'M'},
+    {name: 'Sarah', grade: 12, sex: 'F'},
+    {name: 'Bob', grade: 16, sex: 'M'},
+    {name: 'Johnny', grade: 2, sex: 'M'},
+    {name: 'Ethan', grade: 4, sex: 'M'},
+    {name: 'Paula', grade: 18, sex: 'F'},
+    {name: 'Donald', grade: 5, sex: 'M'},
+    {name: 'Jennifer', grade: 13, sex: 'F'},
+    {name: 'Courtney', grade: 15, sex: 'F'},
+    {name: 'Jane', grade: 9, sex: 'F'}
+]
+
+boys = grades.filter(ele => ele.sex==='M').map(ele =>ele.grade)
+  avgboys=boys.reduce((ele,accu) => accu + ele)/boys.length
+ console.log(avgboys)
+
+
+ console.log(Math.max(...boys))
+
+//   save =boys.reduce((ele,accu) => accu + ele,0)/boys.length
+// console.log(save)
+
+//  let sum =0
+
+//  boys.forEach((ele,index) => sum+=ele);
+//  console.log(sum/boys.length)
+ 
+ girls = grades.filter((ele) => ele.sex=='F').map((ele) => ele.grade)
+ avggirls=girls.reduce((ele,accu) => ele + accu ,0)/girls.length
+ console.log(avggirls)
+ 
+console.log(Math.max(...girls))
+
+avgclass = grades.map((ele) =>  ele.grade)
+
+ getavg=avgclass.reduce((ele,accu)=> ele +accu,0)/avgclass.length
+console.log(getavg)
+
+const students = [
+  { name: 'John James', status: true},
+  { name: 'Micheal Obi', status: false },
+  { name: 'Bola Ade', status: true },
+  { name: 'Emmanuel', status: false },
+  { name: 'Faithfulness Alamu',status: true },
+];
+
+gettrue = students.filter((ele) => ele.status ==true).map((ele) => ele.name)
+ console.log(gettrue)
+
+ getlength = students.map((ele) => ele.name)
+   startwiths  =getlength.filter((ele) => ele.getlength('s'))
+   console.log(startwiths)
+
+
+
 
 
 

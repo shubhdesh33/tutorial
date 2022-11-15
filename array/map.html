@@ -199,7 +199,6 @@ const displayincome = function (ele) {
     .filter(element => element > 0)
     .reduce( (accu,element) =>    element + accu ,0 
     )
-
     console.log(getincome)
 
 
@@ -233,7 +232,7 @@ const euroTousd = 1.1;
 const savemove = movements.map((ele,ind)=> {
 
     return   Math.floor(ele * euroTousd);
-;})
+ ;})
  
 // let usefloor = Math.floor(savemove)
 console.log(savemove)
