@@ -201,7 +201,7 @@
     document.writeln('<h3> Findindex()</h3>')
 
     var num = [1, 61, 71, 56, 81, 63, 45]
-    const foundindex = num.findIndex(num => 60);         //I ha capital pahije
+    const foundindex = num.findIndex((num,ind) => num==56);         //I ha capital pahije
     document.write(foundindex);
     document.write("<hr>")
 

@@ -31,8 +31,21 @@
     createQuote('deshmukh', logquote)
 
 
+    var callbackacceoptingfunc = (fn) =>  {
+     
+       return fn(1,2,3)
+    }
+
+    const callbacks = (ag1,ag2,ag3) => {
+  
+      return ag1 + ag2+ ag3
+    }
+
+    const result =  callbackacceoptingfunc(callbacks)
+
+
     
-    function check() {
+    function check () {
 
       for (var i = 0; i <= 5; i++) {
 
@@ -84,6 +97,9 @@ function sayName(name) {
 
 // calling the function after 2 seconds
 setTimeout(greet, 2000, 'John', sayName);
+
+
+
 
 
 
@@ -166,7 +182,38 @@ setTimeout(greet, 2000, 'John', sayName);
 
     let array2 = [1, 2, 4, 7, 3, 5, 6];
 
+    const user = 'shubham'
 
+
+
+    function greet (user) {
+      console.log(`welcome ${user}`)
+    }
+     setTimeout(greet, 2000,user)
+
+       setTimeout((user) => {
+        console.log(`welcome ${user}`)
+       },2000,user)
+
+
+
+       //   
+        // example == https://howtocreateapps.com/what-is-callback-hell-with-javascript-examples/
+       getDataFromDatabase(id, function(dataFromDatabase) {
+    getDataFromWeatherAPI(dataFromDatabase.url, function(dataFromWeatherAPI) {
+        saveDataToDatabase(dataFromWeatherAPI, function(result) {
+            console.log("am I in hell?")
+        });
+    });
+});
+
+  /* Get data from the database by using a database id.
+When data is retrieved from the database the callback function will be executed with data received from the database.
+We use the data from the database to call a weather API.
+After the data is retrieved from the weather API, we save the data to the database which triggers another callback function.
+The callback functions are nested inside each other since we depend on the data from the previous function.
+
+*/
 
 
     //  Callback HELL
@@ -251,8 +298,18 @@ setTimeout(greet, 2000, 'John', sayName);
 
     doOperation();
 
+    //  when  callback(result) call the function result1 (result1 function cha inside dostep2 function ahe) then 
+    // result1 function == callback funct execute zala nantr ch dosetp2 funct execute honar
 
+      // calculate (2,3, function (result) {
+      //   console.log(result)
+      // })
 
+    
+        //      syntax  
+     /* setTimeout ((argument here) => {
+
+      },2000,argument here)  */
 
     const getrollNo = () => {
 
@@ -277,7 +334,7 @@ setTimeout(greet, 2000, 'John', sayName);
             console.log(`my roll no is ${rollno} and my name ${biodata.name}  & gender is${biodata.gender}`)
 
           }, 2000)
-        }, 2000, rollNo[2])
+        }, 2000, rollNo[2])                              // focous on 
       }, 2000)
     }
 
@@ -298,17 +355,21 @@ setTimeout(greet, 2000, 'John', sayName);
     };
 
 
+      //  HOF
     orders = (getorder, callbackproduction) => {
 
       setTimeout(() => {
         console.log(` get order of ${getorder}`)
 
-        production(getorder)
+       //  production(getorder)
+        callbackproduction(getorder)
 
       }, 2000);
 
     }
 
+
+    //  CALLBACK FUNCTION
     production = (getorder) => {
 
       setTimeout(() => {
@@ -321,7 +382,7 @@ setTimeout(greet, 2000, 'John', sayName);
             console.log(`${stocks.liquid[2]} and ${stocks.liquid[3]} was added`)
 
             setTimeout(() => {
-              console.log(`${stocks.holder[0]} `)
+              console.log(`put the coke in a ${stocks.holder[0]} `)
 
               setTimeout(() => {
                 console.log(`item of ${stocks.topping[0]} is ready `)
@@ -331,21 +392,24 @@ setTimeout(greet, 2000, 'John', sayName);
 
                   setTimeout(() => {
                     console.log(`bill the customer `)
-                  }, 2000)
+                  }, 12000)
                 }, 0000)
               }, 2000)
             }, 0000)
-          }, 0000);
-        }, 2000);
+          }, 2000);
+        }, 4000);
       }, 0000);
     };
 
     orders(stocks.fruits[0], production)
 
 
+
+  // IMP  == https://dev.to/asadanik/callback-hell-in-javascript-29bd
+
 //  https://zellwk.com/blog/callbacks/
 
-
+//  https://www.scaler.com/topics/callback-hell-in-javascript/
 
 //  https://www.programiz.com/javascript/callback
 

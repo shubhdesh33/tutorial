@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+ <script>
+
+
+  // Pass by value
+  var num1 = 10;
+
+  let num2 = num1;
+
+  num2 = 20
+  
+  console.log(num1)
+
+  console.log(num2)
+
+
+  var a = 20;
+
+  function value (b)  {
+   b =10;
+  console.log(b)
+
+  }
+
+  value (a)
+  console.log(a)
+
+
+  //  Pass by reference
+
+  var obj1 = {
+    name : 'adi',
+  }
+
+  obj2 = obj1 
+
+  obj2.name = 'rahul';
+
+  console.log(obj2.name)
+
+  console.log(obj1.name)
+
+
+
+
+
+
+
+
+
+//  IMP == https://www.tektutorialshub.com/javascript/pass-by-value-and-pass-by-reference-in-javascript/
+ </script>
+
+
+</body>
+</html>

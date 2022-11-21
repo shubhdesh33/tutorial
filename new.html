@@ -12,96 +12,86 @@
 <html>
 
 <body>
-  <!-- <script>
+  <script>
+
+
+    // const person = {
+    //     name: "Sarah",
+    //     age: 44,
+    //     address: {
+    //         addressLine1: "Sample Address Line 1",
+    //         city: "My City",
+    //         postCode: "ABC 123"
+    //     }
+    // }
+
+
+    // console.log(Object.values(person))
+
+    // for (const key in person) {
+    //     console.log(`${key}: ${person[key]}`)
+    // }
+
+
+
+    // const iterate = (obj) => {
+
+    //   Object.values(obj).forEach((ele) => {
+
+    //     console.log(obj[ele]);
+
+    //     if (typeof obj[ele]==='object') {
+    //       iterate (obj[ele])
+
+    //     }
+    //   })
+    // }
+
+    // iterate (person)
+
+
+    // const iterate = (obj) => {
+
+    //    Object.values(obj).forEach((ele,key) => {
+
+    //      console.log(ele);
+
+    //    })
+    //  }
+
+    //  iterate (person)
+
+
+    const obj = {
+      name: 'aditya',
+      age: 23,
+      grade: 'd',
+      marks: {
+        eng: 50,
+        hindi: 45,
+        math: 33,
+        mararhi: 60,
+      }
+    }
+
     
-        function msg() {
-            alert( "call me");
-        }
-    </script>
-   <input type="button" onclick="msg()" value="click me">
-   <script>
-  function  shubham(x,y) {
-    y=2;
-    return x*y;
-  }
-document.write(shubham(20));
-</script>
-<script>
-function desh(a,b,c) {
-   a = 2;
- return a+b*c;
+   store =Object.values(obj)
 
+   store.forEach(element => {
+    
+    for (key in element) {
 
-}
- document.write(desh(6,7));
-
-</script> -->
-  <script>
-
-    function Info(fname, lname, city, country, state) {
-      this.fname = fname;
-      this.lname = lname;
-      this.city = city;
-      this.country = country;
+     return  element[key]
     }
-    function Person1(fname, lname, city, country) {
-      Info.call(this, fname, lname, city, country);
-    }
-
-    function Person2(fname, lname, city, country) {
-      Info.call(this, fname, lname, city, country);
-    }
-
-    var per1 = new Person1("shubham", "deshmukh", "amravati", "india");
-    var per2 = new Person1("ram", "dd", "akola", "inida");
-
-    document.write(per1.fname + "    " + per1.lname + "   " + per1.city + "   " + per1.country + "   " + "maha");
-    document.write("<br>");
-
-    document.write(per2.fname + "   " + per2.lname + "   " + per2.city + "    " + per2.country);
-    document.write("<br>");
-
-  </script>
-  <script>
-
-
-    //  callback hell
-
-    function dostep1(val, callback) {
-      const result = val + 1;
-      callback(result)
-    }
-
-    function dostep2(val, callback) {
-      const result = val + 1;
-      callback(result)
-    }
-
-    function dostep3(val, callback) {
-      const result = val + 1;
-      callback(result)
-    }
-
-    function dostep4(val, callback) {
-      const result = val + 1;
-      callback(result)
-    }
-
-    dostep1(0, result1)
-    dostep2(result1, result2)
-    dostep3(result2, result3)
-    dostep4(result3, result4)
-
-
-
-
-
-
-
+   })
+   console.log(store)
 
 
 
   </script>
+
+
+
 </body>
 
 </html>
